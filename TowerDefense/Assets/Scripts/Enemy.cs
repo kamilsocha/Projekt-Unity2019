@@ -2,7 +2,7 @@
 
 public class Enemy : MonoBehaviour
 {
-    public float startSpeed = 10f;
+    public float startSpeed = 5f;
     [HideInInspector]
     public float speed;
 
