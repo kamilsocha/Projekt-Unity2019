@@ -20,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         Vector3 dir = target.position - transform.position;
-        transform.Translate(dir * enemy.speed * Time.deltaTime, Space.World);
+        transform.Translate(dir.normalized * enemy.speed * Time.deltaTime, Space.World);
 
         if(Vector3.Distance(transform.position, target.position) <= radius)
         {
