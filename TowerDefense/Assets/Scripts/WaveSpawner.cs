@@ -18,27 +18,22 @@ public class WaveSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("inside start method");
         EnemiesAlive = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("inside update");
-        Debug.Log("inside update, win level");
         if (EnemiesAlive > 0) return;
 
         if(waveIndex == waves.Length)
         {
-            Debug.Log("inside update, win level");
             gameManager.WinLevel();
             this.enabled = false;
         }
 
         if(countdown <= 0f)
         {
-            Debug.Log("inside update, spawn wave");
             StartCoroutine(SpawnWave());
             countdown = timeBeetwenWaves;
             return;
@@ -57,7 +52,6 @@ public class WaveSpawner : MonoBehaviour
 
         for (int i = 0; i < wave.count; i++)
         {
-            Debug.Log("inside spawn wave, spawn enemy");
             SpawnEnemy(wave.enemyPrefab);
             yield return new WaitForSeconds(1f / wave.rate);
         }
@@ -67,7 +61,6 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy(GameObject enemyPrefab)
     {
-        Debug.Log("inside spawn enemy, instantiate");
         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
     }
 }
