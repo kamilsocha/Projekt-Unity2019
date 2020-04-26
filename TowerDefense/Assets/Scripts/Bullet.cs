@@ -3,7 +3,9 @@
 public class Bullet : MonoBehaviour
 {
     Transform target;
-    public float speed = 70f;
+    public float speed = 50f;
+
+    public GameObject impactEffect;
 
     // Update is called once per frame
     void Update()
@@ -33,6 +35,8 @@ public class Bullet : MonoBehaviour
 
     void HitTarget()
     {
+        GameObject effectInstance = Instantiate(impactEffect, transform.position, transform.rotation);
+        Destroy(effectInstance, 2f);
         Destroy(gameObject);
     }
 }

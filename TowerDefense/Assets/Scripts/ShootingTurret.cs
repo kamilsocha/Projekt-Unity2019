@@ -11,7 +11,7 @@ public class ShootingTurret : MonoBehaviour
 
     [Header("General")]
     public float range = 15f;
-    public float fireRate = 1f;
+    public float fireRate = 0.2f;
     public GameObject bulletPrefab;
     public Transform firePoint;
 
@@ -24,7 +24,7 @@ public class ShootingTurret : MonoBehaviour
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        animator = GetComponent<Animator>();
+        animator = partToRotate.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -84,7 +84,7 @@ public class ShootingTurret : MonoBehaviour
         GameObject bulletGO =  Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 
-        animator.Play("Scene");
+        animator.SetTrigger("Shoot");
 
         if(bullet != null)
         {
