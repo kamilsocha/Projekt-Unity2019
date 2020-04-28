@@ -11,11 +11,6 @@ public class CameraController : MonoBehaviour
     public float minY = 10f;
     public float maxY = 80f;
 
-    Vector2 zoomRange = new Vector2(-5f, 5f);
-    float currentZoom = 0f;
-    float zoomSpeed = 1f;
-    float zoomRotation = 1f;
-
     Vector3 initPos;
     Vector3 initRot;
 

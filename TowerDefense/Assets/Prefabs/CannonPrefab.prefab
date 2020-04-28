@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1420688328414647561}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.942299, y: 0.3, z: -20.002323}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 7161084083534988151}
   - {fileID: 6056721042072870699}
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 15
   fireRate: 1
-  bulletPrefab: {fileID: 233640908589398269, guid: 24890c039f6e05140a821db4e48a24c7,
+  bulletPrefab: {fileID: 8235512071484335377, guid: 7a10b80cd3a211145b269435b2a2485e,
     type: 3}
   firePoint: {fileID: 7161084083534988151}
   enemyTag: Enemy

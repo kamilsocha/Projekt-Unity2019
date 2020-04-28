@@ -55,7 +55,6 @@ public class Node : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        Debug.Log("Entered");
         if (EventSystem.current.IsPointerOverGameObject()) return;
 
         if (!buildManager.CanBuild) return;
