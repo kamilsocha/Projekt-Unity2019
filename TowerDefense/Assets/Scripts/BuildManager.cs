@@ -20,6 +20,8 @@ public class BuildManager : MonoBehaviour
     TurretBlueprint turretToBuild;
     Node selectedNode;
 
+    public GameObject buildEffect;
+
     public bool CanBuild
     {
         get
@@ -31,8 +33,7 @@ public class BuildManager : MonoBehaviour
     {
         get
         {
-            //TODO
-            return true;
+            return PlayerStats.Money >= turretToBuild.cost;
         }
     }
 

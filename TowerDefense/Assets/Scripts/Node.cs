@@ -7,7 +7,7 @@ public class Node : MonoBehaviour
     public Color hoverColor;
     public Color notEnoughMoneyColor;
     Renderer rend;
-    public BuildManager buildManager;
+    BuildManager buildManager;
     public Vector3 positionOffset;
 
     [HideInInspector]
@@ -44,6 +44,12 @@ public class Node : MonoBehaviour
     void BuildTurret(TurretBlueprint blueprint)
     {
         //TODO money
+        if(PlayerStats.Money < blueprint.cost)
+        {
+            Debug.Log("Not enough money to build that!");
+            return;
+        }
+        PlayerStats.Money -= blueprint.cost;
 
         GameObject _turret = Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
         Turret = _turret;
@@ -51,6 +57,18 @@ public class Node : MonoBehaviour
         TurretBlueprint = blueprint;
 
         //TODO effect
+        GameObject effect = Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
+        Destroy(effect, 5f);
+    }
+
+    public void UpgradeTurret()
+    {
+
+    }
+
+    public void SellTurret()
+    {
+
     }
 
     private void OnMouseEnter()

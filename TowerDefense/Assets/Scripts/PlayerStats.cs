@@ -6,9 +6,9 @@ public class PlayerStats : MonoBehaviour
     public static int Money { get; set; }
 
     public int startLives = 20;
-    public static int lives { get; set; }
+    public static int Lives { get; set; }
 
-    public static int rounds { get; set; }
+    public static int Rounds { get; set; }
     
     // TODO
     // Points system
@@ -17,9 +17,12 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         Money = startMoney;
-        lives = startLives;
+        Lives = startLives;
 
-        rounds = 0;
+        Rounds = 0;
         points = 0;
     }
+
+    //TODO?
+    //public void ReduceLive() { }
 }

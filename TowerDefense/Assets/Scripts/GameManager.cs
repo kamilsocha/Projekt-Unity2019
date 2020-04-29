@@ -4,32 +4,36 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    //TODO
+    public static bool GameIsOver;
 
-    public static bool gameIsOver;
+    public GameObject gameOverUI;
+    public GameObject completeLevelUI;
 
     void Start()
     {
-        gameIsOver = false;
+        GameIsOver = false;
     }
 
     void Update()
     {
-        if (gameIsOver) return;
+        if (GameIsOver) return;
 
-        //TODO End game if player run out of lives
+        if(PlayerStats.Lives <= 0)
+        {
+            EndGame();
+        }
     }
 
     void EndGame()
     {
-        gameIsOver = true;
-        //TODO UI
+        GameIsOver = true;
+        gameOverUI.SetActive(true);
     }
 
     public void WinLevel()
     {
-        gameIsOver = true;
-        //TODO UI
+        GameIsOver = true;
+        //completeLevelUI.SetActive(true);
     }
 
 }
