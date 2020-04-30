@@ -11,13 +11,11 @@ public class TurretBlueprint
 
     public int GetSellAmount()
     {
-        //TODO
-        return 0;
+        return cost / 2;
     }
 
     public int GetUpgradedSellAmount()
     {
-        //TODO
-        return 0;
+        return (cost + upgradeCost) / 2;
     }
 }

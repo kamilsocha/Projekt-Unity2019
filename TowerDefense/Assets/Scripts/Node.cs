@@ -9,7 +9,8 @@ public class Node : MonoBehaviour
     Renderer rend;
     BuildManager buildManager;
     public Vector3 positionOffset;
-
+    [HideInInspector]
+    public bool isUpgraded = false;
     [HideInInspector]
     public GameObject Turret { get; set; }
     [HideInInspector]
@@ -56,19 +57,43 @@ public class Node : MonoBehaviour
 
         TurretBlueprint = blueprint;
 
-        //TODO effect
         GameObject effect = Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 5f);
     }
 
     public void UpgradeTurret()
     {
+        if(PlayerStats.Money < TurretBlueprint.upgradeCost)
+        {
+            Debug.Log("Not enough money to upgrade!");
+            return;
+        }
+        PlayerStats.Money -= TurretBlueprint.upgradeCost;
 
+        Destroy(Turret);
+
+        GameObject _turret = Instantiate(TurretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
+        Turret = _turret;
+
+        //Effect
+        //GameObject upgradeEffectGO = Instantiate(buildManager.upgradeEffect, GetBuildPosition(), Quaternion.identity);
+        //Destroy(upgradeEffectGO, 5f);
+
+        isUpgraded = true;
     }
 
     public void SellTurret()
     {
+        if (!isUpgraded)
+            PlayerStats.Money += TurretBlueprint.GetSellAmount();
+        else
+            PlayerStats.Money += TurretBlueprint.GetUpgradedSellAmount();
 
+        GameObject sellEffectGO = Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
+        Destroy(sellEffectGO, 5f);
+
+        Destroy(Turret);
+        TurretBlueprint = null;
     }
 
     private void OnMouseEnter()

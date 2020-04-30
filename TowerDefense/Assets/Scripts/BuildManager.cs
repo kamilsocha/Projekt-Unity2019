@@ -19,8 +19,11 @@ public class BuildManager : MonoBehaviour
 
     TurretBlueprint turretToBuild;
     Node selectedNode;
+    public NodeUI nodeUI;
 
     public GameObject buildEffect;
+    public GameObject upgradeEffect;
+    public GameObject sellEffect;
 
     public bool CanBuild
     {
@@ -47,11 +50,14 @@ public class BuildManager : MonoBehaviour
         }
         selectedNode = node;
         turretToBuild = null;
+
+        nodeUI.SetTarget(node);
     }
 
     public void DeselectNode()
     {
         selectedNode = null;
+        nodeUI.Hide();
     }
 
     public void SelectTurretToBuild(TurretBlueprint turret)
