@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 
     public void Play(string levelToLoad)
     {
-        if (levelToLoad == null) levelToLoad = "SelectLevel";
+        if (levelToLoad == null) levelToLoad = "LevelSelect";
         sceneFader.FadeTo(levelToLoad);
     }
 

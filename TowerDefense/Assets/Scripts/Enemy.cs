@@ -25,7 +25,8 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
-        
+        healthBar.fillAmount = health / startHealth;
+                
         if(health <= 0 && isAlive)
         {
             Die();
@@ -34,7 +35,7 @@ public class Enemy : MonoBehaviour
 
     public void Slow(float percentage)
     {
-
+        speed = startSpeed * (1f - percentage);
     }
 
     void Die()
