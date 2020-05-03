@@ -11,7 +11,7 @@ public class WaveSpawner : MonoBehaviour
     public GameManager gameManager;
     public Transform spawnPoint;
 
-    public float timeBeetwenWaves = 5f;
+    public float timeBetweenWaves = 5f;
     float countdown = 2f;
     public Text waveCountdownText;
 
@@ -23,9 +23,24 @@ public class WaveSpawner : MonoBehaviour
         EnemiesAlive = 0;
     }
 
+    public void StartGame()
+    {
+        EnemiesAlive = 0;
+        spawnPoint = GameObject.FindWithTag("SpawnPoint").transform;
+        this.enabled = true;
+    }
+
+    public void SetData(Wave[] _waves, float _timeBetweenWaves)
+    {
+        waves = _waves;
+        timeBetweenWaves = _timeBetweenWaves;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (!GameManager.IsInGame) return;
+
         if (EnemiesAlive > 0) return;
 
         if(waveIndex == waves.Length)
@@ -37,7 +52,7 @@ public class WaveSpawner : MonoBehaviour
         if(countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
-            countdown = timeBeetwenWaves;
+            countdown = timeBetweenWaves;
             return;
         }
 

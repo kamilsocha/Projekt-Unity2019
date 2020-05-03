@@ -17,11 +17,18 @@ public class CompleteLevel : MonoBehaviour
 
     public void Continue()
     {
-        sceneFader.FadeTo(nextLevel);
+
+        sceneFader.FadeTo(nextLevel, LoadType.SingleLevel);
     }
 
     public void BackToMenu()
     {
-        sceneFader.FadeTo(menuName);
+        sceneFader.FadeTo(menuName, LoadType.Menu);
+    }
+
+    private void OnEnable()
+    {
+        //TODO check if there is next level
+        //if()
     }
 }

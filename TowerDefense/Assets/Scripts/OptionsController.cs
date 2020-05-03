@@ -2,11 +2,11 @@
 
 public class OptionsController : MonoBehaviour
 {
-    public SceneFader sceneFader;
-    string menuName = "MainMenu";
+    public SceneFader sceneFader = SceneFader.Instance;
+    string menuSceneName = "MainMenu";
 
     public void BackToMainMenu()
     {
-        sceneFader.FadeTo(menuName);
+        sceneFader.FadeTo(menuSceneName, LoadType.Menu);
     }
 }

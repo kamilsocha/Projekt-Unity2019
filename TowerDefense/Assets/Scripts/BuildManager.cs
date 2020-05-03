@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BuildManager : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class BuildManager : MonoBehaviour
     {
         if(Instance != null)
         {
-            Debug.LogError("Error - more than one instance of BuildManager");
+            Debug.LogError("BuildManager gets destroyed.");
+            Destroy(this);
             return;
         }
         Instance = this;
+        DontDestroyOnLoad(this);
     }
     #endregion
 
@@ -69,6 +72,19 @@ public class BuildManager : MonoBehaviour
     public TurretBlueprint GetTurretToBuild()
     {
         return turretToBuild;
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(scene.name == "LevelShared")
+        {
+            nodeUI = GameObject.Find("NodeUI").GetComponent<NodeUI>();
+        }
     }
 
 }

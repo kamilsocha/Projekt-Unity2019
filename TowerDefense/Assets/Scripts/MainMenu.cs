@@ -3,12 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public SceneFader sceneFader;
+    public SceneFader sceneFader = SceneFader.Instance;
 
     public void Play(string levelToLoad)
     {
         if (levelToLoad == null) levelToLoad = "LevelSelect";
-        sceneFader.FadeTo(levelToLoad);
+        sceneFader.FadeTo(levelToLoad, LoadType.Menu);
     }
 
     public void Quit()

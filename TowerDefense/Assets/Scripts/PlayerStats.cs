@@ -23,6 +23,12 @@ public class PlayerStats : MonoBehaviour
         points = 0;
     }
 
+    public void SetData(int _startMoney, int _startLives)
+    {
+        startMoney = _startMoney;
+        startLives = _startLives;
+    }
+
     //TODO?
     //public void ReduceLive() { }
 }

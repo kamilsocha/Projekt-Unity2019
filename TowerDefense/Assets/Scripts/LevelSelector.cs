@@ -14,7 +14,9 @@ public class LevelSelector : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < levelButtons.Length; i++)
+        sceneFader = FindObjectOfType<SceneFader>();
+
+        /*for (int i = 0; i < levelButtons.Length; i++)
         {
             levelName = levelString;
             if (i + 1 < 10) levelName += "0";
@@ -22,7 +24,8 @@ public class LevelSelector : MonoBehaviour
             levelName += levelNumber;
             levelButtons[i].GetComponentInChildren<Text>().text = levelNumber;
             levelButtons[i].onClick.AddListener(delegate { Select(levelName); });
-        }
+            Debug.Log("button " + i + " levelName = " + levelName);
+        }*/
         /// <summary>
         /// Block levels which the player has not unlocked yet.
         /// </summary>
@@ -35,11 +38,13 @@ public class LevelSelector : MonoBehaviour
 
     public void Select(string levelName)
     {
-        sceneFader.FadeTo(levelName);
+        PlayerPrefs.SetString("CurrentLevel", levelName);
+        Debug.Log("levelName from button = " + levelName);
+        sceneFader.FadeTo(levelName, LoadType.DoubleLevel);
     }
 
     public void BackToMainMenu()
     {
-        sceneFader.FadeTo(menuName);
+        sceneFader.FadeTo(menuName, LoadType.Menu);
     }
 }
