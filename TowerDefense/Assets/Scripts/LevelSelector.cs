@@ -8,8 +8,8 @@ public class LevelSelector : MonoBehaviour
 
     static string menuName = "MainMenu";
     static string levelString = "Level";
-    string levelName = levelString;
-    string levelNumber = "1";
+    //string levelName = levelString;
+    //string levelNumber = "1";
     int defaultLevel = 1;
 
     private void Start()
@@ -19,7 +19,7 @@ public class LevelSelector : MonoBehaviour
         /*for (int i = 0; i < levelButtons.Length; i++)
         {
             levelName = levelString;
-            if (i + 1 < 10) levelName += "0";
+            if (i < 10) levelName += "0";
             levelNumber = (i + 1).ToString();
             levelName += levelNumber;
             levelButtons[i].GetComponentInChildren<Text>().text = levelNumber;
