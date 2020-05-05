@@ -10,6 +10,7 @@ public class WaveSpawner : MonoBehaviour
 
     public GameManager gameManager;
     public Transform spawnPoint;
+    public Vector3 positionOffset = new Vector3(0, 1.5f, 0);
 
     public float timeBetweenWaves = 5f;
     float countdown = 2f;

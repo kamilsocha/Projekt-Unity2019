@@ -1253,6 +1253,7 @@ MonoBehaviour:
     rate: 1
   gameManager: {fileID: 600965874}
   spawnPoint: {fileID: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
   timeBetweenWaves: 5
   waveCountdownText: {fileID: 1526758705}
 --- !u!4 &600965873
@@ -1290,8 +1291,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ea3d56c818c8ca47a5c823f87cfe2cd, type: 2}
   - {fileID: 11400000, guid: 52ecb72fd7ffe754da02b6c93d94081e, type: 2}
   currentLevelData: {fileID: 0}
-  currentLevel: Level02
-  offset: 0
+  currentLevel: Level01
 --- !u!114 &600965875
 MonoBehaviour:
   m_ObjectHideFlags: 0
