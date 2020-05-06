@@ -2751,7 +2751,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 765951cfd9ef3d14d9c4bb4b91fe3c1e,
+      objectReference: {fileID: 21300000, guid: f24c43c1c51874446becccb944aa84aa,
         type: 3}
     - target: {fileID: 5816523902912407436, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
@@ -2877,6 +2877,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: CANNON
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816523903936982357, guid: 84d38212695a59a43accb9d46f9a8a72,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84d38212695a59a43accb9d46f9a8a72, type: 3}
@@ -3268,7 +3273,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RETRY
+  m_Text: CONTINUE
 --- !u!222 &1591431886
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3947,17 +3952,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crossbowTurret:
-    prefab: {fileID: 1852059978132935949, guid: cdf97655bd8c4fc4aa5c776e5f1a6078,
+    prefab: {fileID: 7578218250711244227, guid: cdf97655bd8c4fc4aa5c776e5f1a6078,
       type: 3}
     cost: 100
-    upgradedPrefab: {fileID: 8197345237649353142, guid: 417dfe50801d3844e92d771e2b5151fe,
+    upgradedPrefab: {fileID: 687945020289995514, guid: 417dfe50801d3844e92d771e2b5151fe,
       type: 3}
     upgradeCost: 60
   cannonTurret:
-    prefab: {fileID: 1420688328414647561, guid: 3a438516b06d6ef46b95f0fbe92ce86d,
+    prefab: {fileID: 6172449242888374197, guid: 3a438516b06d6ef46b95f0fbe92ce86d,
       type: 3}
     cost: 250
-    upgradedPrefab: {fileID: 4569268152277425530, guid: 5428c07a74b64904bb34bd893ea3ccb9,
+    upgradedPrefab: {fileID: 8049532230785201885, guid: 5428c07a74b64904bb34bd893ea3ccb9,
       type: 3}
     upgradeCost: 80
 --- !u!1 &1850775808
@@ -4792,6 +4797,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1754833668}
     m_Modifications:
+    - target: {fileID: 5816523902912407432, guid: 84d38212695a59a43accb9d46f9a8a72,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f545dfbe81651b34c80b462d7c0bd3b6,
+        type: 3}
     - target: {fileID: 5816523902912407436, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
       propertyPath: m_Name
@@ -4907,5 +4918,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1754833672}
+    - target: {fileID: 5816523903936982357, guid: 84d38212695a59a43accb9d46f9a8a72,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84d38212695a59a43accb9d46f9a8a72, type: 3}

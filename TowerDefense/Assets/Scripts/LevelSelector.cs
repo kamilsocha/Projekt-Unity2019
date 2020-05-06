@@ -7,7 +7,7 @@ public class LevelSelector : MonoBehaviour
     public Button[] levelButtons;
 
     static string menuName = "MainMenu";
-    static string levelString = "Level";
+    //static string levelString = "Level";
     //string levelName = levelString;
     //string levelNumber = "1";
     int defaultLevel = 1;
