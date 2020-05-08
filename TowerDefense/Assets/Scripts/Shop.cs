@@ -5,7 +5,7 @@ public class Shop : MonoBehaviour
     public TurretBlueprint crossbowTurret;
     public TurretBlueprint cannonTurret;
     //TODO
-    //public TurretBlueprint laserTurret;
+    public TurretBlueprint laserTurret;
     //public TurretBlueprint antibioticTurret;
     //public TurretBlueprint medicineTurret;
 
@@ -25,12 +25,13 @@ public class Shop : MonoBehaviour
     {
         buildManager.SelectTurretToBuild(cannonTurret);
     }
-    /* TODO
+    
     public void SelectLaserTurret()
     {
-
+        buildManager.SelectTurretToBuild(laserTurret);
     }
-
+    /* 
+     * TODO
     public void SelectAntibioticTurret()
     {
 

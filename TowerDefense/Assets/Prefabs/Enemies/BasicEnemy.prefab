@@ -267,7 +267,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-2088108655354342110
 MonoBehaviour:
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 5
   speed: 0
-  health: 0
+  health: 100
   worth: 30
   deathEffect: {fileID: 7675146461362234754, guid: 171a318d6a4841540bbd082ffd298359,
     type: 3}

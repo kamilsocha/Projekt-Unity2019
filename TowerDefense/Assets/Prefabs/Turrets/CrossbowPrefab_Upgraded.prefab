@@ -142,9 +142,13 @@ MonoBehaviour:
   fireRate: 1
   bulletPrefab: {fileID: 233640908589398269, guid: 24890c039f6e05140a821db4e48a24c7,
     type: 3}
-  firePoint: {fileID: 6631059577027773980}
+  useLaser: 0
+  lineRenderer: {fileID: 0}
+  impactEffect: {fileID: 0}
+  impactLight: {fileID: 0}
   enemyTag: Enemy
   partToRotate: {fileID: 6631059576364302172}
+  firePoint: {fileID: 6631059577027773980}
   turnSpeed: 10
 --- !u!1 &734232658221689592
 GameObject:
@@ -852,7 +856,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: a4c6738b65fe453499228893b6c1366a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1

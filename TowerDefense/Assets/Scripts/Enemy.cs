@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        Debug.Log(gameObject.name.ToString() + " Taking damage");
+
         health -= amount;
         healthBar.fillAmount = health / startHealth;
                 
