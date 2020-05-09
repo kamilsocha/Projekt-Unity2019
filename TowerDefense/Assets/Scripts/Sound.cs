@@ -14,6 +14,8 @@ public class Sound
     [HideInInspector]
     public AudioSource source;
 
+    public AudioMixerGroup output;
+
     public void Play()
     {
         source.Play();

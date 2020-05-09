@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeUI: {fileID: 1772960684690955263, guid: 64df7f252b689704eb07b290fc673d58, type: 3}
+  rangeDrawer: {fileID: 0}
   buildEffect: {fileID: 2813606251350490287, guid: 3a82467450b342146a610aa2da6c85b7,
     type: 3}
   upgradeEffect: {fileID: 8216666287637091103, guid: da791e9de7cc35340af3dc34db592437,

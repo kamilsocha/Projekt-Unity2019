@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1847991410715482801}
   - component: {fileID: 5940649428064133242}
   - component: {fileID: 9045138834253555976}
+  - component: {fileID: 1392538610829688976}
   m_Layer: 0
   m_Name: Coronavirus
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,13 +109,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db02d4d2257df648959438a2cd468ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 5
+  startSpeed: 6
   speed: 0
-  health: 100
-  worth: 50
+  startHealth: 300
+  health: 0
+  worth: 100
   deathEffect: {fileID: 7675146461362234754, guid: 171a318d6a4841540bbd082ffd298359,
     type: 3}
   healthBar: {fileID: 5159687425900029121}
+--- !u!114 &1392538610829688976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115321629247630957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 901a57fbf946fb64692cf193c414063f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8638335737468474735
 PrefabInstance:
   m_ObjectHideFlags: 0

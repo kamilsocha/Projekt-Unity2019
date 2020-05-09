@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     [Header("For testing give here name of the level!")]
     public string currentLevel;
-    /*[Header("Number of scenes built before out actual levels.", order = 0)]
+    /*[Header("Number of scenes built before our actual levels.", order = 0)]
     [Space(-10, order = 1)]
     [Header("Change if you add new (not level) scene", order = 2)]
     [Space(-10, order = 3)]
@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
         //currentLevel = PlayerPrefs.GetString("CurrentLevel", "Level01");
         if(scene.name == currentLevel)
         {
-            currentLevel = PlayerPrefs.GetString("CurrentLevel");//, "Level01");
+            currentLevel = PlayerPrefs.GetString("CurrentLevel", currentLevel);//, "Level01");
             Debug.Log("current level = " + currentLevel);
             LevelData ld = Array.Find(levels, level => level.name == currentLevel);
             if (ld == null)
@@ -100,12 +100,12 @@ public class GameManager : MonoBehaviour
 
     public void ReadyButton()
     {
-        currentLevel = PlayerPrefs.GetString("CurrentLevel");//, "Level01");
+        currentLevel = PlayerPrefs.GetString("CurrentLevel", currentLevel);//, "Level01");
         Debug.Log("current level = " + currentLevel);
         LevelData ld = Array.Find(levels, level => level.name == currentLevel);
         if (ld == null)
         {
-            Debug.LogWarning("Level data not found. You may have not added the level to GameMaster or made a typo :)");
+            Debug.LogWarning("Level data not found. You may have not added the level to GameMaster or made a typo :) From Button");
             return;
         }
 

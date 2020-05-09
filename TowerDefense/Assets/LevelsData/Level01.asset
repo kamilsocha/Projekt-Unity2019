@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Level01
   waves:
-  - enemyPrefab: {fileID: 4242049019832670043, guid: ce50dc7cdaa0be24b8b031a535fc8f88,
+  - enemyPrefab: {fileID: 115321629247630957, guid: 1bd8b7e796d288743b9aaf5da4c286f0,
       type: 3}
     count: 1
     rate: 2
@@ -27,5 +27,5 @@ MonoBehaviour:
     count: 5
     rate: 2
   timeBetweenWaves: 5
-  startMoney: 400
-  startLives: 20
+  startMoney: 500
+  startLives: 10

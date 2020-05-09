@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Node : MonoBehaviour
 {
@@ -15,12 +16,14 @@ public class Node : MonoBehaviour
     public GameObject Turret { get; set; }
     [HideInInspector]
     public TurretBlueprint TurretBlueprint { get; set; }
+    
 
     private void Start()
     {
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
-        buildManager = BuildManager.Instance;
+
+        buildManager = BuildManager.Instance; 
     }
 
     public Vector3 GetBuildPosition()
@@ -44,7 +47,6 @@ public class Node : MonoBehaviour
 
     void BuildTurret(TurretBlueprint blueprint)
     {
-        //TODO money
         if(PlayerStats.Money < blueprint.cost)
         {
             Debug.Log("Not enough money to build that!");
@@ -59,6 +61,9 @@ public class Node : MonoBehaviour
 
         GameObject effect = Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 5f);
+
+        //buildManager.BuyTextAnimation("$" + blueprint.cost, GetBuildPosition());
+
     }
 
     public void UpgradeTurret()
@@ -110,10 +115,22 @@ public class Node : MonoBehaviour
         {
             rend.material.color = notEnoughMoneyColor;
         }
+
+        buildManager.DrawTurretRange(GetBuildPosition());
     }
 
     private void OnMouseExit()
     {
         rend.material.color = startColor;
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        buildManager = BuildManager.Instance;
     }
 }

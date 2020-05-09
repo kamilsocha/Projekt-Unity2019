@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BuildManager : MonoBehaviour
 {
@@ -23,6 +25,9 @@ public class BuildManager : MonoBehaviour
     TurretBlueprint turretToBuild;
     Node selectedNode;
     public NodeUI nodeUI;
+    //public GameObject buyText;
+    public RangeDrawer rangeDrawer;
+    //public GameObject rangeDrawer;
 
     public GameObject buildEffect;
     public GameObject upgradeEffect;
@@ -74,9 +79,16 @@ public class BuildManager : MonoBehaviour
         return turretToBuild;
     }
 
+    public void DrawTurretRange(Vector3 pos)
+    {
+        var turret = turretToBuild.prefab.GetComponent<Turret>() as Turret;
+        rangeDrawer.Show(pos, turret.range);
+    }
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        rangeDrawer.Hide();
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -84,7 +96,16 @@ public class BuildManager : MonoBehaviour
         if(scene.name == "LevelShared")
         {
             nodeUI = GameObject.Find("NodeUI").GetComponent<NodeUI>();
+            nodeUI.Hide();
         }
+    }
+
+    public void BuyTextAnimation(string text, Vector3 pos)
+    {
+        /*buyText.SetActive(true);
+        buyText.transform.position = pos;
+        buyText.GetComponent<TMP_Text>().text = text;
+        GetComponent<Animator>().SetTrigger("Buy");*/
     }
 
 }

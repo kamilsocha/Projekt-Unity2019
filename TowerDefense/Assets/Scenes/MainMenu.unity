@@ -364,7 +364,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2018,32 +2018,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf882e6bca64c634e96b9f7bc5b97115, type: 3}
---- !u!1 &2205063048966004477 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2385419153338662468, guid: cf882e6bca64c634e96b9f7bc5b97115,
-    type: 3}
-  m_PrefabInstance: {fileID: 2205063048966004476}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2205063048966004478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2205063048966004477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5fecf48599c5264694004bd6f334c7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theme: Theme
-  sounds:
-  - name: Theme
-    clip: {fileID: 8300000, guid: 56c934168c20a72419145541fc3fef41, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
 --- !u!23 &2573774611976869301
 MeshRenderer:
   m_ObjectHideFlags: 0

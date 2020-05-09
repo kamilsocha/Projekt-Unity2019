@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootingTurret : MonoBehaviour
+[RequireComponent(typeof(TargetSeeker))]
+public class ShootingTurret : Turret
 {
-    Transform target;
-
-    Animator animator;
-
-    [Header("General")]
-    public float range = 15f;
-    public float fireRate = 1f;
+    public Animator animator;
 
     [Header("Use Bullets(default)")]
     float fireCountdown = 0f;
@@ -21,32 +16,31 @@ public class ShootingTurret : MonoBehaviour
     public LineRenderer lineRenderer;
     public ParticleSystem impactEffect;
     public Light impactLight;
-    public float damage = 20f;
+    public int laserDamage = 20;
     public float laserSpeed = 20f;
 
     [Header("Unity Setup Stuff")]
     public string enemyTag = "Enemy";
-    public Transform partToRotate;
     public Transform firePoint;
-    public float turnSpeed = 10f;
 
-    // Start is called before the first frame update
+    Transform target;
+    TargetSeeker targetSeeker;
+    
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        animator = partToRotate.GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
+        targetSeeker = GetComponent<TargetSeeker>();
+        if(bulletPrefab != null) 
+            bulletPrefab.GetComponent<Bullet>().damage = damage;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
+        target = targetSeeker.Target;
         if(target == null)
         {
             return;
         }
-        LockOnTarget();
-
-
 
         if (fireCountdown <= 0f)
         {
@@ -62,42 +56,6 @@ public class ShootingTurret : MonoBehaviour
             fireCountdown = 1f / fireRate;
         }
         fireCountdown -= Time.deltaTime;
-
-
-    }
-
-    void UpdateTarget()
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-        
-        float shortestDistance = Mathf.Infinity;
-        GameObject nearestEnemy = null;
-
-        foreach  (GameObject enemy in enemies)
-        {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if(distanceToEnemy < shortestDistance)
-            {
-                shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
-            }
-        }
-        if(nearestEnemy != null && shortestDistance <= range)
-        {
-            target = nearestEnemy.transform;
-        }
-        else
-        {
-            target = null;
-        }
-    }
-
-    void LockOnTarget()
-    {
-        Vector3 dir = target.position - transform.position;
-        Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
     void Shoot()
@@ -170,4 +128,5 @@ public class ShootingTurret : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
+
 }
