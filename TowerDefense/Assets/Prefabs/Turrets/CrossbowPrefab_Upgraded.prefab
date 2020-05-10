@@ -103,6 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4600228562626453737}
   - component: {fileID: 687945020289995461}
+  - component: {fileID: 2866145355981318805}
   m_Layer: 0
   m_Name: CrossbowPrefab_Upgraded
   m_TagString: Untagged
@@ -139,16 +140,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 20
-  fireRate: 1
+  fireRate: 0.5
+  damage: 60
+  description: 
+  animator: {fileID: 0}
   bulletPrefab: {fileID: 233640908589398269, guid: 24890c039f6e05140a821db4e48a24c7,
     type: 3}
   useLaser: 0
   lineRenderer: {fileID: 0}
   impactEffect: {fileID: 0}
   impactLight: {fileID: 0}
+  laserDamage: 20
+  laserSpeed: 20
   enemyTag: Enemy
-  partToRotate: {fileID: 6631059576364302172}
   firePoint: {fileID: 6631059577027773980}
+--- !u!114 &2866145355981318805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687945020289995514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f603563335cf854cb7b1a5b72dac913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partToRotate: {fileID: 6631059576364302172}
   turnSpeed: 10
 --- !u!1 &734232658221689592
 GameObject:

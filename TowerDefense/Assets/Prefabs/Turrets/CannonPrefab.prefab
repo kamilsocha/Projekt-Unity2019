@@ -252,6 +252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7202285199578330534}
   - component: {fileID: 6172449242888374198}
+  - component: {fileID: 2011190936746382480}
   m_Layer: 0
   m_Name: CannonPrefab
   m_TagString: Untagged
@@ -289,10 +290,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 15
   fireRate: 1
+  damage: 50
+  description: 
+  animator: {fileID: 0}
   bulletPrefab: {fileID: 8235512071484335377, guid: 7a10b80cd3a211145b269435b2a2485e,
     type: 3}
-  firePoint: {fileID: 3841979592568258763}
+  useLaser: 0
+  lineRenderer: {fileID: 0}
+  impactEffect: {fileID: 0}
+  impactLight: {fileID: 0}
+  laserDamage: 20
+  laserSpeed: 20
   enemyTag: Enemy
+  firePoint: {fileID: 3841979592568258763}
+--- !u!114 &2011190936746382480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6172449242888374197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f603563335cf854cb7b1a5b72dac913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   partToRotate: {fileID: 3841979592714014507}
   turnSpeed: 10
 --- !u!1 &8305453006369082105

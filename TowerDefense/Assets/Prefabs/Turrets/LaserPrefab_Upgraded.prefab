@@ -39,6 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2788705731088931905}
+  - component: {fileID: 1192392413195652904}
   - component: {fileID: 937822240679572535}
   - component: {fileID: 8440740275718396009}
   m_Layer: 0
@@ -64,6 +65,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1192392413195652904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218259771479567954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f603563335cf854cb7b1a5b72dac913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partToRotate: {fileID: 1670965361847091545}
+  turnSpeed: 10
 --- !u!114 &937822240679572535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,17 +93,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 25
   fireRate: 0.5
+  damage: 30
+  description: 
+  animator: {fileID: 0}
   bulletPrefab: {fileID: 0}
   useLaser: 1
   lineRenderer: {fileID: 8440740275718396009}
   impactEffect: {fileID: 0}
   impactLight: {fileID: 0}
-  damage: 30
+  laserDamage: 20
   laserSpeed: 20
   enemyTag: Enemy
-  partToRotate: {fileID: 1670965361847091545}
   firePoint: {fileID: 2883374237064042855}
-  turnSpeed: 10
 --- !u!120 &8440740275718396009
 LineRenderer:
   m_ObjectHideFlags: 0

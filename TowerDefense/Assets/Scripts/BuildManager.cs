@@ -27,7 +27,6 @@ public class BuildManager : MonoBehaviour
     public NodeUI nodeUI;
     //public GameObject buyText;
     public RangeDrawer rangeDrawer;
-    //public GameObject rangeDrawer;
 
     public GameObject buildEffect;
     public GameObject upgradeEffect;
@@ -59,13 +58,28 @@ public class BuildManager : MonoBehaviour
         selectedNode = node;
         turretToBuild = null;
 
+        DrawTurretRange();
+
         nodeUI.SetTarget(node);
+    }
+
+    void DrawTurretRange()
+    {
+        var turret = selectedNode.Turret.GetComponent<Turret>() as Turret;
+        rangeDrawer.Show(selectedNode.GetBuildPosition(), turret.range);
+    }
+
+    public void DrawTurretRange(Vector3 pos)
+    {
+        var turret = turretToBuild.prefab.GetComponent<Turret>() as Turret;
+        rangeDrawer.Show(pos, turret.range);
     }
 
     public void DeselectNode()
     {
         selectedNode = null;
         nodeUI.Hide();
+        rangeDrawer.Hide();
     }
 
     public void SelectTurretToBuild(TurretBlueprint turret)
@@ -76,13 +90,18 @@ public class BuildManager : MonoBehaviour
 
     public TurretBlueprint GetTurretToBuild()
     {
+        rangeDrawer.Hide();
         return turretToBuild;
     }
 
-    public void DrawTurretRange(Vector3 pos)
+    public void DeselectTurretToBuild()
     {
-        var turret = turretToBuild.prefab.GetComponent<Turret>() as Turret;
-        rangeDrawer.Show(pos, turret.range);
+        if(turretToBuild != null)
+        {
+            Debug.Log("deselecting");
+            rangeDrawer.Hide();
+            turretToBuild = null;
+        } 
     }
 
     private void OnEnable()

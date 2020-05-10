@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2724518364728571688}
   - component: {fileID: 2724518364728571689}
   - component: {fileID: 2724518364728571694}
+  - component: {fileID: 1331666878}
   m_Layer: 0
   m_Name: RangeDrawer
   m_TagString: Untagged
@@ -93,3 +94,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1331666878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2724518364728571695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd42fc35d4b651742bd91f4307b52ce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionOffset: {x: 0, y: 0, z: 0}

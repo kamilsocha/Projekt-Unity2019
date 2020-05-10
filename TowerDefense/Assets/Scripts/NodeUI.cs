@@ -9,6 +9,11 @@ public class NodeUI : MonoBehaviour
     public Button upgradeButton;
     private Node target;
 
+    private void Awake()
+    {
+        ui.SetActive(true);
+    }
+
     public void SetTarget(Node _target)
     {
         target = _target;

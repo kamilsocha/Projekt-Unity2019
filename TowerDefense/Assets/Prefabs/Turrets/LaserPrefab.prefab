@@ -122,8 +122,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9162618858054292124}
+  - component: {fileID: 65650366091634618}
   - component: {fileID: 6095762850248358634}
   - component: {fileID: 3222563952885946036}
+  - component: {fileID: 7637840590271077026}
   m_Layer: 0
   m_Name: LaserPrefab
   m_TagString: Untagged
@@ -147,6 +149,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &65650366091634618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5292697779473866895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f603563335cf854cb7b1a5b72dac913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partToRotate: {fileID: 5668666872860053380}
+  turnSpeed: 10
 --- !u!114 &6095762850248358634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,17 +177,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 20
   fireRate: 0.5
+  damage: 20
+  description: 
+  animator: {fileID: 0}
   bulletPrefab: {fileID: 0}
   useLaser: 1
   lineRenderer: {fileID: 3222563952885946036}
   impactEffect: {fileID: 0}
   impactLight: {fileID: 0}
-  damage: 20
+  laserDamage: 20
   laserSpeed: 20
   enemyTag: Enemy
-  partToRotate: {fileID: 5668666872860053380}
   firePoint: {fileID: 8185465837554948026}
-  turnSpeed: 10
 --- !u!120 &3222563952885946036
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -269,6 +286,20 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &7637840590271077026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5292697779473866895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f603563335cf854cb7b1a5b72dac913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partToRotate: {fileID: 0}
+  turnSpeed: 10
 --- !u!1 &5659484188293823503
 GameObject:
   m_ObjectHideFlags: 0
