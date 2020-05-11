@@ -95,13 +95,12 @@ MonoBehaviour:
   fireRate: 0.5
   damage: 30
   description: 
+  type: 1
   animator: {fileID: 0}
   bulletPrefab: {fileID: 0}
-  useLaser: 1
   lineRenderer: {fileID: 8440740275718396009}
   impactEffect: {fileID: 0}
   impactLight: {fileID: 0}
-  laserDamage: 20
   laserSpeed: 20
   enemyTag: Enemy
   firePoint: {fileID: 2883374237064042855}

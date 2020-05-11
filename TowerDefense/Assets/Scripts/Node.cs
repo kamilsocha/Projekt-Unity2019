@@ -62,7 +62,7 @@ public class Node : MonoBehaviour
         GameObject effect = Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 5f);
 
-        //buildManager.BuyTextAnimation("$" + blueprint.cost, GetBuildPosition());
+        buildManager.BuyTextAnimation("$" + blueprint.cost, GetBuildPosition());
 
     }
 
@@ -80,9 +80,9 @@ public class Node : MonoBehaviour
         GameObject _turret = Instantiate(TurretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
         Turret = _turret;
 
-        //Effect
-        //GameObject upgradeEffectGO = Instantiate(buildManager.upgradeEffect, GetBuildPosition(), Quaternion.identity);
-        //Destroy(upgradeEffectGO, 5f);
+        GameObject upgradeEffectGO = Instantiate(buildManager.upgradeEffect, GetBuildPosition(), Quaternion.identity);
+        Destroy(upgradeEffectGO, 5f);
+        buildManager.BuyTextAnimation("$" + TurretBlueprint.upgradeCost, GetBuildPosition());
 
         isUpgraded = true;
     }

@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Turret : MonoBehaviour
+public abstract class Turret : MonoBehaviour
 {
-    [Header("General")]
+    //[Header("General")]
     public float range = 15f;
     public float fireRate = 1f;
     public int damage;

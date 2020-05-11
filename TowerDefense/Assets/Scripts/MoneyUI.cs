@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+
+//[System.Serializable]
+
 
 public class MoneyUI : MonoBehaviour
 {

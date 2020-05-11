@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,13 +20,18 @@ public class BuildManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(this);
+
+        buyAnimator = buyAnimationGO.GetComponentInChildren<Animator>();
+        buyAnimationText = buyAnimationGO.GetComponentInChildren<TMP_Text>();
     }
     #endregion
 
     TurretBlueprint turretToBuild;
     Node selectedNode;
     public NodeUI nodeUI;
-    //public GameObject buyText;
+    public GameObject buyAnimationGO;
+    TMP_Text buyAnimationText;
+    Animator buyAnimator;
     public RangeDrawer rangeDrawer;
 
     public GameObject buildEffect;
@@ -121,10 +127,18 @@ public class BuildManager : MonoBehaviour
 
     public void BuyTextAnimation(string text, Vector3 pos)
     {
-        /*buyText.SetActive(true);
-        buyText.transform.position = pos;
-        buyText.GetComponent<TMP_Text>().text = text;
-        GetComponent<Animator>().SetTrigger("Buy");*/
+        buyAnimationGO.SetActive(true);
+        buyAnimationGO.transform.position = pos;
+        buyAnimationText.text = text;
+        StartCoroutine(PlayBuyAnimation());
+    }
+
+    IEnumerator PlayBuyAnimation()
+    {
+        buyAnimator.SetTrigger("Buy");
+        var state = buyAnimator.GetCurrentAnimatorStateInfo(0);
+        yield return new WaitForSeconds(state.length);
+        buyAnimationGO.SetActive(false);
     }
 
 }
