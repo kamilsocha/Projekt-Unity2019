@@ -23,6 +23,7 @@ public class Shop : MonoBehaviour
 
     public void SelectCrossbowTurret()
     {
+        Debug.Log("Selected crossbow");
         buildManager.SelectTurretToBuild(crossbowTurret);
     }
     public void MouseOverCrossbowTurret()

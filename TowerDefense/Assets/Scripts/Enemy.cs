@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
     public float startSpeed = 5f;
     [HideInInspector]
     public float speed;
-    bool isAlive = true;
+    protected bool isAlive = true;
     public float startHealth = 100;
     [HideInInspector]
     public float health;
@@ -17,16 +17,14 @@ public class Enemy : MonoBehaviour
     public Image healthBar;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         speed = startSpeed;
         health = startHealth;
     }
 
-    public void TakeDamage(float amount)
+    public virtual void TakeDamage(float amount)
     {
-        Debug.Log(gameObject.name.ToString() + " Taking damage");
-
         health -= amount;
         healthBar.fillAmount = health / startHealth;
                 
@@ -41,7 +39,7 @@ public class Enemy : MonoBehaviour
         speed = startSpeed * (1f - percentage);
     }
 
-    void Die()
+    protected virtual void Die()
     {
         isAlive = false;
         PlayerStats.Money += worth;
