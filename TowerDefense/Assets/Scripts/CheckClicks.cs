@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class CheckClicks : MonoBehaviour
 {
+    StatsUI statsUI;
+
     private void OnMouseDown()
     {
         if (EventSystem.current.IsPointerOverGameObject())
@@ -14,7 +16,13 @@ public class CheckClicks : MonoBehaviour
             return;
         }
 
-        BuildManager.Instance.DeselectTurretToBuild();   
+        BuildManager.Instance.DeselectTurretToBuild();
+        if(statsUI == null)
+        {
+            statsUI = GameObject.Find("StatsUI").GetComponent<StatsUI>();
+        }
+        statsUI.Hide();
+        
     }
 
 }

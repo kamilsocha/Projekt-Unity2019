@@ -178,7 +178,7 @@ MonoBehaviour:
   range: 20
   fireRate: 0.5
   damage: 20
-  description: 
+  description: Fires a laser beam which hurts all hit enemies.
   type: 1
   animator: {fileID: 0}
   bulletPrefab: {fileID: 0}

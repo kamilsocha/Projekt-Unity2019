@@ -16,6 +16,8 @@ public class Node : MonoBehaviour
     public GameObject Turret { get; set; }
     [HideInInspector]
     public TurretBlueprint TurretBlueprint { get; set; }
+
+    public PlayerStats playerStats;
     
 
     private void Start()
@@ -23,7 +25,8 @@ public class Node : MonoBehaviour
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
 
-        buildManager = BuildManager.Instance; 
+        buildManager = BuildManager.Instance;
+        //playerStats = GameObject.Find("GameMaster").GetComponent<PlayerStats>();
     }
 
     public Vector3 GetBuildPosition()
@@ -52,7 +55,7 @@ public class Node : MonoBehaviour
             Debug.Log("Not enough money to build that!");
             return;
         }
-        PlayerStats.Money -= blueprint.cost;
+        playerStats.ReduceMoney(blueprint.cost);
 
         GameObject _turret = Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
         Turret = _turret;
@@ -73,7 +76,7 @@ public class Node : MonoBehaviour
             Debug.Log("Not enough money to upgrade!");
             return;
         }
-        PlayerStats.Money -= TurretBlueprint.upgradeCost;
+        playerStats.ReduceMoney(TurretBlueprint.upgradeCost);
 
         Destroy(Turret);
 
@@ -90,9 +93,13 @@ public class Node : MonoBehaviour
     public void SellTurret()
     {
         if (!isUpgraded)
-            PlayerStats.Money += TurretBlueprint.GetSellAmount();
+        {
+            playerStats.RestoreMoney(TurretBlueprint.GetSellAmount());
+        }
         else
-            PlayerStats.Money += TurretBlueprint.GetUpgradedSellAmount();
+        {
+            playerStats.ReduceMoney(TurretBlueprint.GetUpgradedSellAmount());
+        }
 
         GameObject sellEffectGO = Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(sellEffectGO, 5f);
@@ -132,5 +139,6 @@ public class Node : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         buildManager = BuildManager.Instance;
+        playerStats = GameObject.Find("GameMaster").GetComponent<PlayerStats>();
     }
 }

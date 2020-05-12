@@ -1,7 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Shop : MonoBehaviour
 {
+    public StatsUI statsUI;
+    public Button[] buttons;
+
     public TurretBlueprint crossbowTurret;
     public TurretBlueprint cannonTurret;
     //TODO
@@ -20,15 +25,27 @@ public class Shop : MonoBehaviour
     {
         buildManager.SelectTurretToBuild(crossbowTurret);
     }
+    public void MouseOverCrossbowTurret()
+    {
+        ShowStatsUI(crossbowTurret);
+    }
 
     public void SelectCannonTurret()
     {
         buildManager.SelectTurretToBuild(cannonTurret);
     }
-    
+    public void MouseOverCannonTurret()
+    {
+        ShowStatsUI(cannonTurret);
+    }
+
     public void SelectLaserTurret()
     {
         buildManager.SelectTurretToBuild(laserTurret);
+    }
+    public void MouseOverLaserTurret()
+    {
+        ShowStatsUI(laserTurret);
     }
     /* 
      * TODO
@@ -43,9 +60,9 @@ public class Shop : MonoBehaviour
     }
     */
 
-    private void OnMouseDown()
+    void ShowStatsUI(TurretBlueprint tb)
     {
-        if(buildManager.CanBuild)
-            buildManager.DeselectNode();
+        statsUI.SelectTurret(tb);
     }
+
 }

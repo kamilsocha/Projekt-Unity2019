@@ -291,7 +291,7 @@ MonoBehaviour:
   range: 15
   fireRate: 0.25
   damage: 50
-  description: 
+  description: Bullets explode hurting all targets within bullet explosion range.
   type: 0
   animator: {fileID: 0}
   bulletPrefab: {fileID: 8235512071484335377, guid: 7a10b80cd3a211145b269435b2a2485e,

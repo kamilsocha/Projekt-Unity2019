@@ -9,9 +9,20 @@ public class MoneyUI : MonoBehaviour
 {
     public Text moneyText;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
+    {
+        PlayerStats playerStats = GameObject.Find("GameMaster").GetComponent<PlayerStats>();
+        playerStats.OnPlayerMoneyChanged += HandlePlayerMoneyChanged;
+    }
+
+    void HandlePlayerMoneyChanged()
+    {
+        moneyText.text = "$" + PlayerStats.Money;
+    }
+
+
+    /*void Update()
     {
         moneyText.text = "$" + PlayerStats.Money;        
-    }
+    }*/
 }

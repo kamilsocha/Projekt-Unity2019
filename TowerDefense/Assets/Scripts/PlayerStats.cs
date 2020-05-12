@@ -14,6 +14,9 @@ public class PlayerStats : MonoBehaviour
     // Points system
     public static float points { get; set; }
 
+    public delegate void PlayerMoneyChangedEvent();
+    public event PlayerMoneyChangedEvent OnPlayerMoneyChanged;
+
     void Start()
     {
         Money = startMoney;
@@ -27,6 +30,18 @@ public class PlayerStats : MonoBehaviour
     {
         startMoney = _startMoney;
         startLives = _startLives;
+    }
+
+    public void ReduceMoney(int moneyToReduce)
+    {
+        Money -= moneyToReduce;
+        OnPlayerMoneyChanged?.Invoke();
+    }
+
+    public void RestoreMoney(int moneyToRestore)
+    {
+        Money += moneyToRestore;
+        OnPlayerMoneyChanged?.Invoke();
     }
 
     //TODO?
