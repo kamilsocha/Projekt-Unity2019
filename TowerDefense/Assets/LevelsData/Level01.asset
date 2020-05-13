@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Level01
   waves:
-  - enemyPrefab: {fileID: 6030557604789675288, guid: 36c5895cde1000d4a8458b294211077b,
+  - enemyPrefab: {fileID: 7989696480547705687, guid: 387b0947afa19e74e9e5e8d2afe52f80,
       type: 3}
     count: 1
     rate: 2

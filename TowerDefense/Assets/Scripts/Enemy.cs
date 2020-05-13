@@ -8,7 +8,7 @@ public abstract class Enemy : MonoBehaviour
     public float speed;
     protected bool isAlive = true;
     public int startHealth = 100;
-    [HideInInspector]
+    //[HideInInspector]
     public int health;
     public int worth = 50;
     public GameObject deathEffect;

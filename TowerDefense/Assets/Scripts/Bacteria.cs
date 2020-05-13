@@ -3,17 +3,31 @@
 public class Bacteria : Enemy
 {
     bool isShieldActive = true;
+    public int shieldDurability;
     public int shield;
 
     public override void TakeDamage(int amount)
     {
         if(isShieldActive)
         {
-            amount -= shield;
-            if(amount > 0)
+            int amountToReduce = amount - shield;
+            if(amountToReduce > 0)
             {
-                health -= amount;
+                health -= amountToReduce;
+                shieldDurability -= amountToReduce;
             }
+            else 
+            {
+                shieldDurability -= amount / 2;
+            }
+        }
+        else
+        {
+            health -= amount;
+        }
+        if(shieldDurability >= 0)
+        {
+            DisableShield();
         }
         if(health < 0 && isAlive)
         {
