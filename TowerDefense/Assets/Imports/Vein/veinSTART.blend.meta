@@ -3,7 +3,12 @@ guid: 138f6cf8a383b3846b01e153d702fc58
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EntranceVein
+    second: {fileID: 2100000, guid: ca0f2cf0c8e5a9b4cb82190af784660e, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

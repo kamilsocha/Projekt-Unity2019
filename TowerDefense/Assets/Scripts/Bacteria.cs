@@ -3,9 +3,9 @@
 public class Bacteria : Enemy
 {
     bool isShieldActive = true;
-    public float shield;
+    public int shield;
 
-    public override void TakeDamage(float amount)
+    public override void TakeDamage(int amount)
     {
         if(isShieldActive)
         {

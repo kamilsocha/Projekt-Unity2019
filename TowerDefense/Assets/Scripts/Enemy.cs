@@ -7,23 +7,22 @@ public abstract class Enemy : MonoBehaviour
     [HideInInspector]
     public float speed;
     protected bool isAlive = true;
-    public float startHealth = 100;
+    public int startHealth = 100;
     [HideInInspector]
-    public float health;
+    public int health;
     public int worth = 50;
     public GameObject deathEffect;
 
     [Header("Unity Stuff")]
     public Image healthBar;
 
-    // Start is called before the first frame update
     protected virtual void Start()
     {
         speed = startSpeed;
         health = startHealth;
     }
 
-    public virtual void TakeDamage(float amount)
+    public virtual void TakeDamage(int amount)
     {
         health -= amount;
         healthBar.fillAmount = health / startHealth;

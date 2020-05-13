@@ -9,19 +9,14 @@ public class ShootingTurret : Turret
     public TurretType type;
 
     public Animator animator;
-    //[Header("Use Bullets(default)")]
     public GameObject bulletPrefab;
     float fireCountdown = 0f;
 
-    //[Header("Use Laser")]
-    //public bool useLaser = false;
     public LineRenderer lineRenderer;
     public ParticleSystem impactEffect;
     public Light impactLight;
-    //public int laserDamage = 20;
     public float laserSpeed = 20f;
 
-    //[Header("Unity Setup Stuff")]
     public string enemyTag = "Enemy";
     public Transform firePoint;
 
@@ -46,7 +41,6 @@ public class ShootingTurret : Turret
 
         if (fireCountdown <= 0f)
         {
-            //if(useLaser)
             if(type == TurretType.Laser)
             {
                 Laser();
@@ -54,7 +48,6 @@ public class ShootingTurret : Turret
             else
             {
                 Shoot();
-                //fireCountdown = 1f / fireRate;
             }
             fireCountdown = 1f / fireRate;
         }

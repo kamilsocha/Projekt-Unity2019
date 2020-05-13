@@ -7,9 +7,9 @@ public class Virus : Enemy
     bool hasRevived;
     [Header("Probability to get bonus health points")]
     [Range(0f, 100f)]
-    public float chanceToRevive;
+    public int chanceToRevive;
     [Header("Health to receive if virus survives.")]
-    public float reviveHealth;
+    public int reviveHealth;
 
     protected override void Start()
     {

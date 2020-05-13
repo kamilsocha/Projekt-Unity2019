@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Level01
   waves:
-  - enemyPrefab: {fileID: 7005421749725031407, guid: d4222455164daa94b8d8ac227349ecb3,
+  - enemyPrefab: {fileID: 6030557604789675288, guid: 36c5895cde1000d4a8458b294211077b,
       type: 3}
     count: 1
     rate: 2
-  - enemyPrefab: {fileID: 7005421749725031407, guid: d4222455164daa94b8d8ac227349ecb3,
+  - enemyPrefab: {fileID: 982579040981603849, guid: 1bd8b7e796d288743b9aaf5da4c286f0,
       type: 3}
     count: 2
     rate: 2
-  - enemyPrefab: {fileID: 3196964370400274831, guid: 843b4477c8f083e4c87c8df912826ea9,
+  - enemyPrefab: {fileID: 2533016371982342510, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
       type: 3}
     count: 5
     rate: 2
