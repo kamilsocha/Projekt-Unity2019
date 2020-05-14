@@ -1,9 +1,11 @@
-﻿
+﻿using UnityEngine;
 
 public class Bacteria : Enemy
 {
     bool isShieldActive = true;
+    [Header("Total amount of damage the shield can take before it disappears.")]
     public int shieldDurability;
+    [Header("Value of damage the shield absorbs.")]
     public int shield;
 
     public override void TakeDamage(int amount)

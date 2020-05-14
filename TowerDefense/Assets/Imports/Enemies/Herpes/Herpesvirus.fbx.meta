@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b1143a544007e514186126475fe44952
+guid: 1ef5019ab99935c43a6cec7326e90ba2
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MissileBase
-    second: {fileID: 2100000, guid: 31d3d9e888b073041a7e8222376e0019, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MissileSecond
-    second: {fileID: 2100000, guid: a54eff5fd1a392242aa0a020963400af, type: 2}
+      name: Herpesvirus
+    second: {fileID: 2100000, guid: b50a51c06c1ff594e8ddffe470ac8921, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -51,8 +46,8 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

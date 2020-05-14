@@ -142,7 +142,7 @@ MonoBehaviour:
   range: 15
   fireRate: 1
   damage: 30
-  description: 
+  description: Basic turret, hurts one enemy on regular period.
   type: 0
   animator: {fileID: 0}
   bulletPrefab: {fileID: 233640908589398269, guid: 24890c039f6e05140a821db4e48a24c7,
