@@ -51,7 +51,7 @@ MonoBehaviour:
   startHealth: 80
   health: 0
   worth: 50
-  deathEffect: {fileID: 7675146461362234754, guid: 171a318d6a4841540bbd082ffd298359,
+  deathEffect: {fileID: 1526814387584026795, guid: 9ad51332c669bbe44a165db2ec9c93b6,
     type: 3}
   healthBar: {fileID: 3441459970949977820}
   maxRevives: 1

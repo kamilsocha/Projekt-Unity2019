@@ -99,7 +99,7 @@ MonoBehaviour:
   startHealth: 150
   health: 0
   worth: 80
-  deathEffect: {fileID: 7675146461362234754, guid: 171a318d6a4841540bbd082ffd298359,
+  deathEffect: {fileID: 5507643424701861108, guid: a171e9a0ce679e6469e994eab5572831,
     type: 3}
   healthBar: {fileID: 6115778974339071495}
   maxRevives: 1
