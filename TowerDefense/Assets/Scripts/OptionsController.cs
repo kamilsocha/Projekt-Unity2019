@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -18,7 +19,7 @@ public class OptionsController : MonoBehaviour
     {
         graphicsDropdown.SetValueWithoutNotify(QualitySettings.GetQualityLevel());
 
-        resolutions = Screen.resolutions;
+        resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray();
         resolutionDropdown.ClearOptions();
 
         List<string> resolutionsList = new List<string>();
@@ -28,7 +29,8 @@ public class OptionsController : MonoBehaviour
             string resolutionString = resolutions[i].width + "x" + resolutions[i].height;
             resolutionsList.Add(resolutionString);
 
-            if(resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
+            //if(resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
+            if(resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
             {
                 currentResolutionIndex = i;
             }
@@ -45,7 +47,7 @@ public class OptionsController : MonoBehaviour
     public void SetVolume(float volume)
     {
         Debug.Log(volume);
-        audioMixer.SetFloat("Volume", volume);
+        audioMixer.SetFloat("Volume", Mathf.Log10(volume) * 20);
     }
 
     public void SetQuality(int qualityIndex)
