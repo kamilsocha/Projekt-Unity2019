@@ -16,6 +16,8 @@ public class PlayerStats : MonoBehaviour
 
     public delegate void PlayerMoneyChangedEvent();
     public event PlayerMoneyChangedEvent OnPlayerMoneyChanged;
+    public delegate void PlayerLivesChangedEvent();
+    public event PlayerLivesChangedEvent OnPlayerLivesChanged;
 
     void Start()
     {
@@ -30,6 +32,11 @@ public class PlayerStats : MonoBehaviour
     {
         startMoney = _startMoney;
         startLives = _startLives;
+        Money = startMoney;
+        Lives = startLives;
+        Rounds = 0;
+        OnPlayerLivesChanged?.Invoke();
+        OnPlayerMoneyChanged?.Invoke();
     }
 
     public void ReduceMoney(int moneyToReduce)
@@ -44,6 +51,9 @@ public class PlayerStats : MonoBehaviour
         OnPlayerMoneyChanged?.Invoke();
     }
 
-    //TODO?
-    //public void ReduceLive() { }
+    public void ReduceLive() 
+    {
+        Lives--;
+        OnPlayerLivesChanged?.Invoke();
+    }
 }

@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1534919892663578599}
   m_Layer: 0
   m_Name: SalmonellaPrefab
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   deathEffect: {fileID: 1182809934006311627, guid: e4972868da7883b409528fa0adc49b09,
     type: 3}
   healthBar: {fileID: 5362374969396472413}
-  shieldDurability: 80
+  shieldDurability: 160
   shield: 40
 --- !u!114 &1534919892663578599
 MonoBehaviour:

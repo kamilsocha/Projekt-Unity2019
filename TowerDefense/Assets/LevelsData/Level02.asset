@@ -14,14 +14,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Level02
   waves:
-  - enemyPrefab: {fileID: 1070466320533221583, guid: ce50dc7cdaa0be24b8b031a535fc8f88,
+  - enemyPrefab: {fileID: 963621573988982035, guid: a89985756d35f60448ff392ec3dba19e,
       type: 3}
-    count: 3
-    rate: 2
-  - enemyPrefab: {fileID: 982579040981603849, guid: 1bd8b7e796d288743b9aaf5da4c286f0,
+    count: 5
+    rate: 0.5
+  - enemyPrefab: {fileID: 963621573988982035, guid: a89985756d35f60448ff392ec3dba19e,
+      type: 3}
+    count: 10
+    rate: 0.5
+  - enemyPrefab: {fileID: 4638214922290219259, guid: 36c5895cde1000d4a8458b294211077b,
+      type: 3}
+    count: 10
+    rate: 0.75
+  - enemyPrefab: {fileID: 6793368727743567176, guid: ee67a49d1d35c5c4193991bdf76a5567,
+      type: 3}
+    count: 4
+    rate: 0.25
+  - enemyPrefab: {fileID: 6417118012919658425, guid: 8f3937f24ce06cb4686597b1f63fa221,
+      type: 3}
+    count: 10
+    rate: 0.1
+  - enemyPrefab: {fileID: 6417118012919658425, guid: 8f3937f24ce06cb4686597b1f63fa221,
       type: 3}
     count: 7
-    rate: 2
+    rate: 0.5
+  - enemyPrefab: {fileID: 6582347219084660416, guid: ccf07670b2a36b544adcd8b7962663c1,
+      type: 3}
+    count: 20
+    rate: 0.5
+  - enemyPrefab: {fileID: 5924642817355052401, guid: 21234748572af824a828e5ef7c29a1ee,
+      type: 3}
+    count: 30
+    rate: 0.5
+  - enemyPrefab: {fileID: 7989696480547705687, guid: 387b0947afa19e74e9e5e8d2afe52f80,
+      type: 3}
+    count: 10
+    rate: 0.5
+  - enemyPrefab: {fileID: 5006414172559102137, guid: 1bd8b7e796d288743b9aaf5da4c286f0,
+      type: 3}
+    count: 20
+    rate: 0.25
   timeBetweenWaves: 5
   startMoney: 300
   startLives: 15

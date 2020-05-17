@@ -5,8 +5,13 @@ public class LivesUI : MonoBehaviour
 {
     public Text livesText;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
+    {
+        PlayerStats playerStats = GameObject.Find("GameMaster").GetComponent<PlayerStats>();
+        playerStats.OnPlayerLivesChanged += HandlePlayerLivesChange;
+    }
+
+    void HandlePlayerLivesChange()
     {
         livesText.text = PlayerStats.Lives + " LIVES";
     }

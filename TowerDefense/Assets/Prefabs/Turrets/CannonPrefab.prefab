@@ -290,7 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 15
   fireRate: 0.25
-  damage: 50
+  damage: 25
   description: Bullets explode hurting all targets within bullet explosion range.
   type: 0
   animator: {fileID: 0}

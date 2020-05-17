@@ -92,8 +92,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 25
-  fireRate: 0.5
-  damage: 30
+  fireRate: 1
+  damage: 40
   description: 
   type: 1
   animator: {fileID: 0}

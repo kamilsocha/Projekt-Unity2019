@@ -2,32 +2,41 @@
 
 public class Bacteria : Enemy
 {
-    bool isShieldActive = true;
+    bool isShieldActive;
     [Header("Total amount of damage the shield can take before it disappears.")]
     public int shieldDurability;
     [Header("Value of damage the shield absorbs.")]
     public int shield;
 
+    protected override void Start()
+    {
+        base.Start();
+        isShieldActive = true;
+    }
+
     public override void TakeDamage(int amount)
     {
-        if(isShieldActive)
+        if (isShieldActive)
         {
+            Debug.Log(amount);
+            
             int amountToReduce = amount - shield;
-            if(amountToReduce > 0)
+            Debug.Log(amountToReduce);
+            if (amountToReduce > 0)
             {
                 health -= amountToReduce;
                 shieldDurability -= amountToReduce;
             }
             else 
             {
-                shieldDurability -= amount / 2;
+                shieldDurability -= amount;
             }
         }
         else
         {
             health -= amount;
         }
-        if(shieldDurability >= 0)
+        if(shieldDurability <= 0)
         {
             DisableShield();
         }

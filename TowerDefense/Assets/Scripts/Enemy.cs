@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using JetBrains.Annotations;
+using UnityEngine;
 using UnityEngine.UI;
 
 public abstract class Enemy : MonoBehaviour
@@ -25,7 +26,7 @@ public abstract class Enemy : MonoBehaviour
     public virtual void TakeDamage(int amount)
     {
         health -= amount;
-        healthBar.fillAmount = health / startHealth;
+        healthBar.fillAmount = health / (float) startHealth;
                 
         if(health <= 0 && isAlive)
         {
@@ -41,7 +42,7 @@ public abstract class Enemy : MonoBehaviour
     protected virtual void Die()
     {
         isAlive = false;
-        PlayerStats.Money += worth;
+        FindObjectOfType<PlayerStats>().RestoreMoney(worth);
         WaveSpawner.EnemiesAlive--;
 
         GameObject deathEffectGO = Instantiate(deathEffect, transform.position, Quaternion.identity);

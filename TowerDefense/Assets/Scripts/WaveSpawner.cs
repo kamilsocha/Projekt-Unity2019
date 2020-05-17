@@ -18,7 +18,6 @@ public class WaveSpawner : MonoBehaviour
 
     private int waveIndex = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         EnemiesAlive = 0;
@@ -27,6 +26,7 @@ public class WaveSpawner : MonoBehaviour
     public void StartGame()
     {
         EnemiesAlive = 0;
+        waveIndex = 0;
         spawnPoint = GameObject.FindWithTag("SpawnPoint").transform;
         this.enabled = true;
     }
@@ -37,7 +37,6 @@ public class WaveSpawner : MonoBehaviour
         timeBetweenWaves = _timeBetweenWaves;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!GameManager.IsInGame) return;
@@ -75,12 +74,17 @@ public class WaveSpawner : MonoBehaviour
             SpawnEnemy(wave.enemyPrefab);
             yield return new WaitForSeconds(1f / wave.rate);
         }
-
         waveIndex++;
+        
     }
 
     void SpawnEnemy(GameObject enemyPrefab)
     {
         Instantiate(enemyPrefab, spawnPoint.position + positionOffset, spawnPoint.rotation);
+    }
+
+    public void ReduceEnemies()
+    {
+        EnemiesAlive--;
     }
 }

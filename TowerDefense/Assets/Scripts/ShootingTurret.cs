@@ -70,7 +70,6 @@ public class ShootingTurret : Turret
     void Laser()
     {
         RaycastHit[] hits;
-        Vector3 dir = firePoint.position - target.position;
 
         hits = Physics.RaycastAll(firePoint.position, firePoint.forward, range);
         Debug.Log("hits: " + hits.Length);

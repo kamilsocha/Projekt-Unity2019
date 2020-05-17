@@ -370,7 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 20
   fireRate: 0.5
-  damage: 70
+  damage: 40
   description: 
   type: 0
   animator: {fileID: 0}

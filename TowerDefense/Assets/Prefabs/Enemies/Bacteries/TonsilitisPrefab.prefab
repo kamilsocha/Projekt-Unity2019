@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079176f19449b2247be5f6589916d4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 3
+  startSpeed: 5
   speed: 0
   startHealth: 500
   health: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
   deathEffect: {fileID: 6356494289311358451, guid: a28b49d5dfe84414383f7ceaa0d90a77,
     type: 3}
   healthBar: {fileID: 4879089725620934845}
-  shieldDurability: 100
+  shieldDurability: 300
   shield: 60
 --- !u!114 &-3825538185000353535
 MonoBehaviour:

@@ -28,7 +28,7 @@ public class Virus : Enemy
         if(revive <= chanceToRevive && canRevive)
         {
             health = reviveHealth;
-            healthBar.fillAmount = reviveHealth / startHealth;
+            healthBar.fillAmount = reviveHealth / (float)startHealth;
             revives--;
             if(revives <= 0)
             {

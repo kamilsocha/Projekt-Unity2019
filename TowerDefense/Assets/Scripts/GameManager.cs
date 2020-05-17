@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject startLevelUI;
     public GameObject gameOverUI;
     public GameObject completeLevelUI;
+    public GameObject gameWonUI;
 
     public WaveSpawner waveSpawner;
     public PlayerStats playerStats;
@@ -21,22 +22,34 @@ public class GameManager : MonoBehaviour
 
     [Header("For testing give here name of the level!")]
     public string currentLevel;
-    /*[Header("Number of scenes built before our actual levels.", order = 0)]
-    [Space(-10, order = 1)]
-    [Header("Change if you add new (not level) scene", order = 2)]
-    [Space(-10, order = 3)]
-    [Header("in build settings.", order = 4)]
-    public int offset;*/
 
-    void Start()
+    string levelSharedName = "LevelShared";
+
+    private void Start()
     {
-        startLevelUI.SetActive(true);
-
         waveSpawner = GetComponent<WaveSpawner>();
         playerStats = GetComponent<PlayerStats>();
+        currentLevel = PlayerPrefs.GetString("CurrentLevel", currentLevel);//, "Level01");
+    }
+
+    void OnStart()
+    {
+        Debug.Log("OnStart called.");
+        startLevelUI.SetActive(true);
 
         GameIsOver = false;
         IsInGame = false;
+
+        Debug.Log("current level = " + currentLevel);
+        currentLevelData = Array.Find(levels, level => level.name == currentLevel);
+        if (currentLevelData == null)
+        {
+            Debug.LogWarning("Level data not found. You may have not added the level to GameMaster or made a typo :) From Button");
+            return;
+        }
+        SceneFader.Instance.activeScene = currentLevel;
+        waveSpawner.SetData(currentLevelData.waves, currentLevelData.timeBetweenWaves);
+        playerStats.SetData(currentLevelData.startMoney, currentLevelData.startLives);
     }
 
     public void Ready()
@@ -64,7 +77,22 @@ public class GameManager : MonoBehaviour
     public void WinLevel()
     {
         GameIsOver = true;
+        int levelNumber = Array.IndexOf(levels, currentLevelData);
+        if (levelNumber == (levels.Length - 1))
+        {
+            gameWonUI.SetActive(true);
+            return;
+        }
+        Debug.Log("Next Level");
+        currentLevel = levels[levelNumber + 1].name;
+        completeLevelUI.GetComponent<CompleteLevel>().SetNextLevel(currentLevel, levelNumber + 2);
         completeLevelUI.SetActive(true);
+
+        Turret[] turrets = FindObjectsOfType<Turret>();
+        foreach (var turret in turrets)
+        {
+            Destroy(turret.gameObject);
+        }
     }
 
     private void OnEnable()
@@ -79,39 +107,12 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        //needs to be commented when testing without level choosing 
-        //currentLevel = PlayerPrefs.GetString("CurrentLevel", "Level01");
-        if(scene.name == currentLevel)
-        {
-            currentLevel = PlayerPrefs.GetString("CurrentLevel", currentLevel);//, "Level01");
-            Debug.Log("current level = " + currentLevel);
-            LevelData ld = Array.Find(levels, level => level.name == currentLevel);
-            if (ld == null)
-            {
-                Debug.LogWarning("Level data not found. You may have not added the level to GameMaster or made a typo :)");
-                return;
-            }
-
-            waveSpawner.SetData(ld.waves, ld.timeBetweenWaves);
-            playerStats.SetData(ld.startMoney, ld.startLives);
-            //Ready();
-        }
+        if(scene.name != levelSharedName)
+            OnStart();
     }
 
     public void ReadyButton()
     {
-        currentLevel = PlayerPrefs.GetString("CurrentLevel", currentLevel);//, "Level01");
-        Debug.Log("current level = " + currentLevel);
-        LevelData ld = Array.Find(levels, level => level.name == currentLevel);
-        if (ld == null)
-        {
-            Debug.LogWarning("Level data not found. You may have not added the level to GameMaster or made a typo :) From Button");
-            return;
-        }
-
-        waveSpawner.SetData(ld.waves, ld.timeBetweenWaves);
-        playerStats.SetData(ld.startMoney, ld.startLives);
-
         Ready();
         startLevelUI.SetActive(false);
     }

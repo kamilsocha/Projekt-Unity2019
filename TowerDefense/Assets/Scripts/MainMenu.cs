@@ -3,12 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public SceneFader sceneFader = SceneFader.Instance;
+    public string optionsSceneName = "Options";
+    public string levelSelectSceneName = "LevelSelect";
+    public string endlessGameSceneName = "EndlessMode";
 
-    public void Play(string levelToLoad)
+    public void Play()
     {
-        if (levelToLoad == null) levelToLoad = "LevelSelect";
-        sceneFader.FadeTo(levelToLoad, LoadType.Menu);
+        SceneFader.Instance.FadeTo(levelSelectSceneName, LoadType.Menu);
     }
 
     public void Quit()
@@ -19,19 +20,25 @@ public class MainMenu : MonoBehaviour
 
     public void Options()
     {
-        //TODO
         Debug.Log("Loading options menu.");
+        SceneFader.Instance.FadeTo(optionsSceneName, LoadType.Menu);
     }
 
-    public void WallOfGlory()
+    public void Highscores()
     {
         //TODO
-        Debug.Log("Loading highscores scene.");
+        Debug.Log("Display highscores.");
     }
 
     public void Credits()
     {
         //TODO
-        Debug.Log("Loading credits scene.");
+        Debug.Log("Display credits.");
+    }
+
+    public void PlayEndlessMode()
+    {
+        //TODO
+        Debug.Log("Playing endless game.");
     }
 }

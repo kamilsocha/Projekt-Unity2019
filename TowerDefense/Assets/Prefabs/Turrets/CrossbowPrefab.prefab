@@ -139,9 +139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d697bde184b9e4aa63260d18595a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 15
-  fireRate: 1
-  damage: 30
+  range: 14
+  fireRate: 0.5
+  damage: 20
   description: Basic turret, hurts one enemy on regular period.
   type: 0
   animator: {fileID: 0}

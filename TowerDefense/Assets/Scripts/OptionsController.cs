@@ -5,7 +5,6 @@ using UnityEngine.Audio;
 
 public class OptionsController : MonoBehaviour
 {
-    public SceneFader sceneFader;
     string menuSceneName = "MainMenu";
     Resolution[] resolutions;
 
@@ -13,10 +12,10 @@ public class OptionsController : MonoBehaviour
     public TMP_Dropdown graphicsDropdown;
     public TMP_Dropdown resolutionDropdown;
 
+    public TurretPanelUI turretPanelUI;
+
     private void Awake()
     {
-        sceneFader = FindObjectOfType<SceneFader>();
-
         graphicsDropdown.SetValueWithoutNotify(QualitySettings.GetQualityLevel());
 
         resolutions = Screen.resolutions;
@@ -40,7 +39,7 @@ public class OptionsController : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        sceneFader.FadeTo(menuSceneName, LoadType.Menu);
+        SceneFader.Instance.FadeTo(menuSceneName, LoadType.Menu);
     }
 
     public void SetVolume(float volume)
@@ -63,6 +62,11 @@ public class OptionsController : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void ShowTurretsPanel()
+    {
+        turretPanelUI.Show();
     }
 
 }

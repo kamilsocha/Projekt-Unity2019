@@ -177,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 20
   fireRate: 0.5
-  damage: 20
+  damage: 25
   description: Fires a laser beam which hurts all hit enemies.
   type: 1
   animator: {fileID: 0}

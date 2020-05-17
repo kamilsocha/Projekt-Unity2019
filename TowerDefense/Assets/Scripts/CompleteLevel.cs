@@ -3,9 +3,8 @@
 public class CompleteLevel : MonoBehaviour
 {
     public string menuName = "MainMenu";
-    public string nextLevel = "Level02";
+    public string nextLevel = "Level01";
     public int levelToUnlock = 2;
-    public SceneFader sceneFader;
 
     private void Awake()
     {
@@ -15,20 +14,26 @@ public class CompleteLevel : MonoBehaviour
         }
     }
 
+    public void SetNextLevel(string _nextLevel, int _levelToUnlock)
+    {
+        nextLevel = _nextLevel;
+        levelToUnlock = _levelToUnlock;
+    }
+
+    public void SetLevelToUnlock(int _levelToUnlock)
+    {
+        levelToUnlock = _levelToUnlock;
+    }
+
     public void Continue()
     {
-
-        sceneFader.FadeTo(nextLevel, LoadType.SingleLevel);
+        SceneFader.Instance.FadeTo(nextLevel, LoadType.SingleLevel);
+        gameObject.SetActive(false);
     }
 
     public void BackToMenu()
     {
-        sceneFader.FadeTo(menuName, LoadType.Menu);
+        SceneFader.Instance.FadeTo(menuName, LoadType.Menu);
     }
 
-    private void OnEnable()
-    {
-        //TODO check if there is next level
-        //if()
-    }
 }
