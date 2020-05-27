@@ -45,7 +45,7 @@ public class ShootingTurretEditor : Editor
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
-        
+
         GUILayout.BeginVertical();
 
         //[Header("General")]
@@ -60,7 +60,7 @@ public class ShootingTurretEditor : Editor
         EditorGUILayout.PropertyField(firePoint);
 
         EditorGUILayout.PropertyField(type);
-        if(turret.type == ShootingTurret.TurretType.ShootingBullets)
+        if (turret.type == ShootingTurret.TurretType.ShootingBullets)
         {
             EditorGUILayout.LabelField("Use bullets", EditorStyles.boldLabel);
             EditorGUILayout.PropertyField(bulletPrefab);
@@ -74,7 +74,7 @@ public class ShootingTurretEditor : Editor
             EditorGUILayout.PropertyField(impactLight);
             EditorGUILayout.PropertyField(laserSpeed);
         }
-        
+
         GUILayout.EndVertical();
 
         serializedObject.ApplyModifiedProperties();

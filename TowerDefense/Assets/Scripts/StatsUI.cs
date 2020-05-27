@@ -32,12 +32,12 @@ public class StatsUI : MonoBehaviour
         var upgradedTurret = selectedTurret.upgradedPrefab.GetComponent<Turret>() as Turret;
 
         description.text = turret.description;
-        range.text = turret.range.ToString();
-        damage.text = turret.damage.ToString();
-        fireRate.text = turret.fireRate.ToString();
-        upgradedRange.text = upgradedTurret.range.ToString();
-        upgradedDamage.text = upgradedTurret.damage.ToString();
-        upgradedFireRate.text = upgradedTurret.fireRate.ToString();
+        range.text = turret.range.ToString().Replace(",", ".");
+        damage.text = turret.damage.ToString().Replace(",", ".");
+        fireRate.text = turret.fireRate.ToString().Replace(",", ".");
+        upgradedRange.text = upgradedTurret.range.ToString().Replace(",", ".");
+        upgradedDamage.text = upgradedTurret.damage.ToString().Replace(",", ".");
+        upgradedFireRate.text = upgradedTurret.fireRate.ToString().Replace(",", ".");
 
         ui.SetActive(true);
     }

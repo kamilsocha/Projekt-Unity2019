@@ -11,7 +11,7 @@ public class NodeUI : MonoBehaviour
 
     private void Awake()
     {
-        ui.SetActive(true);
+        ui.SetActive(false);
     }
 
     public void SetTarget(Node _target)

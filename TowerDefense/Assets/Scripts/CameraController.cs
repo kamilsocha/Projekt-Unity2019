@@ -13,11 +13,14 @@ public class CameraController : MonoBehaviour
 
     Vector3 initPos;
     Vector3 initRot;
+    
+    string cameraMovementEnableKey;
 
     private void Start()
     {
         initPos = transform.position;
         initRot = transform.eulerAngles;
+        cameraMovementEnableKey = PlayerPrefs.GetString("cameraMovementEnableKey", "m");
     }
 
     // Update is called once per frame
@@ -29,7 +32,7 @@ public class CameraController : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.M)) doMovement = !doMovement;
+        if (Input.GetKeyDown(cameraMovementEnableKey)) doMovement = !doMovement;
 
         if (!doMovement) return;
 

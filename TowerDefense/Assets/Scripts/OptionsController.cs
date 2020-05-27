@@ -14,6 +14,10 @@ public class OptionsController : MonoBehaviour
     public TMP_Dropdown resolutionDropdown;
 
     public TurretPanelUI turretPanelUI;
+    public GameObject optionsCanvas;
+    public GameObject controlsCanvas;
+
+    public TMP_InputField cameraMovementEnableKeyInput;
 
     private void Awake()
     {
@@ -37,6 +41,14 @@ public class OptionsController : MonoBehaviour
         }
         resolutionDropdown.AddOptions(resolutionsList);
         resolutionDropdown.SetValueWithoutNotify(currentResolutionIndex);
+
+        optionsCanvas.SetActive(true);
+        controlsCanvas.SetActive(false);
+
+        cameraMovementEnableKeyInput.onValueChanged.AddListener(delegate
+        {
+            PlayerPrefs.SetString("cameraMovementEnableKey", cameraMovementEnableKeyInput.text.ToLower());
+        });
     }
 
     public void BackToMainMenu()
@@ -69,6 +81,11 @@ public class OptionsController : MonoBehaviour
     public void ShowTurretsPanel()
     {
         turretPanelUI.Show();
+    }
+
+    public void ToggleControlsCanvas()
+    {
+        controlsCanvas.SetActive(!controlsCanvas.activeSelf);
     }
 
 }

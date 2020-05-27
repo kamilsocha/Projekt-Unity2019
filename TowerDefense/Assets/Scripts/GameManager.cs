@@ -25,6 +25,14 @@ public class GameManager : MonoBehaviour
 
     string levelSharedName = "LevelShared";
 
+    //[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    //static void Init()
+    //{
+    //    Debug.Log("Counter reset.");
+    //    counter = 0;
+    //}
+
+
     private void Start()
     {
         waveSpawner = GetComponent<WaveSpawner>();

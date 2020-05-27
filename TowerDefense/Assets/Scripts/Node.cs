@@ -26,6 +26,7 @@ public class Node : MonoBehaviour
         startColor = rend.material.color;
 
         buildManager = BuildManager.Instance;
+        playerStats = GameObject.Find("GameMaster").GetComponent<PlayerStats>();
     }
 
     public Vector3 GetBuildPosition()
