@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MeteorMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 6e35a36f0b64dc447ba13f5e13050395,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_25EC96C1:
+        m_Texture: {fileID: 2800000, guid: a5f4771898ca0d142a5c765aece4ae8c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_6AB6AA66: 0
+    - Vector1_971C63BC: 2
+    - Vector1_B4D4178F: 2
+    - Vector1_B7EAED6E: 20
+    - Vector1_C04698E0: 0
+    - Vector1_C18A26CB: 3
+    - Vector1_C54F5174: 3
+    - Vector1_D3044D7C: 1
+    m_Colors:
+    - Color_25651BCE: {r: 0.5471698, g: 0.5187789, b: 0.5187789, a: 0}
+    - Color_53DA086C: {r: 15.74902, g: 2.0078433, b: 0.8156863, a: 0}
+    - Color_6EBCEFD4: {r: 15.121565, g: 4.0376954, b: 0.475023, a: 1}
+    - Vector2_404818E1: {r: -0.1, g: 0.1, b: 0, a: 0}
+    - Vector2_4A32B849: {r: 0.1, g: 0, b: 0, a: 0}
