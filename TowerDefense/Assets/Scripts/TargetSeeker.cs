@@ -6,12 +6,12 @@ using UnityEngine;
 public class TargetSeeker : MonoBehaviour
 {
     public Transform Target { get; private set; }
+    public Enemy TargetEnemy { get; private set; }
     public Transform partToRotate;
     public float turnSpeed = 10f;
 
     private ShootingTurret turret;
 
-    // Start is called before the first frame update
     void Start()
     {
         turret = GetComponent<ShootingTurret>();
@@ -46,6 +46,7 @@ public class TargetSeeker : MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= turret.range)
         {
             Target = nearestEnemy.transform;
+            TargetEnemy = nearestEnemy.GetComponent<Enemy>();
         }
         else
         {

@@ -251,8 +251,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7202285199578330534}
-  - component: {fileID: 6172449242888374198}
   - component: {fileID: 2011190936746382480}
+  - component: {fileID: 4490195364703371629}
   m_Layer: 0
   m_Name: CannonPrefab
   m_TagString: Untagged
@@ -276,32 +276,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6172449242888374198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6172449242888374197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6d697bde184b9e4aa63260d18595a54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 15
-  fireRate: 0.25
-  damage: 25
-  description: Bullets explode hurting all targets within bullet explosion range.
-  type: 0
-  animator: {fileID: 0}
-  bulletPrefab: {fileID: 8235512071484335377, guid: 7a10b80cd3a211145b269435b2a2485e,
-    type: 3}
-  lineRenderer: {fileID: 0}
-  impactEffect: {fileID: 0}
-  impactLight: {fileID: 0}
-  laserSpeed: 20
-  enemyTag: Enemy
-  firePoint: {fileID: 3841979592568258763}
 --- !u!114 &2011190936746382480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,6 +290,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partToRotate: {fileID: 3841979592714014507}
   turnSpeed: 10
+--- !u!114 &4490195364703371629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6172449242888374197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04bc50104d8063f4c85cf40462c06cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 15
+  fireRate: 0.25
+  damage: 25
+  description: Bullets explode hurting all targets within bullet explosion range.
+  type: 0
+  enemyTag: Enemy
+  firePoint: {fileID: 3841979592568258763}
+  bulletPrefab: {fileID: 4686413160238505437, guid: 24532f3c7772a054f998134f8438d0be,
+    type: 3}
 --- !u!1 &8305453006369082105
 GameObject:
   m_ObjectHideFlags: 0

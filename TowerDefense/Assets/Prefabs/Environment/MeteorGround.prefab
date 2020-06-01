@@ -75,9 +75,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47c8e48fc047a8488aa1a71f67a73c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vfx: {fileID: 3524003436214584210, guid: 3f587e651b0210d44867c8a6ccc9a748, type: 3}
-  startPoint: {fileID: 6449275262246855314}
-  endPoint: {fileID: 6449275262380704847}
+  meteorPrefab: {fileID: 3524003436214584210, guid: 3f587e651b0210d44867c8a6ccc9a748,
+    type: 3}
+  spawnPosition: {fileID: 6449275262246855314}
+  endPosition: {fileID: 0}
+  timeBetweenSpawns: 60
 --- !u!65 &6449275262380704841
 BoxCollider:
   m_ObjectHideFlags: 0

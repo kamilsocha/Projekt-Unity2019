@@ -754,7 +754,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8710120840214961144}
-  - component: {fileID: 5673349266562329065}
+  - component: {fileID: 3661050692019719278}
   - component: {fileID: 5673349266562329066}
   m_Layer: 0
   m_Name: CrossbowPrefab_Upgraded
@@ -779,7 +779,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5673349266562329065
+--- !u!114 &3661050692019719278
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -788,7 +788,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5673349266562329067}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6d697bde184b9e4aa63260d18595a54, type: 3}
+  m_Script: {fileID: 11500000, guid: 04bc50104d8063f4c85cf40462c06cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   range: 17.5
@@ -796,15 +796,11 @@ MonoBehaviour:
   damage: 30
   description: 
   type: 0
-  animator: {fileID: 0}
-  bulletPrefab: {fileID: 233640908589398269, guid: 24890c039f6e05140a821db4e48a24c7,
-    type: 3}
-  lineRenderer: {fileID: 0}
-  impactEffect: {fileID: 0}
-  impactLight: {fileID: 0}
-  laserSpeed: 20
   enemyTag: Enemy
   firePoint: {fileID: 7622653163925853104}
+  animator: {fileID: 0}
+  bulletPrefab: {fileID: 233640908589398269, guid: eb24c4ff20a8e194c815d8d0e7206b4f,
+    type: 3}
 --- !u!114 &5673349266562329066
 MonoBehaviour:
   m_ObjectHideFlags: 0

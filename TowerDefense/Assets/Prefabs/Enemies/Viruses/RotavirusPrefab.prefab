@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 5775181125075054659}
   - component: {fileID: 7480470185116966255}
   - component: {fileID: 8363250843675114301}
+  - component: {fileID: 4217191170764329406}
   m_Layer: 0
   m_Name: RotavirusPrefab
   m_TagString: Enemy
@@ -142,6 +143,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901a57fbf946fb64692cf193c414063f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &4217191170764329406
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963621573988982035}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0.66, z: 0}
 --- !u!1 &1292858965535651880
 GameObject:
   m_ObjectHideFlags: 0

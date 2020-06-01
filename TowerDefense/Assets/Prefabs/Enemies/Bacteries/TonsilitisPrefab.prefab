@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6393496592248922436}
   - component: {fileID: 8687366729807902940}
   - component: {fileID: -3825538185000353535}
+  - component: {fileID: 2801040682208150661}
   m_Layer: 0
   m_Name: TonsilitisPrefab
   m_TagString: Enemy
@@ -54,8 +55,8 @@ MonoBehaviour:
   deathEffect: {fileID: 6356494289311358451, guid: a28b49d5dfe84414383f7ceaa0d90a77,
     type: 3}
   healthBar: {fileID: 4879089725620934845}
-  shieldDurability: 300
-  shield: 60
+  startShieldDurability: 0
+  shieldStart: 0
 --- !u!114 &-3825538185000353535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,6 +69,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901a57fbf946fb64692cf193c414063f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &2801040682208150661
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7989696480547705687}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 4
+  m_Direction: 0
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!1 &8319872278664324546
 GameObject:
   m_ObjectHideFlags: 0

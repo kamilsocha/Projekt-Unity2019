@@ -5,7 +5,7 @@ public abstract class Turret : MonoBehaviour
     //[Header("General")]
     public float range = 15f;
     public float fireRate = 1f;
-    public int damage;
+    public float damage;
     public string description;
 
     private void OnDrawGizmosSelected()

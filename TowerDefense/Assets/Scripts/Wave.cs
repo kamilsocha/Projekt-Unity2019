@@ -3,7 +3,16 @@
 [System.Serializable]
 public class Wave
 {
-    public GameObject enemyPrefab;
-    public int count;
+    public EnemyBlueprint[] enemyWaves;
+    public int Count { get
+        {
+            int count = 0;
+            foreach(var enemyBlueprint in enemyWaves)
+            {
+                count += enemyBlueprint.count;
+            }
+            return count;
+        } 
+    }
     public float rate;
 }

@@ -2,6 +2,7 @@
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -14,9 +15,11 @@ public class WaveSpawner : MonoBehaviour
 
     public float timeBetweenWaves = 5f;
     float countdown = 2f;
-    public Text waveCountdownText;
+    public TMP_Text waveCountdownText;
 
-    private int waveIndex = 0;
+    int waveIndex = 0;
+
+
 
     void Start()
     {
@@ -67,13 +70,18 @@ public class WaveSpawner : MonoBehaviour
         PlayerStats.Rounds++;
 
         Wave wave = waves[waveIndex];
-        EnemiesAlive = wave.count;
+        EnemiesAlive = wave.Count;
+        Debug.Log("wave count: " + wave.Count);
 
-        for (int i = 0; i < wave.count; i++)
+        foreach(var enemyWave in wave.enemyWaves)
         {
-            SpawnEnemy(wave.enemyPrefab);
-            yield return new WaitForSeconds(1f / wave.rate);
+            for(int i = 0; i < enemyWave.count; i++)
+            {
+                SpawnEnemy(enemyWave.enemyPrefab);
+                yield return new WaitForSeconds(1f / wave.rate);
+            }
         }
+
         waveIndex++;
         
     }

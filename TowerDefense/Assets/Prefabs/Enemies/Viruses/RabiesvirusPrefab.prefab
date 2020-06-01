@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 13498554724409778}
   - component: {fileID: 3818967844581450978}
   - component: {fileID: 2854220302534674062}
+  - component: {fileID: 4008515771950107393}
   m_Layer: 0
   m_Name: RabiesvirusPrefab
   m_TagString: Enemy
@@ -264,6 +265,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901a57fbf946fb64692cf193c414063f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &4008515771950107393
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4638214922290219259}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3447038591770236762, guid: e5a784205eabc5641935c802dde2e2a8, type: 3}
 --- !u!1 &7090776297859123811
 GameObject:
   m_ObjectHideFlags: 0

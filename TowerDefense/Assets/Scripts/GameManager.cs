@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
     public LevelData[] levels;
     public LevelData currentLevelData;
 
+    [Header("Scene to load after the game is won.")]
+    public string gameWonSceneLoad = "MainMenu";
+
     [Header("For testing give here name of the level!")]
     public string currentLevel;
 
@@ -38,6 +41,8 @@ public class GameManager : MonoBehaviour
         waveSpawner = GetComponent<WaveSpawner>();
         playerStats = GetComponent<PlayerStats>();
         currentLevel = PlayerPrefs.GetString("CurrentLevel", currentLevel);//, "Level01");
+        //delete later
+        OnStart();
     }
 
     void OnStart()
@@ -91,9 +96,12 @@ public class GameManager : MonoBehaviour
             gameWonUI.SetActive(true);
             return;
         }
+
+
         Debug.Log("Next Level");
-        currentLevel = levels[levelNumber + 1].name;
-        completeLevelUI.GetComponent<CompleteLevel>().SetNextLevel(currentLevel, levelNumber + 2);
+        levelNumber++;
+        currentLevel = levels[levelNumber].name;
+        completeLevelUI.GetComponent<CompleteLevel>().SetNextLevel(currentLevel, levelNumber + 1);
         completeLevelUI.SetActive(true);
 
         Turret[] turrets = FindObjectsOfType<Turret>();
@@ -123,5 +131,10 @@ public class GameManager : MonoBehaviour
     {
         Ready();
         startLevelUI.SetActive(false);
+    }
+
+    public void WinGame()
+    {
+        SceneFader.Instance.FadeTo(gameWonSceneLoad, LoadType.Menu);
     }
 }

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class LivesUI : MonoBehaviour
 {
-    public Text livesText;
+    public TMP_Text livesText;
 
     private void Start()
     {

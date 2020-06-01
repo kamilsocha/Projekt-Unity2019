@@ -116,11 +116,11 @@ public class Node : MonoBehaviour
 
         if(buildManager.HasMoney)
         {
-            rend.material.color = hoverColor;
+            rend.material.SetColor("_BaseColor", hoverColor);
         }
         else
         {
-            rend.material.color = notEnoughMoneyColor;
+            rend.material.SetColor("_BaseColor", notEnoughMoneyColor);
         }
 
         buildManager.DrawTurretRange(GetBuildPosition());
@@ -128,7 +128,7 @@ public class Node : MonoBehaviour
 
     private void OnMouseExit()
     {
-        rend.material.color = startColor;
+        rend.material.SetColor("_BaseColor", startColor);
     }
 
     private void OnEnable()

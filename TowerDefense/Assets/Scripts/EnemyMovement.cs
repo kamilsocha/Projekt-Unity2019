@@ -9,14 +9,12 @@ public class EnemyMovement : MonoBehaviour
 
     Enemy enemy;
 
-    // Start is called before the first frame update
     void Start()
     {
         enemy = GetComponent<Enemy>();
         target = Waypoints.points[0];
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector3 dir = target.position - transform.position;

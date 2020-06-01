@@ -10,7 +10,7 @@ public abstract class Enemy : MonoBehaviour
     protected bool isAlive = true;
     public int startHealth = 100;
     //[HideInInspector]
-    public int health;
+    public float health;
     public int worth = 50;
     public GameObject deathEffect;
 
@@ -23,7 +23,7 @@ public abstract class Enemy : MonoBehaviour
         health = startHealth;
     }
 
-    public virtual void TakeDamage(int amount)
+    public virtual void TakeDamage(float amount)
     {
         health -= amount;
         healthBar.fillAmount = health / (float) startHealth;
@@ -36,6 +36,7 @@ public abstract class Enemy : MonoBehaviour
 
     public void Slow(float percentage)
     {
+        percentage /= 100f;
         speed = startSpeed * (1f - percentage);
     }
 

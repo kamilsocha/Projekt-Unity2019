@@ -331,8 +331,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6480388710227805390}
-  - component: {fileID: 8049532230785201886}
   - component: {fileID: 6913735492367982748}
+  - component: {fileID: 2624065244953747379}
   m_Layer: 0
   m_Name: CannonPrefab_Upgraded
   m_TagString: Untagged
@@ -356,32 +356,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8049532230785201886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8049532230785201885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6d697bde184b9e4aa63260d18595a54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 20
-  fireRate: 0.5
-  damage: 40
-  description: 
-  type: 0
-  animator: {fileID: 0}
-  bulletPrefab: {fileID: 8235512071484335377, guid: 7a10b80cd3a211145b269435b2a2485e,
-    type: 3}
-  lineRenderer: {fileID: 0}
-  impactEffect: {fileID: 0}
-  impactLight: {fileID: 0}
-  laserSpeed: 20
-  enemyTag: Enemy
-  firePoint: {fileID: 1102303413379215779}
 --- !u!114 &6913735492367982748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,3 +370,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partToRotate: {fileID: 1102303413267021379}
   turnSpeed: 10
+--- !u!114 &2624065244953747379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049532230785201885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04bc50104d8063f4c85cf40462c06cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 20
+  fireRate: 0.5
+  damage: 40
+  description: 
+  type: 0
+  enemyTag: Enemy
+  firePoint: {fileID: 1102303413379215779}
+  animator: {fileID: 0}
+  bulletPrefab: {fileID: 8235512071484335377, guid: 7a10b80cd3a211145b269435b2a2485e,
+    type: 3}

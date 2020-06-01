@@ -1,16 +1,22 @@
-﻿using UnityEngine;
+﻿using System;
+using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 
 public class Shop : MonoBehaviour
 {
     public StatsUI statsUI;
-    public Button[] buttons;
+    public GameObject shopUI;
+    public TMP_Text toggleButtonText;
+    string activeString = "close";
+    string inactiveString = "open";
 
     public TurretBlueprint crossbowTurret;
     public TurretBlueprint cannonTurret;
-    //TODO
+    public TurretBlueprint laserBeamerTurret;
     public TurretBlueprint laserTurret;
+    //TODO
     //public TurretBlueprint antibioticTurret;
     //public TurretBlueprint medicineTurret;
 
@@ -19,6 +25,11 @@ public class Shop : MonoBehaviour
     private void Start()
     {
         buildManager = BuildManager.Instance;
+        var shopUIState = shopUI.activeSelf;
+        if (shopUIState)
+            toggleButtonText.text = activeString;
+        else
+            toggleButtonText.text = inactiveString;
     }
 
     public void SelectCrossbowTurret()
@@ -38,6 +49,15 @@ public class Shop : MonoBehaviour
     public void MouseOverCannonTurret()
     {
         ShowStatsUI(cannonTurret);
+    }
+
+    public void SelectLaserBeamerTurret()
+    {
+        buildManager.SelectTurretToBuild(laserBeamerTurret);
+    }
+    public void MouseOverLaserBeamerTurret()
+    {
+        ShowStatsUI(laserBeamerTurret);
     }
 
     public void SelectLaserTurret()
@@ -60,6 +80,19 @@ public class Shop : MonoBehaviour
 
     }
     */
+
+    public void ToggleShopPanel()
+    {
+        if(shopUI.activeSelf)
+        {
+            shopUI.SetActive(false);
+            toggleButtonText.text = inactiveString;
+        } else
+        {
+            shopUI.SetActive(true);
+            toggleButtonText.text = activeString;
+        }
+    }
 
     void ShowStatsUI(TurretBlueprint tb)
     {

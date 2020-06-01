@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 
 public class MoneyUI : MonoBehaviour
 {
-    public Text moneyText;
+    public TMP_Text moneyText;
 
     private void Start()
     {

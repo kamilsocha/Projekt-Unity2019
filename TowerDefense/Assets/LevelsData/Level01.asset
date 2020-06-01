@@ -14,25 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Level01
   waves:
-  - enemyPrefab: {fileID: 5384380379752912404, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
-      type: 3}
-    count: 2
+  - enemyWaves:
+    - enemyPrefab: {fileID: 5384380379752912404, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
+        type: 3}
+      count: 1
+    - enemyPrefab: {fileID: 6582347219084660416, guid: ccf07670b2a36b544adcd8b7962663c1,
+        type: 3}
+      count: 2
     rate: 0.25
-  - enemyPrefab: {fileID: 5384380379752912404, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
-      type: 3}
-    count: 2
+  - enemyWaves: []
     rate: 0.5
-  - enemyPrefab: {fileID: 5384380379752912404, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
-      type: 3}
-    count: 4
+  - enemyWaves: []
     rate: 0.5
-  - enemyPrefab: {fileID: 5384380379752912404, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
-      type: 3}
-    count: 6
+  - enemyWaves: []
     rate: 0.75
-  - enemyPrefab: {fileID: 5384380379752912404, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
-      type: 3}
-    count: 10
+  - enemyWaves: []
     rate: 1
   timeBetweenWaves: 5
   startMoney: 200

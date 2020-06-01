@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 8022449212006385066}
   - component: {fileID: 2469064919644321131}
   - component: {fileID: 1534919892663578599}
+  - component: {fileID: 8240701444472038938}
   m_Layer: 0
   m_Name: SalmonellaPrefab
   m_TagString: Enemy
@@ -133,8 +134,8 @@ MonoBehaviour:
   deathEffect: {fileID: 1182809934006311627, guid: e4972868da7883b409528fa0adc49b09,
     type: 3}
   healthBar: {fileID: 5362374969396472413}
-  shieldDurability: 160
-  shield: 40
+  startShieldDurability: 0
+  shieldStart: 0
 --- !u!114 &1534919892663578599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +148,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901a57fbf946fb64692cf193c414063f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &8240701444472038938
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6417118012919658425}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.7
+  m_Height: 3.5
+  m_Direction: 0
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6699073397314273388
 PrefabInstance:
   m_ObjectHideFlags: 0

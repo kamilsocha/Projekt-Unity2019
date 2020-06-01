@@ -32,8 +32,9 @@ public class ProjectileMove : MonoBehaviour
 
         if(impactPrefab != null)
         {
-            var impactVFX = Instantiate(impactPrefab, pos, rot);
-            Destroy(impactVFX, 3);
+            var impactGO = Instantiate(impactPrefab, pos, rot);
+
+            Destroy(impactGO, 300);
         }
 
         if(trails.Count > 0)

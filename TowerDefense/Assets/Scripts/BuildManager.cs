@@ -104,7 +104,6 @@ public class BuildManager : MonoBehaviour
     {
         if(turretToBuild != null)
         {
-            Debug.Log("deselecting");
             rangeDrawer.Hide();
             turretToBuild = null;
         } 
@@ -112,6 +111,7 @@ public class BuildManager : MonoBehaviour
 
     private void OnEnable()
     {
+        turretToBuild = null;
         SceneManager.sceneLoaded += OnSceneLoaded;
         rangeDrawer.Hide();
     }
