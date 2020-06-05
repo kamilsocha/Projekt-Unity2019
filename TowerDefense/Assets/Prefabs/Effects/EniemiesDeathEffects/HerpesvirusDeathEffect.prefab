@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6169225111382729782}
   - component: {fileID: 6169225111382729781}
   - component: {fileID: 6169225111382729780}
+  - component: {fileID: 3586414671891854143}
   m_Layer: 0
   m_Name: HerpesvirusDeathEffect
   m_TagString: Untagged
@@ -4821,3 +4822,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &3586414671891854143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6169225111382729779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd8abbac675d5f44a8a272a6dd9ad602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectSound: Death4

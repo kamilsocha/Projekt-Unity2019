@@ -795,10 +795,9 @@ MonoBehaviour:
   fireRate: 1
   damage: 30
   description: 
-  type: 0
   enemyTag: Enemy
+  audioEffectName: Crossbow
   firePoint: {fileID: 7622653163925853104}
-  animator: {fileID: 0}
   bulletPrefab: {fileID: 233640908589398269, guid: eb24c4ff20a8e194c815d8d0e7206b4f,
     type: 3}
 --- !u!114 &5673349266562329066

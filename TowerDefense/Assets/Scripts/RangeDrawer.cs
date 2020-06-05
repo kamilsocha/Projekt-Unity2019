@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class RangeDrawer : MonoBehaviour
 {
-    public Vector3 positionOffset;
+    public float yOffset = 1f;
+    Vector3 positionOffset;
 
     private void Awake()
     {
-        gameObject.SetActive(false);
-        positionOffset = new Vector3(0, 1, 0);
+        positionOffset = new Vector3(0, yOffset, 0);
     }
 
     public void Show(Vector3 pos, float range)

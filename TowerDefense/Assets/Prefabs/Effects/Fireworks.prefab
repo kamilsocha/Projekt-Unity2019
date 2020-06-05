@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1233866156899751477}
   - component: {fileID: 1233866156899751474}
   - component: {fileID: 1233866156899751475}
+  - component: {fileID: 872210187813248794}
   m_Layer: 0
   m_Name: Fireworks
   m_TagString: Untagged
@@ -110,3 +111,16 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &872210187813248794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233866156899751472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd8abbac675d5f44a8a272a6dd9ad602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectSoundName: Fireworks

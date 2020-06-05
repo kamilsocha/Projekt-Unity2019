@@ -9,7 +9,8 @@ public class OptionsController : MonoBehaviour
     string menuSceneName = "MainMenu";
     Resolution[] resolutions;
 
-    public AudioMixer audioMixer;
+    public AudioMixer themeAudioMixer;
+    public AudioMixer soundsAudioMixer;
     public TMP_Dropdown graphicsDropdown;
     public TMP_Dropdown resolutionDropdown;
 
@@ -18,6 +19,7 @@ public class OptionsController : MonoBehaviour
     public GameObject controlsCanvas;
 
     public TMP_InputField cameraMovementEnableKeyInput;
+    string buttonAudioName = "ButtonClick";
 
     private void Awake()
     {
@@ -56,10 +58,16 @@ public class OptionsController : MonoBehaviour
         SceneFader.Instance.FadeTo(menuSceneName, LoadType.Menu);
     }
 
-    public void SetVolume(float volume)
+    public void SetThemeVolume(float volume)
     {
         Debug.Log(volume);
-        audioMixer.SetFloat("Volume", Mathf.Log10(volume) * 20);
+        themeAudioMixer.SetFloat("Volume", Mathf.Log10(volume) * 20);
+    }
+
+    public void SetSoundsVolume(float volume)
+    {
+        Debug.Log(volume);
+        soundsAudioMixer.SetFloat("Volume", Mathf.Log10(volume) * 20);
     }
 
     public void SetQuality(int qualityIndex)
@@ -86,6 +94,12 @@ public class OptionsController : MonoBehaviour
     public void ToggleControlsCanvas()
     {
         controlsCanvas.SetActive(!controlsCanvas.activeSelf);
+    }
+
+    public void PlaySound(string s)
+    {
+        if (s == null) s = buttonAudioName;
+        AudioManager.Instance.Play(s);
     }
 
 }

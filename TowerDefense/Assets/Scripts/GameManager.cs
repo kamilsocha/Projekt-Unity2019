@@ -13,6 +13,10 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverUI;
     public GameObject completeLevelUI;
     public GameObject gameWonUI;
+    public GameObject winLevelEffectPrefab;
+    public GameObject winGameEffectPrefab;
+    public float winImpactEffectLifetime = 120;
+    GameObject effectGO;
 
     public WaveSpawner waveSpawner;
     public PlayerStats playerStats;
@@ -26,7 +30,10 @@ public class GameManager : MonoBehaviour
     [Header("For testing give here name of the level!")]
     public string currentLevel;
 
+    public AudioManager audioManager;
+
     string levelSharedName = "LevelShared";
+    string clickAudioName = "ButtonClick";
 
     //[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     //static void Init()
@@ -40,9 +47,13 @@ public class GameManager : MonoBehaviour
     {
         waveSpawner = GetComponent<WaveSpawner>();
         playerStats = GetComponent<PlayerStats>();
+
         currentLevel = PlayerPrefs.GetString("CurrentLevel", currentLevel);//, "Level01");
-        //delete later
-        OnStart();
+
+        completeLevelUI.GetComponent<CompleteLevel>().OnContinue += HandleContinueToNextLevel;
+        audioManager = AudioManager.Instance;
+        // delete later - faster loading stuff
+        //OnStart();
     }
 
     void OnStart()
@@ -60,7 +71,6 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("Level data not found. You may have not added the level to GameMaster or made a typo :) From Button");
             return;
         }
-        SceneFader.Instance.activeScene = currentLevel;
         waveSpawner.SetData(currentLevelData.waves, currentLevelData.timeBetweenWaves);
         playerStats.SetData(currentLevelData.startMoney, currentLevelData.startLives);
     }
@@ -94,9 +104,13 @@ public class GameManager : MonoBehaviour
         if (levelNumber == (levels.Length - 1))
         {
             gameWonUI.SetActive(true);
+            //var winGameEffect = Instantiate(winGameEffectPrefab, transform.position, Quaternion.identity);
+            effectGO = Instantiate(winGameEffectPrefab, transform.position, Quaternion.identity);
+            //Destroy(winGameEffect, winImpactEffectLifetime);
             return;
         }
 
+        effectGO = Instantiate(winLevelEffectPrefab, transform.position, Quaternion.identity);
 
         Debug.Log("Next Level");
         levelNumber++;
@@ -130,11 +144,23 @@ public class GameManager : MonoBehaviour
     public void ReadyButton()
     {
         Ready();
+        SceneFader.Instance.activeScene = currentLevel;
         startLevelUI.SetActive(false);
     }
 
     public void WinGame()
     {
         SceneFader.Instance.FadeTo(gameWonSceneLoad, LoadType.Menu);
+    }
+
+    void HandleContinueToNextLevel()
+    {
+        Destroy(effectGO);
+    }
+
+    public void PlaySound(string s)
+    {
+        if (s == null) s = clickAudioName;
+        audioManager.Play(s);
     }
 }

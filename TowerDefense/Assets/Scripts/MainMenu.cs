@@ -41,4 +41,9 @@ public class MainMenu : MonoBehaviour
         //TODO
         Debug.Log("Playing endless game.");
     }
+
+    public void PlaySound(string s)
+    {
+        AudioManager.Instance.Play(s);
+    }
 }

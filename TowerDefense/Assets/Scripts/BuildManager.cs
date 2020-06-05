@@ -20,23 +20,22 @@ public class BuildManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(this);
-
-        buyAnimator = buyAnimationGO.GetComponentInChildren<Animator>();
-        buyAnimationText = buyAnimationGO.GetComponentInChildren<TMP_Text>();
     }
     #endregion
 
     TurretBlueprint turretToBuild;
     Node selectedNode;
     public NodeUI nodeUI;
-    public GameObject buyAnimationGO;
-    TMP_Text buyAnimationText;
-    Animator buyAnimator;
-    public RangeDrawer rangeDrawer;
+    ObjectPooler objectPooler;
+    public GameObject rangeDrawerPrefab;
+    public AudioManager audioManager;
+    RangeDrawer rangeDrawer;
 
     public GameObject buildEffect;
     public GameObject upgradeEffect;
     public GameObject sellEffect;
+
+    string transactionSound = "Coin";
 
     public bool CanBuild
     {
@@ -53,6 +52,12 @@ public class BuildManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        objectPooler = ObjectPooler.Instance;
+        audioManager = AudioManager.Instance;
+        rangeDrawer = Instantiate(rangeDrawerPrefab, transform.position, Quaternion.identity).GetComponent<RangeDrawer>();
+    }
 
     public void SelectNode(Node node)
     {
@@ -113,7 +118,6 @@ public class BuildManager : MonoBehaviour
     {
         turretToBuild = null;
         SceneManager.sceneLoaded += OnSceneLoaded;
-        rangeDrawer.Hide();
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -127,18 +131,9 @@ public class BuildManager : MonoBehaviour
 
     public void BuyTextAnimation(string text, Vector3 pos)
     {
-        buyAnimationGO.SetActive(true);
-        buyAnimationGO.transform.position = pos;
-        buyAnimationText.text = text;
-        StartCoroutine(PlayBuyAnimation());
-    }
-
-    IEnumerator PlayBuyAnimation()
-    {
-        buyAnimator.SetTrigger("Buy");
-        var state = buyAnimator.GetCurrentAnimatorStateInfo(0);
-        yield return new WaitForSeconds(state.length);
-        buyAnimationGO.SetActive(false);
+        GameObject floatingMoney = objectPooler.SpawnFromPool("BuyAnimations", pos, Quaternion.identity);
+        floatingMoney.GetComponentInChildren<TMP_Text>().text = text;
+        audioManager.Play(transactionSound);
     }
 
 }

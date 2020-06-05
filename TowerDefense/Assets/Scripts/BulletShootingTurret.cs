@@ -37,6 +37,7 @@ public class BulletShootingTurret : ShootingTurret
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 
         animator.SetTrigger("Shoot");
+        audioManager.Play(audioEffectName);
 
         if (bullet != null)
         {

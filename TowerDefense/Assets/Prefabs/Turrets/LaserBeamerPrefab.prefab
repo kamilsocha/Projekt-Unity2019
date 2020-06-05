@@ -9615,7 +9615,7 @@ GameObject:
   - component: {fileID: 7623808330001491556}
   - component: {fileID: 7623808330001491555}
   m_Layer: 0
-  m_Name: LaserPrefab
+  m_Name: LaserBeamerPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9653,9 +9653,10 @@ MonoBehaviour:
   range: 15
   fireRate: 1
   damage: 5
-  description: 
-  type: 0
+  description: Constant beam of laser which slows opponent and takes small amount
+    of life.
   enemyTag: Enemy
+  audioEffectName: LaserConstant
   firePoint: {fileID: 7623808330555502552}
   slowAmount: 5
   lineRenderer: {fileID: 7623808330001491555}

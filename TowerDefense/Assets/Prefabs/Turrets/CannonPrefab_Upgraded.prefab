@@ -386,9 +386,8 @@ MonoBehaviour:
   fireRate: 0.5
   damage: 40
   description: 
-  type: 0
   enemyTag: Enemy
+  audioEffectName: Cannon
   firePoint: {fileID: 1102303413379215779}
-  animator: {fileID: 0}
   bulletPrefab: {fileID: 8235512071484335377, guid: 7a10b80cd3a211145b269435b2a2485e,
     type: 3}

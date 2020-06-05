@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3326198838834339685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3326198838834339707}
+  - component: {fileID: 3326198838834339704}
+  - component: {fileID: 3326198838834339706}
+  - component: {fileID: 3326198838834339705}
+  - component: {fileID: 3326198838834339711}
+  - component: {fileID: 3326198838834339710}
+  m_Layer: 0
+  m_Name: GameMaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3326198838834339707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3326198838834339685}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 35, y: 0, z: -40}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3326198838834339704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3326198838834339685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b066dd44a3c0d0a48a237520309323b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startLevelUI: {fileID: 0}
+  gameOverUI: {fileID: 0}
+  completeLevelUI: {fileID: 0}
+  gameWonUI: {fileID: 0}
+  winLevelEffectPrefab: {fileID: 1657098823398795704, guid: 550243c4dd14a914bae383957e5814dc,
+    type: 3}
+  winGameEffectPrefab: {fileID: 3775376634813518604, guid: 77c9a82aba2f24b4bb58a4b42c318f4b,
+    type: 3}
+  winImpactEffectLifetime: 0
+  waveSpawner: {fileID: 3326198838834339706}
+  playerStats: {fileID: 3326198838834339705}
+  levels:
+  - {fileID: 11400000, guid: 8a6aea5a6cc5ef7418de7bb365c43c33, type: 2}
+  - {fileID: 11400000, guid: 52ecb72fd7ffe754da02b6c93d94081e, type: 2}
+  currentLevelData: {fileID: 0}
+  gameWonSceneLoad: MainMenu
+  currentLevel: Level01
+  audioManager: {fileID: 0}
+--- !u!114 &3326198838834339706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3326198838834339685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5278ecb13891f60468519e512541a655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - enemyWaves:
+    - enemyPrefab: {fileID: 0}
+      count: 0
+    rate: 1
+  gameManager: {fileID: 3326198838834339704}
+  spawnPoint: {fileID: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
+  timeBetweenWaves: 5
+  waveCountdownText: {fileID: 0}
+--- !u!114 &3326198838834339705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3326198838834339685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe1a2f1ea0fe2d468a99accea96b4ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMoney: 400
+  startLives: 20
+--- !u!114 &3326198838834339711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3326198838834339685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11d077458099ccd4bbfbeda2ac02e127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui: {fileID: 0}
+  menuSceneName: MainMenu
+--- !u!114 &3326198838834339710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3326198838834339685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2559aba056f661240a340a728797b185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: BuyAnimations
+    prefab: {fileID: 6069917543026236951, guid: 1281dc680c11b5143a8a156c37ff34e9,
+      type: 3}
+    size: 5
+  - tag: Meteors
+    prefab: {fileID: 3524003436214584210, guid: 3f587e651b0210d44867c8a6ccc9a748,
+      type: 3}
+    size: 5

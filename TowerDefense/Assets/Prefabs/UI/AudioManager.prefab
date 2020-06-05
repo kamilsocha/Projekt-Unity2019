@@ -44,11 +44,230 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theme: Theme
-  sounds:
-  - name: Theme
+  themeOffset: 5
+  themes:
+  - name: NightKing
     clip: {fileID: 8300000, guid: 3ac308d52ad81e8418bc14a52d4413ca, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: bdbcb50982dc5494e81a90f5c2437742, type: 2}
+  - name: DeadShip
+    clip: {fileID: 8300000, guid: cd021c3ec2455f747b786d0a0539abe4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: bdbcb50982dc5494e81a90f5c2437742, type: 2}
+  - name: TheStar
+    clip: {fileID: 8300000, guid: e7f40f4fb8f20eb4084acbe847910a94, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: bdbcb50982dc5494e81a90f5c2437742, type: 2}
+  sounds:
+  - name: Death1
+    clip: {fileID: 8300000, guid: 01e04038a26a9d94ab0217127a713b11, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Death2
+    clip: {fileID: 8300000, guid: eab1bf730938a4f4195b0939fe3a3bb0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Death3
+    clip: {fileID: 8300000, guid: b827b4acd6e632e43935f28ca657884f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Death4
+    clip: {fileID: 8300000, guid: fcf4b6f6ea4f6194c8d17d57d8bfebfd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Death5
+    clip: {fileID: 8300000, guid: e6855f463d1379d4fb78afd292a8a494, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Death6
+    clip: {fileID: 8300000, guid: 9c29c72b98a7b8b4bb048d7c19a2a756, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Death7
+    clip: {fileID: 8300000, guid: 905cd6bd9517bd9439e5cf9fd6394cfb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Death8
+    clip: {fileID: 8300000, guid: ab7962619536e0f4ba6198d7cb179079, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Death9
+    clip: {fileID: 8300000, guid: 7cb639f1e3619d146970b604ae0e6934, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Death10
+    clip: {fileID: 8300000, guid: ff85de1395c493f4d89db63835ea8ce2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Death11
+    clip: {fileID: 8300000, guid: 46b4a773480f3d14eba58f57c5b550c4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Death12
+    clip: {fileID: 8300000, guid: 90c619f68b85c934cbd431477cee20ce, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Fireworks
+    clip: {fileID: 8300000, guid: 039eb8bd1890e0240876db772e80641b, type: 3}
     volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}
-    output: {fileID: 24300002, guid: bdbcb50982dc5494e81a90f5c2437742, type: 2}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: MeteorExplosion
+    clip: {fileID: 8300000, guid: e8f648c7a83eaa24b8eaf7ffaa0b3dfe, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: MissileExplosion
+    clip: {fileID: 8300000, guid: 4891901466daa694797c0c1ae6231ae9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Crossbow
+    clip: {fileID: 8300000, guid: aab3dcd0985baea4089f2ea617bbdafa, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Cannon
+    clip: {fileID: 8300000, guid: 3abd7e09249bd274eba105105038f686, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: LaserConstant
+    clip: {fileID: 8300000, guid: 524ebbff76d291e449461802f6f97af4, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: LaserSingle
+    clip: {fileID: 8300000, guid: e3d13644af97eb14e80af84c87aff46a, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Water
+    clip: {fileID: 8300000, guid: 50d5ef6d27a016f4eb16bbb2aa3bef9d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: ButtonClick
+    clip: {fileID: 8300000, guid: 716a8237ff0da2a43a134e4e5cfd3bfb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Clock1
+    clip: {fileID: 8300000, guid: c092a14bf095b0c46858314f938e6f06, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Clock2
+    clip: {fileID: 8300000, guid: f43775fb9920fd845ab09a80fac3f00a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Clock3
+    clip: {fileID: 8300000, guid: 4c4908fe87deed84b95ebcd39336eae2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Clock4
+    clip: {fileID: 8300000, guid: 5d4e44375a9cfc649b9bd9aa90f47abd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: EnemyEndPath
+    clip: {fileID: 8300000, guid: 860cca30301b39243acc997b9f435fc5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: c584863c0c3e08b48afdf5f86add00d5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Powerup
+    clip: {fileID: 8300000, guid: 545a74c60b3e0bf41b2b8df18341034b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Coin
+    clip: {fileID: 8300000, guid: 5dc158e2acc8616468c9e81128609cf9, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}

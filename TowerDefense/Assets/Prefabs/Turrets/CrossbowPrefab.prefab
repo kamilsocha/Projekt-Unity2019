@@ -157,10 +157,9 @@ MonoBehaviour:
   fireRate: 0.5
   damage: 20
   description: Basic turret, hurts one enemy on regular period.
-  type: 0
   enemyTag: Enemy
+  audioEffectName: Crossbow
   firePoint: {fileID: 3441723701579391451}
-  animator: {fileID: 0}
   bulletPrefab: {fileID: 233640908589398269, guid: 24890c039f6e05140a821db4e48a24c7,
     type: 3}
 --- !u!1 &796345644165030786

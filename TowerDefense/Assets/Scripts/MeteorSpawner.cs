@@ -1,15 +1,18 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class MeteorSpawner : MonoBehaviour
 {
-    public GameObject meteorPrefab;
+    //public GameObject meteorPrefab;
     public Transform spawnPosition;
-    public Transform endPosition;
+    Transform endPosition;
+    ObjectPooler objectPooler;
 
     bool doSpawn;
     int spawns = 0;
     int maxNumberOfSpawns = 10;
-    public float timeBetweenSpawns;
+    public float timeBetweenSpawns = 60;
+    public float spawnDelay = 10;
     float countdown;
 
     float min_x, max_x;
@@ -23,22 +26,20 @@ public class MeteorSpawner : MonoBehaviour
         max_x = transform.position.x + GetComponent<Collider>().bounds.size.x / 2;
         min_z = transform.position.z - GetComponent<Collider>().bounds.size.z / 2;
         max_z = transform.position.z + GetComponent<Collider>().bounds.size.z / 2;
-
-        doSpawn = true;
     }
 
     private void Update()
     {
+        StartCoroutine(DelaySpawning());
+
         if (!doSpawn)
         {
-            //destroy?
             return;
         }
 
         if(countdown <= 0)
         {
             SpawnMeteor();
-            
             countdown = timeBetweenSpawns;
             return;
         }
@@ -60,22 +61,32 @@ public class MeteorSpawner : MonoBehaviour
         return new Vector3(endX, endPosition.position.y, endZ);
     }
 
-    void RotateTo(GameObject go, Vector3 destination)
+    void RotateTo(GameObject obj, Vector3 destination)
     {
-        var direction = destination - go.transform.position;
+        var direction = destination - obj.transform.position;
         var rotation = Quaternion.LookRotation(direction);
-        go.transform.localRotation = Quaternion.Lerp(go.transform.rotation, rotation, 1);
+        obj.transform.localRotation = Quaternion.Lerp(obj.transform.rotation, rotation, 1);
     }
 
     void SpawnMeteor()
     {
         var startPos = GenerateSpawnPosition();
         var endPos = GenerateEndPosition();
-        GameObject meteorGO = Instantiate(meteorPrefab, startPos, Quaternion.identity);
-        RotateTo(meteorGO, endPos);
+        //GameObject meteor = Instantiate(meteorPrefab, startPos, Quaternion.identity);
+        //GameObject meteor = ObjectPooler.Instance.SpawnFromPool("M", startPos, Quaternion.identity);
+        GameObject meteor = objectPooler.SpawnFromPool("Meteors", startPos, Quaternion.identity);
+        RotateTo(meteor, endPos);
         spawns++;
         if (spawns >= maxNumberOfSpawns) 
             doSpawn = false;
+
+    }
+
+    IEnumerator DelaySpawning()
+    {
+        yield return new WaitForSeconds(spawnDelay);
+        objectPooler = ObjectPooler.Instance;
+        doSpawn = true;
     }
 
 }

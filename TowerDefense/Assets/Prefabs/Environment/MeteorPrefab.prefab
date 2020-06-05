@@ -4767,12 +4767,12 @@ GameObject:
   - component: {fileID: 118663178}
   - component: {fileID: 118663180}
   m_Layer: 0
-  m_Name: MeteorGO
+  m_Name: MeteorPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8720436611429935702
 Transform:
   m_ObjectHideFlags: 0
@@ -4830,6 +4830,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78bf97eeae21774ab3611960a1753b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedBoundLow: 30
+  speedBoundHigh: 70
   speed: 50
   impactPrefab: {fileID: 9107532716542055018, guid: 8edb1dc07f515d84eb30f6c884741eb9,
     type: 3}

@@ -21,11 +21,12 @@ public class LaserBeamer : ShootingTurret
                 lineRenderer.enabled = false;
                 impactEffect.Stop();
                 impactLight.enabled = false;
+                audioManager.Stop(audioEffectName);
             }
             return;
         }
 
-        LaserBeam();
+        LaserBeam();   
     }
 
     void LaserBeam()
@@ -35,6 +36,7 @@ public class LaserBeamer : ShootingTurret
             lineRenderer.enabled = true;
             impactEffect.Play();
             impactLight.enabled = true;
+            audioManager.Play(audioEffectName);
         }
 
         lineRenderer.SetPosition(0, firePoint.position);

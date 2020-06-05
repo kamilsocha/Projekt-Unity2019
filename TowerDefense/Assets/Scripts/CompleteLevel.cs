@@ -6,6 +6,9 @@ public class CompleteLevel : MonoBehaviour
     public string nextLevel = "Level01";
     public int levelToUnlock = 2;
 
+    public delegate void ContinueButtonEvent();
+    public event ContinueButtonEvent OnContinue;
+
     private void Awake()
     {
         if (levelToUnlock > PlayerPrefs.GetInt("levelReached", 1))
@@ -27,6 +30,7 @@ public class CompleteLevel : MonoBehaviour
 
     public void Continue()
     {
+        OnContinue?.Invoke();
         SceneFader.Instance.FadeTo(nextLevel, LoadType.SingleLevel);
         gameObject.SetActive(false);
     }

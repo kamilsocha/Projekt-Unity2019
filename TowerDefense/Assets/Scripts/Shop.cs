@@ -11,6 +11,7 @@ public class Shop : MonoBehaviour
     public TMP_Text toggleButtonText;
     string activeString = "close";
     string inactiveString = "open";
+    string clickAudioName = "ButtonClick";
 
     public TurretBlueprint crossbowTurret;
     public TurretBlueprint cannonTurret;
@@ -25,6 +26,7 @@ public class Shop : MonoBehaviour
     private void Start()
     {
         buildManager = BuildManager.Instance;
+        shopUI.SetActive(true);
         var shopUIState = shopUI.activeSelf;
         if (shopUIState)
             toggleButtonText.text = activeString;
@@ -83,6 +85,7 @@ public class Shop : MonoBehaviour
 
     public void ToggleShopPanel()
     {
+        AudioManager.Instance.Play(clickAudioName);
         if(shopUI.activeSelf)
         {
             shopUI.SetActive(false);

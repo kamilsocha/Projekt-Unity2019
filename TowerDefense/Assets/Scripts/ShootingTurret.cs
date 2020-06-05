@@ -6,15 +6,18 @@ using UnityEngine;
 public class ShootingTurret : Turret
 {
     public string enemyTag = "Enemy";
+    public string audioEffectName = "Shot";
     public Transform firePoint;
 
     protected Transform target;
     protected Enemy targetEnemy;
     TargetSeeker targetSeeker;
+    protected AudioManager audioManager;
     
     protected virtual void Start()
     {
         targetSeeker = GetComponent<TargetSeeker>();
+        audioManager = AudioManager.Instance;
     }
     
     protected virtual void Update()

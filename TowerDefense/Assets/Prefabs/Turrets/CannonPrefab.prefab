@@ -306,8 +306,8 @@ MonoBehaviour:
   fireRate: 0.25
   damage: 25
   description: Bullets explode hurting all targets within bullet explosion range.
-  type: 0
   enemyTag: Enemy
+  audioEffectName: Cannon
   firePoint: {fileID: 3841979592568258763}
   bulletPrefab: {fileID: 4686413160238505437, guid: 24532f3c7772a054f998134f8438d0be,
     type: 3}

@@ -290,6 +290,7 @@ MonoBehaviour:
   damage: 10
   description: Fires laser which hits all opponents on it's path.
   enemyTag: Enemy
+  audioEffectName: LaserSingle
   firePoint: {fileID: 2543767870035661941}
   laserPrefab: {fileID: 5913583372916035686}
 --- !u!1001 &1884534925259724188

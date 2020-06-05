@@ -5086,7 +5086,7 @@ GameObject:
   - component: {fileID: 5671172077675333346}
   - component: {fileID: 1369613709785902010}
   m_Layer: 0
-  m_Name: LaserPrefab_Upgraded
+  m_Name: LaserBeamerPrefab_Upgraded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5125,8 +5125,8 @@ MonoBehaviour:
   fireRate: 1
   damage: 10
   description: 
-  type: 0
   enemyTag: Enemy
+  audioEffectName: LaserConstant
   firePoint: {fileID: 3963404998012478793}
   slowAmount: 10
   lineRenderer: {fileID: 1369613709785902010}

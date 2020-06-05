@@ -59,6 +59,7 @@ public class Laser : ShootingTurret
             if (farestTarget.transform.tag == "Enemy")
             {
                 StartCoroutine(DrawLaser(farestTarget.transform.gameObject));
+                audioManager.Play(audioEffectName);
             }
                 
         }

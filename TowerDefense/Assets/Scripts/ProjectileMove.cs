@@ -1,13 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileMove : MonoBehaviour
+public class ProjectileMove : MonoBehaviour, IPooledObject
 {
+    public float speedBoundLow = 30;
+    public float speedBoundHigh = 70;
     public float speed;
     public GameObject impactPrefab;
     public List<GameObject> trails;
 
     private Rigidbody rb;
+
+    public void OnObjectSpawn()
+    {
+        speed = UnityEngine.Random.Range(speedBoundLow, speedBoundHigh);
+    }
 
     void Start()
     {
@@ -53,4 +61,5 @@ public class ProjectileMove : MonoBehaviour
 
         Destroy(gameObject);
     }
+
 }

@@ -3,6 +3,8 @@
 [RequireComponent(typeof(Enemy))]
 public class EnemyMovement : MonoBehaviour
 {
+    public string enemyEndPathSound = "EnemyEndPath";
+
     Transform target;
     int wavepointIndex = 0;
     float radius = 0.4f;
@@ -42,6 +44,7 @@ public class EnemyMovement : MonoBehaviour
     {
         FindObjectOfType<PlayerStats>().ReduceLive();
         FindObjectOfType<WaveSpawner>().ReduceEnemies();
+        AudioManager.Instance.Play(enemyEndPathSound);
         Destroy(gameObject);
     }
 }
