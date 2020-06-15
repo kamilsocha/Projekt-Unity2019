@@ -296,7 +296,6 @@ MonoBehaviour:
   startSpeed: 10
   speed: 0
   startHealth: 60
-  health: 0
   worth: 30
   deathEffect: {fileID: 6169225111382729779, guid: 05ffd09c2640d5a46a88fb0b71a621e7,
     type: 3}
@@ -316,6 +315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901a57fbf946fb64692cf193c414063f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partToRotate: {fileID: 8858120802182960314}
+  enemyEndPathSound: EnemyEndPath
 --- !u!135 &8857343529869630768
 SphereCollider:
   m_ObjectHideFlags: 0

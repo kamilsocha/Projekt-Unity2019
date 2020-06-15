@@ -1,21 +1,20 @@
 ﻿using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 
 public class MoneyUI : MonoBehaviour
 {
     public TMP_Text moneyText;
 
-    private void Start()
+    private void Awake()
     {
         PlayerStats playerStats = GameObject.Find("GameMaster").GetComponent<PlayerStats>();
         playerStats.OnPlayerMoneyChanged += HandlePlayerMoneyChanged;
     }
 
-    void HandlePlayerMoneyChanged()
+    void HandlePlayerMoneyChanged(int money)
     {
-        moneyText.text = "$" + PlayerStats.Money;
+        moneyText.text = "$" + money;
     }
 
 }

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4dc2075a73de0409ed5a38c49a24af, type: 3}
+  m_Name: Level06
+  m_EditorClassIdentifier: 
+  name: Level06
+  waves:
+  - enemyWaves: []
+    bossPrefab: {fileID: 3712512803101729328, guid: db277239970a3ac44aeea84ba36ff397,
+      type: 3}
+    rate: 1
+  - enemyWaves:
+    - enemyPrefab: {fileID: 5384380379752912404, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
+        type: 3}
+      count: 1
+    bossPrefab: {fileID: 0}
+    rate: 0.5
+  timeBetweenWaves: 5
+  startMoney: 200
+  startLives: 10

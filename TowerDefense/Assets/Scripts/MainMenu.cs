@@ -1,11 +1,30 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEditor.ShaderGraph.Internal;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public string optionsSceneName = "Options";
+    public string settingsSceneName = "Settings";
     public string levelSelectSceneName = "LevelSelect";
     public string endlessGameSceneName = "EndlessMode";
+
+    public GameObject creditsScreen;
+    Animator animator;
+    float creditsTime;
+
+    private void Start()
+    {
+        creditsScreen.SetActive(false);
+        animator = creditsScreen.GetComponent<Animator>();
+        Debug.Log($"animator: {animator.name}");
+        RuntimeAnimatorController ac = animator.runtimeAnimatorController;
+        foreach (var c in ac.animationClips)
+        {
+            creditsTime += c.length;
+        }
+        Debug.Log($"clips length: {creditsTime}");
+    }
 
     public void Play()
     {
@@ -18,10 +37,10 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void Options()
+    public void Settings()
     {
-        Debug.Log("Loading options menu.");
-        SceneFader.Instance.FadeTo(optionsSceneName, LoadType.Menu);
+        Debug.Log("Loading settings menu.");
+        SceneFader.Instance.FadeTo(settingsSceneName, LoadType.Menu);
     }
 
     public void Highscores()
@@ -34,6 +53,8 @@ public class MainMenu : MonoBehaviour
     {
         //TODO
         Debug.Log("Display credits.");
+        creditsScreen.SetActive(true);
+        StartCoroutine(ShowCredits());
     }
 
     public void PlayEndlessMode()
@@ -46,4 +67,11 @@ public class MainMenu : MonoBehaviour
     {
         AudioManager.Instance.Play(s);
     }
+
+    IEnumerator ShowCredits()
+    {
+        yield return new WaitForSeconds(creditsTime - 1f);
+        creditsScreen.SetActive(false);
+    }
+
 }

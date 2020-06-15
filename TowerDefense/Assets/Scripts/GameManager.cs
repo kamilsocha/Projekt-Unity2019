@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     public GameObject gameWonUI;
     public GameObject winLevelEffectPrefab;
     public GameObject winGameEffectPrefab;
-    public float winImpactEffectLifetime = 120;
     GameObject effectGO;
 
     public WaveSpawner waveSpawner;
@@ -85,7 +84,7 @@ public class GameManager : MonoBehaviour
     {
         if (GameIsOver) return;
 
-        if(PlayerStats.Lives <= 0)
+        if(playerStats.Lives <= 0)
         {
             EndGame();
         }
@@ -104,9 +103,7 @@ public class GameManager : MonoBehaviour
         if (levelNumber == (levels.Length - 1))
         {
             gameWonUI.SetActive(true);
-            //var winGameEffect = Instantiate(winGameEffectPrefab, transform.position, Quaternion.identity);
             effectGO = Instantiate(winGameEffectPrefab, transform.position, Quaternion.identity);
-            //Destroy(winGameEffect, winImpactEffectLifetime);
             return;
         }
 

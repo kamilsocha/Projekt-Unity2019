@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Globalization;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class WaveSpawner : MonoBehaviour
@@ -10,6 +9,7 @@ public class WaveSpawner : MonoBehaviour
     public Wave[] waves;
 
     public GameManager gameManager;
+    PlayerStats playerStats;
     public Transform spawnPoint;
     public Vector3 positionOffset = new Vector3(0, 1.5f, 0);
 
@@ -20,10 +20,10 @@ public class WaveSpawner : MonoBehaviour
     int waveIndex = 0;
 
 
-
     void Start()
     {
         EnemiesAlive = 0;
+        playerStats = GetComponent<PlayerStats>();
     }
 
     public void StartGame()
@@ -68,10 +68,10 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave()
     {
         PlayerStats.Rounds++;
-
         Wave wave = waves[waveIndex];
-        EnemiesAlive = wave.Count;
-        Debug.Log("wave count: " + wave.Count);
+        EnemiesAlive = wave.Count + 1;
+
+        Debug.Log($"eniemies alive: {EnemiesAlive}");
 
         foreach(var enemyWave in wave.enemyWaves)
         {
@@ -82,17 +82,25 @@ public class WaveSpawner : MonoBehaviour
             }
         }
 
+        while(EnemiesAlive > 1)
+        {
+            yield return new WaitForSeconds(1f);
+        }
+
+        SpawnEnemy(wave.bossPrefab);
+
         waveIndex++;
-        
     }
 
     void SpawnEnemy(GameObject enemyPrefab)
     {
-        Instantiate(enemyPrefab, spawnPoint.position + positionOffset, spawnPoint.rotation);
+        var obj = Instantiate(enemyPrefab, spawnPoint.position + positionOffset, spawnPoint.rotation);
+        obj.GetComponent<EnemyMovement>().OnEndPath += ReduceEnemies;
     }
 
-    public void ReduceEnemies()
+    public void ReduceEnemies(int livesToReduce)
     {
         EnemiesAlive--;
+        playerStats.ReduceLives(livesToReduce);
     }
 }

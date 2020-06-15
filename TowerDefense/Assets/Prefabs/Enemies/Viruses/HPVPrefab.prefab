@@ -293,6 +293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901a57fbf946fb64692cf193c414063f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partToRotate: {fileID: 8753337823170094323}
+  enemyEndPathSound: EnemyEndPath
 --- !u!114 &5295485854756979748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,7 +310,6 @@ MonoBehaviour:
   startSpeed: 8
   speed: 0
   startHealth: 100
-  health: 0
   worth: 70
   deathEffect: {fileID: 3839504768761925124, guid: 3001d3966c027424e86ec6b036552c7f,
     type: 3}

@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSelect.unity
     guid: cc099a5c3aed9304ebf54d0a441aa4cf
   - enabled: 1
-    path: Assets/Scenes/Options.unity
+    path: Assets/Scenes/Settings.unity
     guid: a3bdce52159d13e47aea03f92623c80d
   - enabled: 1
     path: Assets/Scenes/LevelShared.unity
@@ -22,5 +22,5 @@ EditorBuildSettings:
     guid: 68ca0824568e3b9459d127d2139a4f47
   - enabled: 1
     path: Assets/Scenes/Level02.unity
-    guid: 95e64d0b4a4e73447a45be0b6f70378c
+    guid: 253ac12479f01884fbd87f30b6250570
   m_configObjects: {}

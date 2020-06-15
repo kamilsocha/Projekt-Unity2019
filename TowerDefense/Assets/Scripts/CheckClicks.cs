@@ -6,16 +6,23 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class CheckClicks : MonoBehaviour
 {
+
+    Shop shop;
     StatsUI statsUI;
+
+    private void Awake()
+    {
+        shop = FindObjectOfType<Shop>();
+    }
 
     private void OnMouseDown()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
+        if (EventSystem.current.IsPointerOverGameObject() || !shop.shopUI.activeSelf)
         {
-            //Debug.Log("Clicked on the UI");
             return;
         }
         BuildManager.Instance.DeselectTurretToBuild();
+
         if(statsUI == null)
         {
             statsUI = GameObject.Find("StatsUI").GetComponent<StatsUI>();

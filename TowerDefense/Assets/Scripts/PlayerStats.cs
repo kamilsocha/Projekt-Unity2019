@@ -6,18 +6,20 @@ public class PlayerStats : MonoBehaviour
     public static int Money { get; set; }
 
     public int startLives = 20;
-    public static int Lives { get; set; }
+    public int Lives;// { get; set; }
 
     public static int Rounds { get; set; }
     
     // TODO
-    // Points system
-    public static float points { get; set; }
+    // Score system
+    public static int Score { get; set; }
 
-    public delegate void PlayerMoneyChangedEvent();
+    public delegate void PlayerMoneyChangedEvent(int money);
     public event PlayerMoneyChangedEvent OnPlayerMoneyChanged;
-    public delegate void PlayerLivesChangedEvent();
+    public delegate void PlayerLivesChangedEvent(int lives);
     public event PlayerLivesChangedEvent OnPlayerLivesChanged;
+    public delegate void PlayerScoreChangedEvent(int lives);
+    public event PlayerScoreChangedEvent OnPlayerScoreChanged;
 
     void Start()
     {
@@ -25,7 +27,7 @@ public class PlayerStats : MonoBehaviour
         Lives = startLives;
 
         Rounds = 0;
-        points = 0;
+        Score = 0;
     }
 
     public void SetData(int _startMoney, int _startLives)
@@ -35,25 +37,36 @@ public class PlayerStats : MonoBehaviour
         Money = startMoney;
         Lives = startLives;
         Rounds = 0;
-        OnPlayerLivesChanged?.Invoke();
-        OnPlayerMoneyChanged?.Invoke();
+
+        //?
+        Score = 0;
+
+        OnPlayerLivesChanged?.Invoke(Lives);
+        OnPlayerMoneyChanged?.Invoke(Money);
+        OnPlayerScoreChanged?.Invoke(Score);
     }
 
     public void ReduceMoney(int moneyToReduce)
     {
         Money -= moneyToReduce;
-        OnPlayerMoneyChanged?.Invoke();
+        OnPlayerMoneyChanged?.Invoke(Money);
     }
 
     public void RestoreMoney(int moneyToRestore)
     {
         Money += moneyToRestore;
-        OnPlayerMoneyChanged?.Invoke();
+        OnPlayerMoneyChanged?.Invoke(Money);
     }
 
-    public void ReduceLive() 
+    public void ReduceLives(int livesToReduce) 
     {
-        Lives--;
-        OnPlayerLivesChanged?.Invoke();
+        Lives -= livesToReduce;
+        OnPlayerLivesChanged?.Invoke(Lives);
+    }
+
+    public void IncreaseScore(int scoreToAdd)
+    {
+        Score += scoreToAdd;
+        OnPlayerScoreChanged?.Invoke(Score);
     }
 }

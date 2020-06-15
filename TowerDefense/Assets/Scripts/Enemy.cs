@@ -9,9 +9,9 @@ public abstract class Enemy : MonoBehaviour
     public float speed;
     protected bool isAlive = true;
     public int startHealth = 100;
-    //[HideInInspector]
     public float health;
-    public int worth = 50;
+    public int moneyWorth = 50;
+    public int scoreWorth = 10;
     public GameObject deathEffect;
 
     [Header("Unity Stuff")]
@@ -43,7 +43,9 @@ public abstract class Enemy : MonoBehaviour
     protected virtual void Die()
     {
         isAlive = false;
-        FindObjectOfType<PlayerStats>().RestoreMoney(worth);
+        var playerStats = FindObjectOfType<PlayerStats>();
+        playerStats.RestoreMoney(moneyWorth);
+        playerStats.IncreaseScore(scoreWorth);
         WaveSpawner.EnemiesAlive--;
 
         GameObject deathEffectGO = Instantiate(deathEffect, transform.position, Quaternion.identity);

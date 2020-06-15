@@ -33,8 +33,6 @@ public class TargetSeeker : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            //var bacteria = enemy.GetComponent<Enemy>() as Bacteria;
-            //if (bacteria != null && !bacteria.canHurt) continue;
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
             if (distanceToEnemy < shortestDistance)
             {

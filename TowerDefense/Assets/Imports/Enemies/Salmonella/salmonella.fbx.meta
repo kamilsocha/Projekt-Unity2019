@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 03f87ae40f5c3d14db6c37ffc2a8f465
+guid: 0c8d283408ce4654a88e68a7b4c534d3
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Salmonella
-    second: {fileID: 2100000, guid: ffbd1b2a0945535439bd1aaecbccb6b0, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -46,8 +41,8 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

@@ -25,7 +25,7 @@ Material:
     - Vector1_41737DAD: 0.56
     - Vector1_A04A749D: 5
     - Vector1_DE5F2B27: 0.2
-    - Vector1_EC276E2B: 0.1
+    - Vector1_EC276E2B: 0
     m_Colors:
-    - Color_1D26946F: {r: 0, g: 0.41437083, b: 0.764151, a: 0}
-    - Color_47E28FB6: {r: 0, g: 1.9843137, b: 2, a: 0}
+    - Color_1D26946F: {r: 0, g: 0.41437083, b: 0.764151, a: 1}
+    - Color_47E28FB6: {r: 0, g: 1.9843137, b: 2, a: 1}

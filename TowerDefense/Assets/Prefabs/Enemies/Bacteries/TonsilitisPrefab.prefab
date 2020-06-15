@@ -50,7 +50,6 @@ MonoBehaviour:
   startSpeed: 5
   speed: 0
   startHealth: 500
-  health: 0
   worth: 300
   deathEffect: {fileID: 6356494289311358451, guid: a28b49d5dfe84414383f7ceaa0d90a77,
     type: 3}
@@ -69,6 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901a57fbf946fb64692cf193c414063f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partToRotate: {fileID: 8319872278664324546}
+  enemyEndPathSound: EnemyEndPath
 --- !u!136 &2801040682208150661
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -122,7 +123,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8319872278664324546}
-  m_Mesh: {fileID: 4711208715938537054, guid: 90ec4d05d4d318245986ceb2be1b7099, type: 3}
+  m_Mesh: {fileID: 4711208715938537054, guid: f964828eb433f454ebd1dd4bfb298a86, type: 3}
 --- !u!23 &1120526776682250077
 MeshRenderer:
   m_ObjectHideFlags: 0

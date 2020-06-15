@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class NodeUI : MonoBehaviour
 {
     public GameObject ui;
-    public Text upgradeCost;
-    public Text sellAmount;
+    public TMP_Text upgradeCost;
+    public TMP_Text sellAmount;
     public Button upgradeButton;
     private Node target;
 
@@ -18,7 +19,6 @@ public class NodeUI : MonoBehaviour
     {
         target = _target;
         transform.position = target.GetBuildPosition();
-
         if(!target.isUpgraded)
         {
             upgradeCost.text = "$" + target.TurretBlueprint.upgradeCost;
@@ -31,7 +31,6 @@ public class NodeUI : MonoBehaviour
             upgradeButton.interactable = false;
             sellAmount.text = "$" + target.TurretBlueprint.GetUpgradedSellAmount();
         }
-
         ui.SetActive(true);
     }
 

@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class MeteorSpawner : MonoBehaviour
 {
-    //public GameObject meteorPrefab;
     public Transform spawnPosition;
+    public string poolName = "Meteors";
     Transform endPosition;
     ObjectPooler objectPooler;
 
@@ -72,9 +72,7 @@ public class MeteorSpawner : MonoBehaviour
     {
         var startPos = GenerateSpawnPosition();
         var endPos = GenerateEndPosition();
-        //GameObject meteor = Instantiate(meteorPrefab, startPos, Quaternion.identity);
-        //GameObject meteor = ObjectPooler.Instance.SpawnFromPool("M", startPos, Quaternion.identity);
-        GameObject meteor = objectPooler.SpawnFromPool("Meteors", startPos, Quaternion.identity);
+        GameObject meteor = objectPooler.SpawnFromPool(poolName, startPos, Quaternion.identity);
         RotateTo(meteor, endPos);
         spawns++;
         if (spawns >= maxNumberOfSpawns) 

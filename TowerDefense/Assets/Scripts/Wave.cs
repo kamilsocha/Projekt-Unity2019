@@ -4,6 +4,7 @@
 public class Wave
 {
     public EnemyBlueprint[] enemyWaves;
+    public GameObject bossPrefab;
     public int Count { get
         {
             int count = 0;

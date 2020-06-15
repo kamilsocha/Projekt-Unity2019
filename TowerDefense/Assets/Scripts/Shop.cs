@@ -1,7 +1,5 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 
 public class Shop : MonoBehaviour
@@ -26,7 +24,7 @@ public class Shop : MonoBehaviour
     private void Start()
     {
         buildManager = BuildManager.Instance;
-        shopUI.SetActive(true);
+        shopUI.SetActive(false);
         var shopUIState = shopUI.activeSelf;
         if (shopUIState)
             toggleButtonText.text = activeString;
@@ -36,7 +34,6 @@ public class Shop : MonoBehaviour
 
     public void SelectCrossbowTurret()
     {
-        Debug.Log("Selected crossbow");
         buildManager.SelectTurretToBuild(crossbowTurret);
     }
     public void MouseOverCrossbowTurret()
