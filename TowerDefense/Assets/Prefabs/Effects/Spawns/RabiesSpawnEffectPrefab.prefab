@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4090349896185573781}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.3700027, y: 8.24, z: -6.4400005}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4090349897676785894}
@@ -222,7 +222,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.16941082, g: 0.20187257, b: 0.764151, a: 1}
+      maxColor: {r: 0.9433962, g: 0.90035754, b: 0.07564971, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1303,7 +1303,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.18039216, g: 0.25783736, b: 0.972549, a: 0}
+        key0: {r: 0.972549, g: 0.9408649, b: 0.18039216, a: 0}
         key1: {r: 0.8392157, g: 0.17647058, b: 0.19800681, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0.34509805}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -4780,7 +4780,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4090349896360948452}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.3700027, y: 8.24, z: -6.4400005}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4090349897676785894}
@@ -4976,7 +4976,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.16941082, g: 0.20187257, b: 0.764151, a: 1}
+      maxColor: {r: 0.8679245, g: 0.6259261, b: 0.0040939935, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -6057,8 +6057,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.21094823, g: 0.18039216, b: 0.972549, a: 0}
-        key1: {r: 0.8962264, g: 0.07186722, b: 0.088179864, a: 1}
+        key0: {r: 0.9811321, g: 0.7193259, b: 0.023139905, a: 0}
+        key1: {r: 0.8980392, g: 0.8798665, b: 0.07058823, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -9534,7 +9534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4090349896368032260}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.37, y: 8.24, z: -6.44}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4090349897676785894}
@@ -9730,7 +9730,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.16941082, g: 0.20187257, b: 0.764151, a: 1}
+      maxColor: {r: 1, g: 0.99644166, b: 0.0047169924, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -10811,7 +10811,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.19247234, g: 0.18039216, b: 0.972549, a: 0}
+        key0: {r: 0.972549, g: 0.9510685, b: 0.18039216, a: 0}
         key1: {r: 0.8773585, g: 0.053800307, b: 0.069928624, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -14288,7 +14288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4090349896967278439}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.3700027, y: 8.24, z: -6.4400005}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4090349897676785894}
@@ -14484,7 +14484,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.16941082, g: 0.20187257, b: 0.764151, a: 0.4745098}
+      maxColor: {r: 0.8679245, g: 0.6328391, b: 0.07778566, a: 0.4745098}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -15574,8 +15574,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.9716981, g: 0.1787558, b: 0.1787558, a: 0}
-        key1: {r: 0.1782218, g: 0.18460669, b: 0.8396226, a: 1}
+        key0: {r: 0.972549, g: 0.7350098, b: 0.18039216, a: 0}
+        key1: {r: 0.9150943, g: 0.29204378, b: 0.02158241, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -19051,7 +19051,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4090349897580928585}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.3700027, y: 8.24, z: -6.4400005}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4090349897676785894}
@@ -19247,7 +19247,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.16941082, g: 0.20187257, b: 0.764151, a: 0.59607846}
+      maxColor: {r: 0.9245283, g: 0.87105566, b: 0.10902455, a: 0.59607846}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -20328,7 +20328,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.18039216, g: 0.19966884, b: 0.972549, a: 0}
+        key0: {r: 0.972549, g: 0.9329318, b: 0.18039216, a: 0}
         key1: {r: 0.8867924, g: 0.037646834, b: 0.12604754, a: 0.7921569}
         key2: {r: 0, g: 0, b: 0, a: 0.5019608}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -23789,7 +23789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4090349897676785894}
   m_Layer: 0
-  m_Name: SpawnEffectPrefab
+  m_Name: RabiesEffectPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

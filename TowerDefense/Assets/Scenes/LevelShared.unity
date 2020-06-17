@@ -1103,7 +1103,7 @@ RectTransform:
   - {fileID: 1469799594}
   - {fileID: 721729041}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4050,7 +4050,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 1
+  m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -5093,7 +5093,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &857195745
 RectTransform:
@@ -5108,7 +5108,7 @@ RectTransform:
   m_Children:
   - {fileID: 1575967549}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7476,7 +7476,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 1
+  m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -8178,7 +8178,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 1
+  m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -12372,6 +12372,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3326198838834339710, guid: a7fe6197d180edf4da742abcf861fa68,
+        type: 3}
+      propertyPath: pools.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326198838834339710, guid: a7fe6197d180edf4da742abcf861fa68,
+        type: 3}
+      propertyPath: pools.Array.data[2].tag
+      value: Diseases
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326198838834339710, guid: a7fe6197d180edf4da742abcf861fa68,
+        type: 3}
+      propertyPath: pools.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 7744989689215336693, guid: 937dc7802d1e38d4895cfc7ee8787735,
+        type: 3}
+    - target: {fileID: 3326198838834339710, guid: a7fe6197d180edf4da742abcf861fa68,
+        type: 3}
+      propertyPath: pools.Array.data[2].size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3326198838834339711, guid: a7fe6197d180edf4da742abcf861fa68,
         type: 3}
       propertyPath: ui
@@ -12745,7 +12766,7 @@ PrefabInstance:
     - target: {fileID: 8995257928168905864, guid: ed5cda7ffdf801246ac8029417bdcab5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8995257928168905864, guid: ed5cda7ffdf801246ac8029417bdcab5,
         type: 3}

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +8,7 @@ public class Boss : MonoBehaviour
 
     public GameObject partToRotate;
     public GameObject enemyPrefabToSpawn;
+    List<GameObject> children;
     public GameObject spawnEffect;
     public GameObject shadowEffectPrefab;
     GameObject shadowEffect;
@@ -55,6 +55,8 @@ public class Boss : MonoBehaviour
         var pos = GenerateSpawnPosition();
         var spawned = Instantiate(enemyPrefabToSpawn, pos, transform.rotation);
         spawned.GetComponent<EnemyMovement>().SetWaypoint(enemyMovement.GetCurrentWaypoint());
+        children.Add(spawned);
+
         var effect = Instantiate(spawnEffect, pos, transform.rotation);
         Destroy(effect, 5f);
     }
@@ -77,5 +79,11 @@ public class Boss : MonoBehaviour
     {
         shadowEffect.transform.parent = null;
         Destroy(shadowEffect.gameObject, 5f);
+
+        foreach(var c in children)
+        {
+            if(c != null)
+                Destroy(c);
+        }
     }
 }

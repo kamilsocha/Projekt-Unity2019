@@ -83,10 +83,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4418302589679760334}
+  - component: {fileID: -5614190464410136435}
   - component: {fileID: 5216346774171136670}
   - component: {fileID: 5324913428656094461}
   - component: {fileID: 1671916050446334960}
-  - component: {fileID: -5614190464410136435}
   m_Layer: 0
   m_Name: BossAdenovirusPrefab
   m_TagString: Enemy
@@ -110,6 +110,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5614190464410136435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3712512803101729328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8992179f131da054db43fe78389a7762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  livesToReduce: 3
+  partToRotate: {fileID: 0}
+  enemyPrefabToSpawn: {fileID: 3712512803101729328, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
+    type: 3}
+  spawnEffect: {fileID: 4090349897676785895, guid: 61664e74d608cd0408af1b787ba09113,
+    type: 3}
+  shadowEffectPrefab: {fileID: 2527996538163765152, guid: 758cca542b93308459252dfd47d8b34e,
+    type: 3}
+  spawnRange: 5
+  timeBetweenSpawns: 3
+  spawns: 20
 --- !u!114 &5216346774171136670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,18 +145,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c45ddce299343948918a2b1a8a40d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 10
+  startSpeed: 8
   speed: 0
-  startHealth: 80
-  health: 0
-  moneyWorth: 50
-  scoreWorth: 10
+  startHealth: 200
+  moneyWorth: 0
+  scoreWorth: 100
   deathEffect: {fileID: 8262978762125445350, guid: e744641683fd1074d868a8d4b368a52b,
     type: 3}
   healthBar: {fileID: 2007817737901706065}
-  maxRevives: 2
-  chanceToRevive: 30
-  reviveHealth: 40
+  maxRevives: 1
+  chanceToRevive: 45
+  reviveHealth: 100
 --- !u!114 &5324913428656094461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,29 +183,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-5614190464410136435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3712512803101729328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8992179f131da054db43fe78389a7762, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  livesToReduce: 3
-  partToRotate: {fileID: 0}
-  enemyPrefabToSpawn: {fileID: 3712512803101729328, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
-    type: 3}
-  spawnEffect: {fileID: 4090349897676785895, guid: 61664e74d608cd0408af1b787ba09113,
-    type: 3}
-  shadowEffectPrefab: {fileID: 2527996538163765152, guid: 758cca542b93308459252dfd47d8b34e,
-    type: 3}
-  spawnRange: 4
-  timeBetweenSpawns: 2
-  spawns: 4
 --- !u!1 &3795363911826284527
 GameObject:
   m_ObjectHideFlags: 0

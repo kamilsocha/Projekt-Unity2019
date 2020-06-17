@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2527996538163765182}
   - component: {fileID: 2527996538163765153}
   m_Layer: 0
-  m_Name: Shadow
+  m_Name: ShadowTonsilitis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ VisualEffect:
       m_Array: []
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 0, y: 1, z: 0.89888954, w: 1}
+      - m_Value: {x: 0.05917394, y: 0.0117647005, z: 0.5764706, w: 1}
         m_Name: Color
         m_Overridden: 1
     m_Uint:

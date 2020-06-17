@@ -9,7 +9,7 @@ public abstract class Enemy : MonoBehaviour
     public float speed;
     protected bool isAlive = true;
     public int startHealth = 100;
-    public float health;
+    protected float health;
     public int moneyWorth = 50;
     public int scoreWorth = 10;
     public GameObject deathEffect;

@@ -84,7 +84,7 @@ public class WaveSpawner : MonoBehaviour
 
         while(EnemiesAlive > 1)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(timeBetweenWaves);
         }
 
         SpawnEnemy(wave.bossPrefab);
