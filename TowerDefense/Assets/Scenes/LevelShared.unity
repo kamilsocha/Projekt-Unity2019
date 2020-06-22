@@ -110,7 +110,7 @@ NavMeshSettings:
     agentRadius: 0.5
     agentHeight: 2
     agentSlope: 45
-    agentClimb: 0.4
+    agentClimb: 0.75
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -121,7 +121,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 60c50bfd9930f504abe7c1e47be540f6, type: 2}
 --- !u!1001 &50256137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12386,7 +12386,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pools.Array.data[2].prefab
       value: 
-      objectReference: {fileID: 7744989689215336693, guid: 937dc7802d1e38d4895cfc7ee8787735,
+      objectReference: {fileID: 6035996753996951502, guid: f9cc32964bce1d14494092629b79ddfb,
         type: 3}
     - target: {fileID: 3326198838834339710, guid: a7fe6197d180edf4da742abcf861fa68,
         type: 3}

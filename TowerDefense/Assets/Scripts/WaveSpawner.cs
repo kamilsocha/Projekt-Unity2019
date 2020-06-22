@@ -5,7 +5,7 @@ using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public static int EnemiesAlive = 0;
+    public int EnemiesAlive = 0;
     public Wave[] waves;
 
     public GameManager gameManager;
@@ -22,6 +22,7 @@ public class WaveSpawner : MonoBehaviour
 
     void Start()
     {
+        Enemy.OnEnemyDeath += HandleEnemyDeath;
         EnemiesAlive = 0;
         playerStats = GetComponent<PlayerStats>();
     }
@@ -102,5 +103,12 @@ public class WaveSpawner : MonoBehaviour
     {
         EnemiesAlive--;
         playerStats.ReduceLives(livesToReduce);
+    }
+
+    public void HandleEnemyDeath(int money, int score)
+    {
+        playerStats.RestoreMoney(money);
+        playerStats.IncreaseScore(score);
+        EnemiesAlive--;
     }
 }

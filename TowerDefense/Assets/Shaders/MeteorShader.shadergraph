@@ -52,7 +52,7 @@
             "typeInfo": {
                 "fullName": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty"
             },
-            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"dda9c3d9-45ce-4819-aa1f-3dfea48bbf29\"\n    },\n    \"m_Name\": \"VoronoiColor\",\n    \"m_DefaultReferenceName\": \"Color_6EBCEFD4\",\n    \"m_OverrideReferenceName\": \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": {\n        \"r\": 60.48628234863281,\n        \"g\": 15.834105491638184,\n        \"b\": 1.583410620689392,\n        \"a\": 0.0\n    },\n    \"m_ColorMode\": 1\n}"
+            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"dda9c3d9-45ce-4819-aa1f-3dfea48bbf29\"\n    },\n    \"m_Name\": \"VoronoiColor\",\n    \"m_DefaultReferenceName\": \"Color_6EBCEFD4\",\n    \"m_OverrideReferenceName\": \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": {\n        \"r\": 60.48628234863281,\n        \"g\": 15.834105491638184,\n        \"b\": 1.583410620689392,\n        \"a\": 1.0\n    },\n    \"m_ColorMode\": 1\n}"
         },
         {
             "typeInfo": {

@@ -1,5 +1,5 @@
-﻿using JetBrains.Annotations;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public abstract class Enemy : MonoBehaviour
@@ -16,6 +16,9 @@ public abstract class Enemy : MonoBehaviour
 
     [Header("Unity Stuff")]
     public Image healthBar;
+
+    public delegate void EnemyDeathEvent(int moneyWorth, int scoreWorth);
+    public static event EnemyDeathEvent OnEnemyDeath;
 
     protected virtual void Start()
     {
@@ -43,10 +46,11 @@ public abstract class Enemy : MonoBehaviour
     protected virtual void Die()
     {
         isAlive = false;
-        var playerStats = FindObjectOfType<PlayerStats>();
-        playerStats.RestoreMoney(moneyWorth);
-        playerStats.IncreaseScore(scoreWorth);
-        WaveSpawner.EnemiesAlive--;
+        //playerStats.RestoreMoney(moneyWorth);
+        //playerStats.IncreaseScore(scoreWorth);
+        //WaveSpawner.EnemiesAlive--;
+
+        OnEnemyDeath?.Invoke(moneyWorth, scoreWorth);
 
         GameObject deathEffectGO = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(deathEffectGO, 5f);

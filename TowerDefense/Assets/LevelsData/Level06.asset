@@ -14,15 +14,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Level06
   waves:
-  - enemyWaves: []
+  - enemyWaves:
+    - enemyPrefab: {fileID: 3712512803101729328, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
+        type: 3}
+      count: 10
+    - enemyPrefab: {fileID: 6582347219084660416, guid: ccf07670b2a36b544adcd8b7962663c1,
+        type: 3}
+      count: 5
+    - enemyPrefab: {fileID: 5924642817355052401, guid: 21234748572af824a828e5ef7c29a1ee,
+        type: 3}
+      count: 5
+    - enemyPrefab: {fileID: 963621573988982035, guid: a89985756d35f60448ff392ec3dba19e,
+        type: 3}
+      count: 5
+    - enemyPrefab: {fileID: 8404717703095437200, guid: 36c5895cde1000d4a8458b294211077b,
+        type: 3}
+      count: 5
     bossPrefab: {fileID: 3712512803101729328, guid: db277239970a3ac44aeea84ba36ff397,
       type: 3}
     rate: 1
   - enemyWaves:
-    - enemyPrefab: {fileID: 5384380379752912404, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
+    - enemyPrefab: {fileID: 1718528107863396320, guid: 012442a7829ce284ea84d298372a235f,
         type: 3}
       count: 1
-    bossPrefab: {fileID: 0}
+    bossPrefab: {fileID: 1718528107863396320, guid: 29d45cbe47cdb9444ae14e461816bf80,
+      type: 3}
     rate: 0.5
   timeBetweenWaves: 5
   startMoney: 200

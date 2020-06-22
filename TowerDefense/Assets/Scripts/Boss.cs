@@ -23,6 +23,7 @@ public class Boss : MonoBehaviour
 
     private void Start()
     {
+        //children = new List<GameObject>();
         enemyMovement = GetComponent<EnemyMovement>();
         waveSpawner = FindObjectOfType(typeof(WaveSpawner)) as WaveSpawner;
         enemyMovement.LivesToReduce = livesToReduce;
@@ -43,6 +44,7 @@ public class Boss : MonoBehaviour
         if(countdown <= 0)
         {
             SpawnChildEnemy();
+            waveSpawner.EnemiesAlive++;
             spawns--;
             countdown = timeBetweenSpawns;
             return;
@@ -55,7 +57,9 @@ public class Boss : MonoBehaviour
         var pos = GenerateSpawnPosition();
         var spawned = Instantiate(enemyPrefabToSpawn, pos, transform.rotation);
         spawned.GetComponent<EnemyMovement>().SetWaypoint(enemyMovement.GetCurrentWaypoint());
-        children.Add(spawned);
+        //children.Add(spawned);
+
+        spawned.GetComponent<EnemyMovement>().OnEndPath += waveSpawner.ReduceEnemies;
 
         var effect = Instantiate(spawnEffect, pos, transform.rotation);
         Destroy(effect, 5f);
@@ -80,10 +84,10 @@ public class Boss : MonoBehaviour
         shadowEffect.transform.parent = null;
         Destroy(shadowEffect.gameObject, 5f);
 
-        foreach(var c in children)
-        {
-            if(c != null)
-                Destroy(c);
-        }
+        //foreach(var c in children)
+        //{
+        //    if(c != null)
+        //        Destroy(c);
+        //}
     }
 }

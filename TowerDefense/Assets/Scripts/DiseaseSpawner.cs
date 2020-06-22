@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class DiseaseSpawner : MonoBehaviour
 {
@@ -26,7 +27,12 @@ public class DiseaseSpawner : MonoBehaviour
         Vector3 force = new Vector3(xForce, yForce, zForce);
 
         var diseaseObj = objectPooler.SpawnFromPool(poolName, transform.position, transform.rotation);
-        diseaseObj.GetComponent<Rigidbody>().AddForce(force);
+        //diseaseObj.GetComponent<Rigidbody>().AddForce(force);
+        diseaseObj.GetComponent<Rigidbody>().velocity = new Vector3(xForce, yForce, zForce);
+
+        var vfx = diseaseObj.GetComponent<VisualEffect>();
+        Debug.Log($"{vfx.name}");
+
         StartCoroutine(Deactivate(diseaseObj, timeBetweenSpawns));
     }
 

@@ -203,7 +203,7 @@ MonoBehaviour:
     output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
   - name: Water
     clip: {fileID: 8300000, guid: 50d5ef6d27a016f4eb16bbb2aa3bef9d, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
