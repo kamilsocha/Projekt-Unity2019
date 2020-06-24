@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -33,14 +31,6 @@ public class GameManager : MonoBehaviour
 
     string levelSharedName = "LevelShared";
     string clickAudioName = "ButtonClick";
-
-    //[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-    //static void Init()
-    //{
-    //    Debug.Log("Counter reset.");
-    //    counter = 0;
-    //}
-
 
     private void Start()
     {
@@ -98,6 +88,15 @@ public class GameManager : MonoBehaviour
 
     public void WinLevel()
     {
+        // TODO
+        // calculate overall score
+
+        var currentLevelStats = SaveData.Current.GetPlayerLevelData(currentLevelData.name);
+        if(playerStats.Score > currentLevelStats.bestScore)
+        {
+            currentLevelStats.bestScore = playerStats.Score;
+        }
+
         GameIsOver = true;
         int levelNumber = Array.IndexOf(levels, currentLevelData);
         if (levelNumber == (levels.Length - 1))

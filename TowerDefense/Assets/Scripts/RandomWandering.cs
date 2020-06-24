@@ -8,8 +8,7 @@ public class RandomWandering : MonoBehaviour
     public float zRange;
     public float speed = 0.3f;
     public int timeToFindDestination;
-    [SerializeField]
-    Transform targetObject;
+    public Transform targetObject;
 
     private void Start()
     {

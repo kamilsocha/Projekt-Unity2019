@@ -5,6 +5,12 @@ using UnityEngine.UI;
 public class RoundsSurvived : MonoBehaviour
 {
     public Text roundsText;
+    PlayerStats playerStats;
+
+    private void Start()
+    {
+        playerStats = FindObjectOfType<PlayerStats>();
+    }
 
     private void OnEnable()
     {
@@ -17,7 +23,7 @@ public class RoundsSurvived : MonoBehaviour
         int round = 0;
 
         yield return new WaitForSeconds(.7f);
-        while(round < PlayerStats.Rounds)
+        while(round < playerStats.Rounds)
         {
             round++;
             roundsText.text = round.ToString();

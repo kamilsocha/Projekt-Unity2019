@@ -3,16 +3,16 @@
 public class PlayerStats : MonoBehaviour
 {
     public int startMoney = 400;
-    public static int Money { get; set; }
+    public int Money { get; set; }
 
     public int startLives = 20;
     public int Lives;// { get; set; }
 
-    public static int Rounds { get; set; }
+    public int Rounds { get; set; }
     
     // TODO
     // Score system
-    public static int Score { get; set; }
+    public int Score { get; set; }
 
     public delegate void PlayerMoneyChangedEvent(int money);
     public event PlayerMoneyChangedEvent OnPlayerMoneyChanged;

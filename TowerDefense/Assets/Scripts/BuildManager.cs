@@ -34,6 +34,7 @@ public class BuildManager : MonoBehaviour
     public GameObject buildEffect;
     public GameObject upgradeEffect;
     public GameObject sellEffect;
+    PlayerStats playerStats;
 
     string transactionSound = "Coin";
 
@@ -48,7 +49,7 @@ public class BuildManager : MonoBehaviour
     {
         get
         {
-            return PlayerStats.Money >= turretToBuild.cost;
+            return playerStats.Money >= turretToBuild.cost;
         }
     }
 
@@ -126,6 +127,7 @@ public class BuildManager : MonoBehaviour
         {
             nodeUI = GameObject.Find("NodeUI").GetComponent<NodeUI>();
             nodeUI.Hide();
+            playerStats = FindObjectOfType<PlayerStats>();
         }
     }
 

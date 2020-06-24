@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,20 +12,37 @@ public class MainMenu : MonoBehaviour
     public string endlessGameSceneName = "EndlessMode";
 
     public GameObject creditsScreen;
+    public GameObject highscoreScreen;
+    public TMP_Text[] scoreTexts; 
+    public PlayerLevelData[] playerLevelDatas;
     Animator animator;
     float creditsTime;
+    public string filePath = "playerStats";
+    string lockedText = "locked";
 
     private void Start()
     {
         creditsScreen.SetActive(false);
         animator = creditsScreen.GetComponent<Animator>();
-        Debug.Log($"animator: {animator.name}");
         RuntimeAnimatorController ac = animator.runtimeAnimatorController;
         foreach (var c in ac.animationClips)
         {
             creditsTime += c.length;
         }
-        Debug.Log($"clips length: {creditsTime}");
+
+        highscoreScreen.SetActive(false);
+        SaveData.Current = SerializationManager.Load(filePath) as SaveData;
+        playerLevelDatas = SaveData.Current.playerLevelDatas.ToArray();
+
+        int i;
+        for(i = 0; i < playerLevelDatas.Length; i++)
+        {
+            scoreTexts[i].text = playerLevelDatas[i].bestScore.ToString();
+        }
+        for(int j = i; j < scoreTexts.Length; j++)
+        {
+            scoreTexts[j].text = lockedText;
+        }
     }
 
     public void Play()
@@ -43,24 +62,22 @@ public class MainMenu : MonoBehaviour
         SceneFader.Instance.FadeTo(settingsSceneName, LoadType.Menu);
     }
 
-    public void Highscores()
+    public void ShowHighscores()
     {
-        //TODO
         Debug.Log("Display highscores.");
+        highscoreScreen.SetActive(true);
+    }
+
+    public void HideHighscores()
+    {
+        //highscoreScreen.SetActive(false);
+        highscoreScreen.GetComponent<Animator>().SetTrigger("FadeOut");
     }
 
     public void Credits()
     {
-        //TODO
-        Debug.Log("Display credits.");
         creditsScreen.SetActive(true);
         StartCoroutine(ShowCredits());
-    }
-
-    public void PlayEndlessMode()
-    {
-        //TODO
-        Debug.Log("Playing endless game.");
     }
 
     public void PlaySound(string s)
@@ -73,5 +90,7 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(creditsTime - 1f);
         creditsScreen.SetActive(false);
     }
+
+
 
 }

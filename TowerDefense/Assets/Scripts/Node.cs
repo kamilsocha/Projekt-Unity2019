@@ -50,7 +50,7 @@ public class Node : MonoBehaviour
 
     void BuildTurret(TurretBlueprint blueprint)
     {
-        if(PlayerStats.Money < blueprint.cost)
+        if(playerStats.Money < blueprint.cost)
         {
             Debug.Log("Not enough money to build that!");
             return;
@@ -71,7 +71,7 @@ public class Node : MonoBehaviour
 
     public void UpgradeTurret()
     {
-        if(PlayerStats.Money < TurretBlueprint.upgradeCost)
+        if(playerStats.Money < TurretBlueprint.upgradeCost)
         {
             Debug.Log("Not enough money to upgrade!");
             return;
@@ -139,6 +139,7 @@ public class Node : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         buildManager = BuildManager.Instance;
-        playerStats = GameObject.Find("GameMaster").GetComponent<PlayerStats>();
+        //playerStats = GameObject.Find("GameMaster").GetComponent<PlayerStats>();
+        playerStats = FindObjectOfType<PlayerStats>();
     }
 }
