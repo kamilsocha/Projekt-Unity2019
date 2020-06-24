@@ -3920,7 +3920,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1.5
+  m_Intensity: 1.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -10585,6 +10585,52 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205063048966004478, guid: cf882e6bca64c634e96b9f7bc5b97115,
+        type: 3}
+      propertyPath: sounds.Array.size
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205063048966004478, guid: cf882e6bca64c634e96b9f7bc5b97115,
+        type: 3}
+      propertyPath: sounds.Array.data[10].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 946eba8fe98e3b648be37cf26ea9a3a5, type: 3}
+    - target: {fileID: 2205063048966004478, guid: cf882e6bca64c634e96b9f7bc5b97115,
+        type: 3}
+      propertyPath: sounds.Array.data[10].volume
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205063048966004478, guid: cf882e6bca64c634e96b9f7bc5b97115,
+        type: 3}
+      propertyPath: sounds.Array.data[29].name
+      value: Heart1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205063048966004478, guid: cf882e6bca64c634e96b9f7bc5b97115,
+        type: 3}
+      propertyPath: sounds.Array.data[29].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5f980c49ec7dfae4baa716ec7ac19b7f, type: 3}
+    - target: {fileID: 2205063048966004478, guid: cf882e6bca64c634e96b9f7bc5b97115,
+        type: 3}
+      propertyPath: sounds.Array.data[29].volume
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205063048966004478, guid: cf882e6bca64c634e96b9f7bc5b97115,
+        type: 3}
+      propertyPath: sounds.Array.data[29].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205063048966004478, guid: cf882e6bca64c634e96b9f7bc5b97115,
+        type: 3}
+      propertyPath: sounds.Array.data[29].output
+      value: 
+      objectReference: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293,
+        type: 2}
+    - target: {fileID: 2205063048966004478, guid: cf882e6bca64c634e96b9f7bc5b97115,
+        type: 3}
+      propertyPath: sounds.Array.data[29].loop
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2385419153338662468, guid: cf882e6bca64c634e96b9f7bc5b97115,
         type: 3}

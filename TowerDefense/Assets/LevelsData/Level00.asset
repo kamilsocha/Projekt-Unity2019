@@ -17,7 +17,7 @@ MonoBehaviour:
   - enemyWaves:
     - enemyPrefab: {fileID: 3712512803101729328, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
         type: 3}
-      count: 1
+      count: 3
     bossPrefab: {fileID: 3712512803101729328, guid: db277239970a3ac44aeea84ba36ff397,
       type: 3}
     rate: 1

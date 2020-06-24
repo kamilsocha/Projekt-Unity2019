@@ -58,8 +58,8 @@ public class ProjectileMove : MonoBehaviour, IPooledObject
                 }
             }
         }
-
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 
 }

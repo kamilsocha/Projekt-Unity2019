@@ -16,7 +16,7 @@ public class WaveSpawner : MonoBehaviour
     public float timeBetweenWaves = 5f;
     float countdown = 2f;
     public TMP_Text waveCountdownText;
-
+    public string[] clockSounds;
     int waveIndex = 0;
 
 
@@ -25,7 +25,11 @@ public class WaveSpawner : MonoBehaviour
         Enemy.OnEnemyDeath += HandleEnemyDeath;
         EnemiesAlive = 0;
         playerStats = GetComponent<PlayerStats>();
+
+        
     }
+
+
 
     public void StartGame()
     {
