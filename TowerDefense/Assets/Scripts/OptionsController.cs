@@ -35,7 +35,6 @@ public class OptionsController : MonoBehaviour
             string resolutionString = resolutions[i].width + "x" + resolutions[i].height;
             resolutionsList.Add(resolutionString);
 
-            //if(resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
             if(resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
             {
                 currentResolutionIndex = i;
@@ -46,6 +45,9 @@ public class OptionsController : MonoBehaviour
 
         optionsCanvas.SetActive(true);
         controlsCanvas.SetActive(false);
+
+        var key = PlayerPrefs.GetString("cameraMovementEnableKey", "m");
+        cameraMovementEnableKeyInput.text = key;
 
         cameraMovementEnableKeyInput.onValueChanged.AddListener(delegate
         {

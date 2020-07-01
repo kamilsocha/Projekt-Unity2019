@@ -4,10 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class Node : MonoBehaviour
 {
-    Color startColor;
+    public Color startColor;
     public Color hoverColor;
     public Color notEnoughMoneyColor;
-    Renderer rend;
+    MeshRenderer rend;
     BuildManager buildManager;
     public Vector3 positionOffset;
     [HideInInspector]
@@ -22,7 +22,8 @@ public class Node : MonoBehaviour
 
     private void Start()
     {
-        rend = GetComponent<Renderer>();
+        rend = GetComponent<MeshRenderer>();
+        
         startColor = rend.material.color;
 
         buildManager = BuildManager.Instance;

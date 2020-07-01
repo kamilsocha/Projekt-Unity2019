@@ -15,6 +15,14 @@ public class ProjectileMove : MonoBehaviour, IPooledObject
     public void OnObjectSpawn()
     {
         speed = UnityEngine.Random.Range(speedBoundLow, speedBoundHigh);
+        if (trails.Count > 0)
+        {
+            for (int i = 0; i < trails.Count; i++)
+            {
+                trails[i].transform.parent = gameObject.transform;
+                trails[i].transform.position = transform.position;
+            }
+        }
     }
 
     void Start()
@@ -32,6 +40,8 @@ public class ProjectileMove : MonoBehaviour, IPooledObject
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("collision");
+
         speed = 0;
 
         ContactPoint contact = collision.contacts[0];
@@ -42,7 +52,7 @@ public class ProjectileMove : MonoBehaviour, IPooledObject
         {
             var impactGO = Instantiate(impactPrefab, pos, rot);
 
-            Destroy(impactGO, 300);
+            Destroy(impactGO, 5);
         }
 
         if(trails.Count > 0)
@@ -54,7 +64,7 @@ public class ProjectileMove : MonoBehaviour, IPooledObject
                 if(particleSystem != null)
                 {
                     particleSystem.Stop();
-                    Destroy(particleSystem.gameObject, particleSystem.main.duration + particleSystem.main.startLifetime.constantMax);
+                    //Destroy(particleSystem.gameObject, particleSystem.main.duration + particleSystem.main.startLifetime.constantMax);
                 }
             }
         }

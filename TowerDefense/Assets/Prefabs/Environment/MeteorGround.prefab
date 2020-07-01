@@ -76,7 +76,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 6449275262246855314}
-  timeBetweenSpawns: 1000
+  poolName: Meteors
+  maxNumberOfSpawns: 10
+  timeBetweenSpawns: 300
+  spawnDelay: 5
 --- !u!65 &6449275262380704841
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -88,5 +91,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 90, y: 0.1, z: 50}
+  m_Size: {x: 60, y: 0.1, z: 50}
   m_Center: {x: 0, y: 0, z: 0}

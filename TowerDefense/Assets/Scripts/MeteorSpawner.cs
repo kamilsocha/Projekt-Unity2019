@@ -10,7 +10,7 @@ public class MeteorSpawner : MonoBehaviour
 
     bool doSpawn;
     int spawns = 0;
-    int maxNumberOfSpawns = 10;
+    public int maxNumberOfSpawns = 10;
     public float timeBetweenSpawns = 60;
     public float spawnDelay = 10;
     float countdown;
@@ -20,6 +20,8 @@ public class MeteorSpawner : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(DelaySpawning());
+
         endPosition = transform;       
 
         min_x = transform.position.x - GetComponent<Collider>().bounds.size.x / 2;
@@ -30,8 +32,6 @@ public class MeteorSpawner : MonoBehaviour
 
     private void Update()
     {
-        StartCoroutine(DelaySpawning());
-
         if (!doSpawn)
         {
             return;
@@ -49,9 +49,10 @@ public class MeteorSpawner : MonoBehaviour
 
     Vector3 GenerateSpawnPosition()
     {
-        var startX = Random.Range(min_x, max_x);
-        var startZ = Random.Range(min_z, max_z);
-        return new Vector3(startX, spawnPosition.position.y, startZ);
+        //var startX = Random.Range(min_x, max_x);
+        //var startZ = Random.Range(min_z, max_z);
+        //return new Vector3(startX, spawnPosition.position.y, startZ);
+        return spawnPosition.position;
     }
 
     Vector3 GenerateEndPosition()
