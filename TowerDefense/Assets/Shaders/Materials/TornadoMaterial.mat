@@ -29,7 +29,7 @@ Material:
     - Vector1_BDA1C2C6: 0.2
     - Vector1_C4A5809A: 20
     m_Colors:
-    - Color_4F3A3A18: {r: 0, g: 28.155945, b: 29.305166, a: 1}
+    - Color_4F3A3A18: {r: 8.257762, g: 18.436897, b: 18.824146, a: 1}
     - Vector2_9180DFC9: {r: 0.5, g: 0.5, b: 0, a: 0}
     - Vector2_D36E4A70: {r: 0.5, g: 0.6, b: 0, a: 0}
     - Vector2_FB159432: {r: 0, g: -0.6, b: 0, a: 0}

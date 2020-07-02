@@ -11,7 +11,7 @@ public class Tornado : MonoBehaviour
     
     public Transform pullingCenter;
     public AnimationCurve pullingCenterCurve;
-    public float pullForce;
+    float pullForce;
     public float pullForceMult = 1000;
     public AnimationCurve pullForceCurve;
     public float refreshRate;

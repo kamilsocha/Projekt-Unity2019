@@ -323,7 +323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b2c3065a842c143b6af52c6ba32b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 0.010679938, g: 0.754717, b: 0.15772286, a: 0.53333336}
+  startColor: {r: 0, g: 0, b: 0, a: 0}
+  hoverColor: {r: 0.010679938, g: 0.754717, b: 0.15772286, a: 1}
   notEnoughMoneyColor: {r: 0, g: 0, b: 0, a: 0.45490196}
   positionOffset: {x: 2, y: 1, z: -2}
   isUpgraded: 0

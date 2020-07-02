@@ -23,8 +23,7 @@ public class Node : MonoBehaviour
     private void Start()
     {
         rend = GetComponent<MeshRenderer>();
-        
-        startColor = rend.material.color;
+        startColor = rend.material.GetColor("_BaseColor");
 
         buildManager = BuildManager.Instance;
         playerStats = GameObject.Find("GameMaster").GetComponent<PlayerStats>();
@@ -140,7 +139,6 @@ public class Node : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         buildManager = BuildManager.Instance;
-        //playerStats = GameObject.Find("GameMaster").GetComponent<PlayerStats>();
         playerStats = FindObjectOfType<PlayerStats>();
     }
 }

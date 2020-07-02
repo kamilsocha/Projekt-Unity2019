@@ -5,8 +5,14 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject ui;
     public GameObject controlsUI;
+    Animator animator;
 
     public string menuSceneName = "MainMenu";
+
+    private void Awake()
+    {
+        animator = ui.GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -45,6 +51,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Controls()
     {
+        if (controlsUI.activeSelf)
+            animator.SetTrigger("ControlsIn");
         controlsUI.SetActive(!controlsUI.activeSelf);
     }
 }
