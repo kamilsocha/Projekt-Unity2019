@@ -4,17 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class Node : MonoBehaviour
 {
-    public Color startColor;
+    Color startColor;
     public Color hoverColor;
     public Color notEnoughMoneyColor;
     MeshRenderer rend;
     BuildManager buildManager;
     public Vector3 positionOffset;
-    [HideInInspector]
     public bool isUpgraded = false;
-    [HideInInspector]
     public GameObject Turret { get; set; }
-    [HideInInspector]
     public TurretBlueprint TurretBlueprint { get; set; }
 
     public PlayerStats playerStats;

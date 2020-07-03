@@ -3,6 +3,9 @@ using System.Globalization;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Spawns waves of enemies, tracks numer of living enemies, handles their deaths.
+/// </summary>
 public class WaveSpawner : MonoBehaviour
 {
     public int EnemiesAlive = 0;
@@ -25,11 +28,7 @@ public class WaveSpawner : MonoBehaviour
         Enemy.OnEnemyDeath += HandleEnemyDeath;
         EnemiesAlive = 0;
         playerStats = GetComponent<PlayerStats>();
-
-        
     }
-
-
 
     public void StartGame()
     {
@@ -99,7 +98,7 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy(GameObject enemyPrefab)
     {
-        var obj = Instantiate(enemyPrefab, spawnPoint.position + positionOffset, spawnPoint.rotation);
+        var obj = Instantiate(enemyPrefab, spawnPoint.position + positionOffset, Quaternion.identity);
         obj.GetComponent<EnemyMovement>().OnEndPath += ReduceEnemies;
     }
 

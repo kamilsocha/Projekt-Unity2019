@@ -112,6 +112,7 @@ public class StrategyCamera : MonoBehaviour
 
         newPosition.x = Mathf.Clamp(newPosition.x, minBorders.x, maxBorders.x);
         newZoom.y = Mathf.Clamp(newZoom.y, minBorders.y, maxBorders.y);
+        newZoom.z = Mathf.Clamp(newZoom.z, minBorders.z, maxBorders.z);
         newPosition.z = Mathf.Clamp(newPosition.z, minBorders.z, maxBorders.z);
 
 
