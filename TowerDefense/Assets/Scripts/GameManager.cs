@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Scene to load after the game is won.")]
     public string gameWonSceneLoad = "MainMenu";
+    public delegate void LevelWonEvent();
+    public event LevelWonEvent OnLevelWon;
 
     [Header("For testing give here name of the level!")]
     public string currentLevel;
@@ -60,7 +62,7 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("Level data not found. You may have not added the level to GameMaster or made a typo :) From Button");
             return;
         }
-        waveSpawner.SetData(currentLevelData.waves, currentLevelData.timeBetweenWaves);
+        waveSpawner.SetData(currentLevelData.waves, currentLevelData.timeBetweenWaves, currentLevelData.bossPrefab);
         playerStats.SetData(currentLevelData.startMoney, currentLevelData.startLives);
     }
 
@@ -88,6 +90,8 @@ public class GameManager : MonoBehaviour
 
     public void WinLevel()
     {
+        OnLevelWon?.Invoke();
+
         // TODO
         // calculate overall score
 
@@ -112,13 +116,7 @@ public class GameManager : MonoBehaviour
         levelNumber++;
         currentLevel = levels[levelNumber].name;
         completeLevelUI.GetComponent<CompleteLevel>().SetNextLevel(currentLevel, levelNumber + 1);
-        completeLevelUI.SetActive(true);
-
-        Turret[] turrets = FindObjectsOfType<Turret>();
-        foreach (var turret in turrets)
-        {
-            Destroy(turret.gameObject);
-        }
+        completeLevelUI.SetActive(true);        
     }
 
     private void OnEnable()
@@ -151,6 +149,11 @@ public class GameManager : MonoBehaviour
 
     void HandleContinueToNextLevel()
     {
+        Turret[] turrets = FindObjectsOfType<Turret>();
+        foreach (var turret in turrets)
+        {
+            Destroy(turret.gameObject);
+        }
         Destroy(effectGO);
     }
 

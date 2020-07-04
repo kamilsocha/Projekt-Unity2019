@@ -57,7 +57,6 @@ public class Boss : MonoBehaviour
         var pos = GenerateSpawnPosition();
         var spawned = Instantiate(enemyPrefabToSpawn, pos, transform.rotation);
         spawned.GetComponent<EnemyMovement>().SetWaypoint(enemyMovement.GetCurrentWaypoint());
-        //children.Add(spawned);
 
         spawned.GetComponent<EnemyMovement>().OnEndPath += waveSpawner.ReduceEnemies;
 

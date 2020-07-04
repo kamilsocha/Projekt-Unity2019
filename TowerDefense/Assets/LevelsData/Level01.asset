@@ -15,21 +15,15 @@ MonoBehaviour:
   name: Level01
   waves:
   - enemyWaves:
-    - enemyPrefab: {fileID: 5384380379752912404, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
+    - enemyPrefab: {fileID: 3712512803101729328, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
+        type: 3}
+      count: 4
+    - enemyPrefab: {fileID: 3712512803101729328, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
         type: 3}
       count: 1
-    - enemyPrefab: {fileID: 6582347219084660416, guid: ccf07670b2a36b544adcd8b7962663c1,
-        type: 3}
-      count: 2
     rate: 0.25
-  - enemyWaves: []
-    rate: 0.5
-  - enemyWaves: []
-    rate: 0.5
-  - enemyWaves: []
-    rate: 0.75
-  - enemyWaves: []
-    rate: 1
+  bossPrefab: {fileID: 3712512803101729328, guid: db277239970a3ac44aeea84ba36ff397,
+    type: 3}
   timeBetweenWaves: 5
   startMoney: 200
   startLives: 10

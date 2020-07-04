@@ -5,16 +5,12 @@ using UnityEngine;
 public class Laser : ShootingTurret
 {
     public GameObject laserPrefab;
-    //public GameObject spawnedLaser;
     LineRenderer lineRenderer;
     float fireCountdown = 0f;
 
     protected override void Start()
     {
         base.Start();
-        //spawnedLaser = Instantiate(laserPrefab, firePoint.position, Quaternion.identity);
-        //lineRenderer = spawnedLaser.GetComponentInChildren<LineRenderer>();
-        //spawnedLaser.SetActive(false);
         laserPrefab.SetActive(false);
         lineRenderer = laserPrefab.GetComponentInChildren<LineRenderer>();
     }
@@ -40,7 +36,6 @@ public class Laser : ShootingTurret
         RaycastHit[] hits;
 
         hits = Physics.RaycastAll(firePoint.position, firePoint.forward, range);
-        Debug.Log("hits: " + hits.Length);
         if (hits.Length > 0)
         {
             RaycastHit farestTarget = hits[0];
@@ -67,19 +62,18 @@ public class Laser : ShootingTurret
 
     IEnumerator DrawLaser(GameObject enemyGO)
     {
-        
-
         laserPrefab.SetActive(true);
-
-        float duration = (1f / fireRate) / 2; 
         float normalizedTime = 0;
 
         while (normalizedTime <= 1f)
         {
-            normalizedTime += Time.deltaTime / duration;
+            normalizedTime += Time.deltaTime;
             laserPrefab.transform.position = firePoint.position;
             laserPrefab.transform.rotation = firePoint.rotation;
-            lineRenderer.SetPosition(1, laserPrefab.transform.InverseTransformPoint(enemyGO.transform.position));
+            if (enemyGO != null)
+                lineRenderer.SetPosition(1, laserPrefab.transform.InverseTransformPoint(enemyGO.transform.position));
+            else
+                break;
             yield return 0;
         }
 

@@ -29,6 +29,10 @@ public class StrategyCamera : MonoBehaviour
     Camera _camera;
     AudioListener audioListener;
 
+    Vector3 initRigPosition;
+    Quaternion initRotation;
+    Vector3 initCameraPosition;
+
     void Start()
     {
         isActive = true;
@@ -40,6 +44,11 @@ public class StrategyCamera : MonoBehaviour
         _camera = GetComponentInChildren<Camera>();
         audioListener = GetComponentInChildren<AudioListener>();
         FindObjectOfType<NodeUI>().OnCamerasSwitch += HandleCamerasSwitch;
+        FindObjectOfType<GameManager>().OnLevelWon += HandleLevelWon;
+
+        initRigPosition = transform.position;
+        initRotation = transform.rotation;
+        initCameraPosition = _camera.transform.localPosition;
     }
 
     void Update()
@@ -50,12 +59,7 @@ public class StrategyCamera : MonoBehaviour
 
     void HandleMovementInput()
     {
-        if (GameManager.GameIsOver)
-        {
-            //this.enabled = false;
-            doMovement = false;
-            return;
-        }
+        
         if (Input.GetKeyDown(cameraMovementEnableKey)) doMovement = !doMovement;
 
         if (!doMovement) return;
@@ -136,4 +140,13 @@ public class StrategyCamera : MonoBehaviour
             audioListener.enabled = true;
         }
     }
+
+    void HandleLevelWon()
+    {
+        newPosition = initRigPosition;
+        newRotation = initRotation;
+        newZoom = initCameraPosition;
+        isActive = true;
+    }
+
 }

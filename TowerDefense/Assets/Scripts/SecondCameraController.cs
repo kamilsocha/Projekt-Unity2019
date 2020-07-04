@@ -36,6 +36,7 @@ public class SecondCameraController : MonoBehaviour
         _camera.enabled = false;
         audioListener.enabled = false;
         FindObjectOfType<NodeUI>().OnCamerasSwitch += HandleCameraSwitch;
+        FindObjectOfType<GameManager>().OnLevelWon += HandleLevelWon;
     }
 
     private void Update()
@@ -106,5 +107,11 @@ public class SecondCameraController : MonoBehaviour
             _camera.enabled = true;
             audioListener.enabled = true;
         }
+    }
+
+    void HandleLevelWon()
+    {
+        if(isActive)
+            HandleCameraSwitch();
     }
 }

@@ -2,6 +2,7 @@
 using System.Globalization;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 /// <summary>
 /// Spawns waves of enemies, tracks numer of living enemies, handles their deaths.
@@ -10,6 +11,7 @@ public class WaveSpawner : MonoBehaviour
 {
     public int EnemiesAlive = 0;
     public Wave[] waves;
+    public GameObject bossPrefab;
 
     public GameManager gameManager;
     PlayerStats playerStats;
@@ -22,12 +24,27 @@ public class WaveSpawner : MonoBehaviour
     public string[] clockSounds;
     int waveIndex = 0;
 
+    bool wavesSpawned;
+    public bool bossSpawned;
+    public GameObject waveInfo;
+    TMP_Text waveInfoText;
+    Animator waveInfoAnimator;
+    public string nextWaveText = "next wave";
+    public string bossSpawnText = "boss";
+    public string clipName = "WaveInfo";
+    float lengthOfClip;
 
     void Start()
     {
         Enemy.OnEnemyDeath += HandleEnemyDeath;
         EnemiesAlive = 0;
         playerStats = GetComponent<PlayerStats>();
+
+        bossSpawned = false;
+        wavesSpawned = false;
+        waveInfoText = waveInfo.GetComponentInChildren<TMP_Text>();
+        waveInfoAnimator = waveInfo.GetComponent<Animator>();
+        lengthOfClip = waveInfoAnimator.runtimeAnimatorController.animationClips.First(x => x.name == clipName).length;
     }
 
     public void StartGame()
@@ -38,10 +55,11 @@ public class WaveSpawner : MonoBehaviour
         this.enabled = true;
     }
 
-    public void SetData(Wave[] _waves, float _timeBetweenWaves)
+    public void SetData(Wave[] _waves, float _timeBetweenWaves, GameObject _bossPrefab)
     {
         waves = _waves;
         timeBetweenWaves = _timeBetweenWaves;
+        bossPrefab = _bossPrefab;
     }
 
     void Update()
@@ -52,32 +70,53 @@ public class WaveSpawner : MonoBehaviour
 
         if(waveIndex == waves.Length)
         {
-            gameManager.WinLevel();
-            this.enabled = false;
-        }
-
-        if(countdown <= 0f)
-        {
-            StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
+            if(!bossSpawned)
+            {
+                waveInfoText.text = bossSpawnText;
+                waveInfo.SetActive(true);
+                waveInfoAnimator.SetTrigger("Fade");
+                StartCoroutine(Wait(lengthOfClip));
+                bossSpawned = true;
+                StartCoroutine(SpawnBoss());
+            }
+            else
+            {
+                gameManager.WinLevel();
+                this.enabled = false;
+            }
             return;
         }
 
-        countdown -= Time.deltaTime;
-        countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+        if(!wavesSpawned)
+        {
+            if (countdown <= 0f)
+            {
+                waveInfoText.text = nextWaveText;
+                waveInfo.SetActive(true);
+                waveInfoAnimator.SetTrigger("Fade");
+                StartCoroutine(Wait(lengthOfClip));
+                StartCoroutine(SpawnWave());
+                countdown = timeBetweenWaves;
+                return;
+            }
 
-        waveCountdownText.text = string.Format(CultureInfo.InvariantCulture,"{0:00.00}", countdown);
+            countdown -= Time.deltaTime;
+            countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+
+            waveCountdownText.text = string.Format(CultureInfo.InvariantCulture, "{0:00.00}", countdown);
+        }
+        
     }
 
     IEnumerator SpawnWave()
     {
         playerStats.Rounds++;
         Wave wave = waves[waveIndex];
-        EnemiesAlive = wave.Count + 1;
+        EnemiesAlive = wave.Count;
 
-        Debug.Log($"eniemies alive: {EnemiesAlive}");
+        if (waveIndex + 1 == waves.Length) wavesSpawned = true;
 
-        foreach(var enemyWave in wave.enemyWaves)
+        foreach (var enemyWave in wave.enemyWaves)
         {
             for(int i = 0; i < enemyWave.count; i++)
             {
@@ -86,14 +125,29 @@ public class WaveSpawner : MonoBehaviour
             }
         }
 
-        while(EnemiesAlive > 1)
+        waveIndex++;
+    }
+
+    IEnumerator SpawnBoss()
+    {
+        EnemiesAlive++;
+        countdown = timeBetweenWaves;
+
+        while (countdown > 0)
         {
-            yield return new WaitForSeconds(timeBetweenWaves);
+            countdown -= Time.deltaTime;
+            countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+            waveCountdownText.text = string.Format(CultureInfo.InvariantCulture, "{0:00.00}", countdown);
+            yield return 0;
         }
 
-        SpawnEnemy(wave.bossPrefab);
+        SpawnEnemy(bossPrefab);
+    }
 
-        waveIndex++;
+    IEnumerator Wait(float time)
+    {
+        yield return new WaitForSeconds(time);
+        waveInfo.SetActive(false);
     }
 
     void SpawnEnemy(GameObject enemyPrefab)

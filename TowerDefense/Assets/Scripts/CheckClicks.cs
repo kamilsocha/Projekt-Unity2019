@@ -28,7 +28,6 @@ public class CheckClicks : MonoBehaviour
             statsUI = GameObject.Find("StatsUI").GetComponent<StatsUI>();
         }
         statsUI.Hide();
-        
     }
 
 }

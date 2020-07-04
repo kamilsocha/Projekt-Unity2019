@@ -1,10 +1,10 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class RoundsSurvived : MonoBehaviour
 {
-    public Text roundsText;
+    public TMP_Text roundsText;
     PlayerStats playerStats;
 
     private void Start()

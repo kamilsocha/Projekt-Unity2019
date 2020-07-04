@@ -1,6 +1,8 @@
-﻿using TMPro;
+﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-
+//using UnityEngine.UI;
+using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
@@ -21,6 +23,33 @@ public class Shop : MonoBehaviour
 
     BuildManager buildManager;
 
+    public GameObject cannonTurretItem;
+    Button cannonButton;
+    Image cannonImage;
+    public GameObject laserBeamerTurretItem;
+    Button laserBeamerButton;
+    Image laserBeamerImage;
+    public GameObject laserTurretItem;
+    Button laserButton;
+    Image laserImage;
+    public GameObject antibioticTurretItem;
+    Button antibioticButton;
+    Image antibioticImage;
+    public GameObject medicineTurretItem;
+    Button medicineButton;
+    Image medicineImage;
+
+    Dictionary<string, Sprite> itemsImages;
+    public Sprite cannonLockedImage;
+    public Sprite laserBeamerLockedImage;
+    public Sprite laserLockedImage; 
+    
+    public int scoreToUnlockCannon;
+    public int scoreToUnlockLaserBeamer;
+    public int scoreToUnlockLaser;
+    public int scoreToUnlockAntibiotic;
+    public int scoreToUnlockMedicine;
+
     private void Start()
     {
         buildManager = BuildManager.Instance;
@@ -30,6 +59,69 @@ public class Shop : MonoBehaviour
             toggleButtonText.text = activeString;
         else
             toggleButtonText.text = inactiveString;
+        FindObjectOfType<PlayerStats>().OnPlayerScoreChanged += HandlePlayerScoreChange;
+
+        itemsImages = new Dictionary<string, Sprite>();
+
+        itemsImages["cannon"] = cannonTurretItem.GetComponent<Image>().sprite;
+        itemsImages["laserBeamer"] = laserBeamerTurretItem.GetComponent<Image>().sprite;
+        itemsImages["laser"] = laserTurretItem.GetComponent<Image>().sprite;
+        itemsImages["antibiotic"] = antibioticTurretItem.GetComponent<Image>().sprite;
+        itemsImages["medicine"] = medicineTurretItem.GetComponent<Image>().sprite;
+
+        cannonImage = cannonTurretItem.GetComponent<Image>();
+        cannonButton = cannonTurretItem.GetComponent<Button>();
+        cannonButton.interactable = false;
+        cannonImage.sprite = cannonLockedImage;
+
+        laserBeamerImage = laserBeamerTurretItem.GetComponent<Image>();
+        laserBeamerButton = laserBeamerTurretItem.GetComponent<Button>();
+        laserBeamerButton.interactable = false;
+        laserBeamerImage.sprite = laserBeamerLockedImage;
+
+        laserImage = laserTurretItem.GetComponent<Image>();
+        laserButton = laserTurretItem.GetComponent<Button>();
+        laserButton.interactable = false;
+        laserImage.sprite = laserLockedImage;
+
+    }
+
+    void HandlePlayerScoreChange(int score)
+    {
+        if(score >= scoreToUnlockMedicine)
+        {
+            //TODO
+        }
+        else if(score >= scoreToUnlockAntibiotic)
+        {
+            //TODO
+        }
+        else if(score >= scoreToUnlockLaser)
+        {
+            laserImage.sprite = itemsImages["laser"];
+            laserButton.interactable = true;
+        }
+        else if(score >= scoreToUnlockLaserBeamer)
+        {
+            laserBeamerImage.sprite = itemsImages["laserBeamer"];
+            laserBeamerButton.interactable = true;
+        }
+        else if(score >= scoreToUnlockCannon)
+        {
+            cannonImage.sprite = itemsImages["cannon"];
+            cannonButton.interactable = true;
+        }
+        else if(score == 0)
+        {
+            cannonImage.sprite = cannonLockedImage;
+            laserBeamerImage.sprite = laserBeamerLockedImage;
+            laserImage.sprite = laserLockedImage;
+
+            cannonButton.interactable = false;
+            laserButton.interactable = false;
+            laserBeamerButton.interactable = false;
+            //TODO REST
+        }
     }
 
     public void SelectCrossbowTurret()
