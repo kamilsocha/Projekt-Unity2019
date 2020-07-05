@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -94,6 +95,10 @@ public class GameManager : MonoBehaviour
 
         // TODO
         // calculate overall score
+        // transform money left into additional score
+        // sum money spent on upgrades?
+
+        StartCoroutine(TransferMoney());
 
         var currentLevelStats = SaveData.Current.GetPlayerLevelData(currentLevelData.name);
         if(playerStats.Score > currentLevelStats.bestScore)
@@ -117,6 +122,16 @@ public class GameManager : MonoBehaviour
         currentLevel = levels[levelNumber].name;
         completeLevelUI.GetComponent<CompleteLevel>().SetNextLevel(currentLevel, levelNumber + 1);
         completeLevelUI.SetActive(true);        
+    }
+
+    IEnumerator TransferMoney()
+    {
+        while (playerStats.Money > 0)
+        {
+            playerStats.ReduceMoney(1);
+            playerStats.IncreaseScore(1);
+            yield return new WaitForSeconds(0.02f);
+        }
     }
 
     private void OnEnable()

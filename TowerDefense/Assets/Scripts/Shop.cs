@@ -8,7 +8,10 @@ public class Shop : MonoBehaviour
 {
     public StatsUI statsUI;
     public GameObject shopUI;
-    public TMP_Text toggleButtonText;
+    public Button toggleButton;
+    TMP_Text toggleButtonText;
+    [SerializeField]
+    Vector3 buttonOffset;
     string activeString = "close";
     string inactiveString = "open";
     string clickAudioName = "ButtonClick";
@@ -21,7 +24,7 @@ public class Shop : MonoBehaviour
     //public TurretBlueprint antibioticTurret;
     //public TurretBlueprint medicineTurret;
 
-    BuildManager buildManager;
+    public BuildManager buildManager;
 
     public GameObject cannonTurretItem;
     Button cannonButton;
@@ -52,13 +55,22 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
-        buildManager = BuildManager.Instance;
         shopUI.SetActive(false);
+        
+        toggleButtonText = toggleButton.GetComponentInChildren<TMP_Text>();
         var shopUIState = shopUI.activeSelf;
         if (shopUIState)
+        {
             toggleButtonText.text = activeString;
+            toggleButton.transform.position += buttonOffset;
+        }
         else
+        {
             toggleButtonText.text = inactiveString;
+            toggleButton.transform.position -= buttonOffset;
+        }
+            
+
         FindObjectOfType<PlayerStats>().OnPlayerScoreChanged += HandlePlayerScoreChange;
 
         itemsImages = new Dictionary<string, Sprite>();
@@ -84,6 +96,7 @@ public class Shop : MonoBehaviour
         laserButton.interactable = false;
         laserImage.sprite = laserLockedImage;
 
+        buildManager = BuildManager.Instance;
     }
 
     void HandlePlayerScoreChange(int score)
@@ -126,6 +139,11 @@ public class Shop : MonoBehaviour
 
     public void SelectCrossbowTurret()
     {
+        if(buildManager == null)
+        {
+            Debug.Log("null");
+            buildManager = BuildManager.Instance;
+        }
         buildManager.SelectTurretToBuild(crossbowTurret);
     }
     public void MouseOverCrossbowTurret()
@@ -166,7 +184,17 @@ public class Shop : MonoBehaviour
 
     }
 
+    public void MouseOverAntibioticTurret()
+    {
+
+    }
+
     public void SelectMedicineTurret()
+    {
+
+    }
+
+    public void MouseOverMedicineTurret()
     {
 
     }
@@ -179,10 +207,12 @@ public class Shop : MonoBehaviour
         {
             shopUI.SetActive(false);
             toggleButtonText.text = inactiveString;
+            toggleButton.transform.position += buttonOffset;
         } else
         {
             shopUI.SetActive(true);
             toggleButtonText.text = activeString;
+            toggleButton.transform.position -= buttonOffset;
         }
     }
 

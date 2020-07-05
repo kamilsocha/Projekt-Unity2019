@@ -139,8 +139,8 @@ MonoBehaviour:
     source: {fileID: 0}
     output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
   - name: Death11
-    clip: {fileID: 8300000, guid: 46b4a773480f3d14eba58f57c5b550c4, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: 946eba8fe98e3b648be37cf26ea9a3a5, type: 3}
+    volume: 0.6
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -203,7 +203,7 @@ MonoBehaviour:
     output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
   - name: Water
     clip: {fileID: 8300000, guid: 50d5ef6d27a016f4eb16bbb2aa3bef9d, type: 3}
-    volume: 0.5
+    volume: 0.2
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -266,8 +266,15 @@ MonoBehaviour:
     output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
   - name: Coin
     clip: {fileID: 8300000, guid: 5dc158e2acc8616468c9e81128609cf9, type: 3}
-    volume: 0.6
+    volume: 0.2
     pitch: 1
     loop: 0
+    source: {fileID: 0}
+    output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}
+  - name: Heart1
+    clip: {fileID: 8300000, guid: 5f980c49ec7dfae4baa716ec7ac19b7f, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
     output: {fileID: 24300002, guid: ddbe4fdf45b409b41b0a1037a645c293, type: 2}

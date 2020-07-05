@@ -14,6 +14,8 @@ public class PlayerStats : MonoBehaviour
     // Score system
     public int Score { get; set; }
 
+    public int UpgradesMoney { get; set; }
+
     public delegate void PlayerMoneyChangedEvent(int money);
     public event PlayerMoneyChangedEvent OnPlayerMoneyChanged;
     public delegate void PlayerLivesChangedEvent(int lives);
@@ -68,5 +70,11 @@ public class PlayerStats : MonoBehaviour
     {
         Score += scoreToAdd;
         OnPlayerScoreChanged?.Invoke(Score);
+    }
+
+    public void UpgradeTurret(int money)
+    {
+        UpgradesMoney += money;
+        RestoreMoney(money);
     }
 }
