@@ -14,7 +14,7 @@ public class PlayerStats : MonoBehaviour
     // Score system
     public int Score { get; set; }
 
-    public int UpgradesMoney { get; set; }
+    public int UpgradesMoney;// { get; set; }
 
     public delegate void PlayerMoneyChangedEvent(int money);
     public event PlayerMoneyChangedEvent OnPlayerMoneyChanged;
@@ -39,8 +39,6 @@ public class PlayerStats : MonoBehaviour
         Money = startMoney;
         Lives = startLives;
         Rounds = 0;
-
-        //?
         Score = 0;
 
         OnPlayerLivesChanged?.Invoke(Lives);

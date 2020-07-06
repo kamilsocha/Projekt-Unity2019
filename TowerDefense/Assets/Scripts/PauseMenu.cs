@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject ui;
     public GameObject controlsUI;
+    public TMP_Text cameraMovementEnableKey;
     Animator animator;
 
     public string menuSceneName = "MainMenu";
@@ -12,6 +14,7 @@ public class PauseMenu : MonoBehaviour
     private void Awake()
     {
         animator = ui.GetComponent<Animator>();
+        cameraMovementEnableKey.text = PlayerPrefs.GetString("cameraMovementEnableKey", "m");
     }
 
     void Update()

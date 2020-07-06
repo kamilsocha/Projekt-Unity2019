@@ -117,7 +117,6 @@ public class GameManager : MonoBehaviour
 
         effectGO = Instantiate(winLevelEffectPrefab, transform.position, Quaternion.identity);
 
-        Debug.Log("Next Level");
         levelNumber++;
         currentLevel = levels[levelNumber].name;
         completeLevelUI.GetComponent<CompleteLevel>().SetNextLevel(currentLevel, levelNumber + 1);

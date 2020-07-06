@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-//using UnityEngine.UI;
 using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
@@ -10,11 +9,11 @@ public class Shop : MonoBehaviour
     public GameObject shopUI;
     public Button toggleButton;
     TMP_Text toggleButtonText;
-    [SerializeField]
-    Vector3 buttonOffset;
+    public Vector3 buttonOffset;
     string activeString = "close";
     string inactiveString = "open";
     string clickAudioName = "ButtonClick";
+    Animator animator;
 
     public TurretBlueprint crossbowTurret;
     public TurretBlueprint cannonTurret;
@@ -56,18 +55,17 @@ public class Shop : MonoBehaviour
     private void Start()
     {
         shopUI.SetActive(false);
+        animator = GetComponent<Animator>();
         
         toggleButtonText = toggleButton.GetComponentInChildren<TMP_Text>();
         var shopUIState = shopUI.activeSelf;
         if (shopUIState)
         {
             toggleButtonText.text = activeString;
-            toggleButton.transform.position += buttonOffset;
         }
         else
         {
             toggleButtonText.text = inactiveString;
-            toggleButton.transform.position -= buttonOffset;
         }
             
 
@@ -208,11 +206,14 @@ public class Shop : MonoBehaviour
             shopUI.SetActive(false);
             toggleButtonText.text = inactiveString;
             toggleButton.transform.position += buttonOffset;
+            animator.SetTrigger("Out");
+
         } else
         {
             shopUI.SetActive(true);
             toggleButtonText.text = activeString;
             toggleButton.transform.position -= buttonOffset;
+            animator.SetTrigger("In");
         }
     }
 
