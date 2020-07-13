@@ -2,6 +2,9 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Contains all sounds and is  
+/// </summary>
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;

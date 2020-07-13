@@ -151,6 +151,8 @@ MonoBehaviour:
   scoreWorth: 400
   deathEffect: {fileID: 1526814387584026795, guid: 9ad51332c669bbe44a165db2ec9c93b6,
     type: 3}
+  bloodPrefab: {fileID: 2034130680917781125, guid: c53909b1a2a36114f93422ad42d364c1,
+    type: 3}
   healthBar: {fileID: 5779035365003630298}
   maxRevives: 1
   chanceToRevive: 40

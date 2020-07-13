@@ -13,6 +13,7 @@ public abstract class Enemy : MonoBehaviour
     public int moneyWorth = 50;
     public int scoreWorth = 10;
     public GameObject deathEffect;
+    public GameObject bloodPrefab;
 
     [Header("Unity Stuff")]
     public Image healthBar;
@@ -46,12 +47,11 @@ public abstract class Enemy : MonoBehaviour
     protected virtual void Die()
     {
         isAlive = false;
-        //playerStats.RestoreMoney(moneyWorth);
-        //playerStats.IncreaseScore(scoreWorth);
-        //WaveSpawner.EnemiesAlive--;
 
         OnEnemyDeath?.Invoke(moneyWorth, scoreWorth);
 
+        GameObject bloodEffect = Instantiate(bloodPrefab, transform.position, Quaternion.identity);
+        Destroy(bloodEffect, 3f);
         GameObject deathEffectGO = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(deathEffectGO, 5f);
 

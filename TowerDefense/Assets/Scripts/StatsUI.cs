@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class StatsUI : MonoBehaviour
 {
     public GameObject ui;
+    Image background;
     public TMP_Text description;
     public TMP_Text range;
     public TMP_Text damage;
@@ -18,11 +19,13 @@ public class StatsUI : MonoBehaviour
     private void Start()
     {
         ui.SetActive(false);
+        background = GetComponent<Image>();
     }
 
     public void SelectTurret(TurretBlueprint turretBlueprint)
     {
         selectedTurret = turretBlueprint;
+        background.enabled = true;
         UpdateStats();
     }
 
@@ -45,6 +48,7 @@ public class StatsUI : MonoBehaviour
     public void Hide()
     {
         ui.SetActive(false);
+        background.enabled = false;
     }
 
 }

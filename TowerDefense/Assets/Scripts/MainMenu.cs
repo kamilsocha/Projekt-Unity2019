@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -70,7 +69,6 @@ public class MainMenu : MonoBehaviour
 
     public void HideHighscores()
     {
-        //highscoreScreen.SetActive(false);
         highscoreScreen.GetComponent<Animator>().SetTrigger("FadeOut");
     }
 

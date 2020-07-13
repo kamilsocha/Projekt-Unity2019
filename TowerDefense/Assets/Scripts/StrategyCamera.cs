@@ -25,13 +25,15 @@ public class StrategyCamera : MonoBehaviour
     public Vector3 minBorders;
     public Vector3 maxBorders;
 
-    bool isActive;
+    public bool isActive { get; private set; }
     Camera _camera;
     AudioListener audioListener;
 
     Vector3 initRigPosition;
     Quaternion initRotation;
     Vector3 initCameraPosition;
+
+    CameraUI cameraUI;
 
     void Start()
     {
@@ -49,6 +51,8 @@ public class StrategyCamera : MonoBehaviour
         initRigPosition = transform.position;
         initRotation = transform.rotation;
         initCameraPosition = _camera.transform.localPosition;
+
+        cameraUI = FindObjectOfType<CameraUI>();
     }
 
     void Update()
@@ -59,8 +63,18 @@ public class StrategyCamera : MonoBehaviour
 
     void HandleMovementInput()
     {
-        
-        if (Input.GetKeyDown(cameraMovementEnableKey)) doMovement = !doMovement;
+        if (Input.GetKeyDown(cameraMovementEnableKey))
+        {
+            if(doMovement)
+            {
+                cameraUI.ToggleCameraText(false);
+                doMovement = false;
+            } else
+            {
+                cameraUI.ToggleCameraText(true);
+                doMovement = true;
+            }
+        }
 
         if (!doMovement) return;
 
@@ -132,12 +146,25 @@ public class StrategyCamera : MonoBehaviour
             isActive = false;
             _camera.enabled = false;
             audioListener.enabled = false;
+            doMovement = false;
+            cameraUI.Hide();
+
+            newPosition.x = initRigPosition.x;
+            newZoom.y = initCameraPosition.y;
+            newZoom.z = initCameraPosition.z;
+            newPosition.z = initRigPosition.z;
+
+            transform.position = initRigPosition;
+            transform.rotation = initRotation;
+            cameraTransform.localPosition = initCameraPosition;
         }
         else
         {
             isActive = true;
             _camera.enabled = true;
             audioListener.enabled = true;
+            doMovement = true;
+            cameraUI.Show();
         }
     }
 

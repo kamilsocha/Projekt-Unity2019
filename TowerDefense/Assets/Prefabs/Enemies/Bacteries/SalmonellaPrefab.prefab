@@ -133,6 +133,8 @@ MonoBehaviour:
   scoreWorth: 10
   deathEffect: {fileID: 1182809934006311627, guid: e4972868da7883b409528fa0adc49b09,
     type: 3}
+  bloodPrefab: {fileID: 2034130680917781125, guid: c53909b1a2a36114f93422ad42d364c1,
+    type: 3}
   healthBar: {fileID: 5362374969396472413}
   startShieldDurability: 0
   shieldStart: 0

@@ -45,11 +45,18 @@ public class BuildManager : MonoBehaviour
             return turretToBuild != null;
         }
     }
-    public bool HasMoney
+    public bool CanBuy
     {
         get
         {
             return playerStats.Money >= turretToBuild.cost;
+        }
+    }
+    public bool CanUpgrade
+    {
+        get
+        {
+            return playerStats.Money >= selectedNode.TurretBlueprint.upgradeCost;
         }
     }
 

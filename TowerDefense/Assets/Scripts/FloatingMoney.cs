@@ -8,12 +8,20 @@ public class FloatingMoney : MonoBehaviour, IPooledObject
     public float xAmplitudeForce = .7f;
     public float zAmplitudeForce = .7f;
 
+    Rigidbody rb;
     CanvasGroup canvas;
+
+    private void Awake()
+    {
+        canvas = GetComponentInChildren<CanvasGroup>();
+        rb = GetComponent<Rigidbody>();
+    }
 
     public void OnObjectSpawn()
     {
-        GetComponent<Rigidbody>().velocity = new Vector3(0, upForce, 0);
-        canvas = GetComponentInChildren<CanvasGroup>();
+        StopAllCoroutines();
+        canvas.alpha = 1;
+        rb.velocity = new Vector3(0, upForce, 0);
         StartCoroutine(FloatMoney());
     }
 

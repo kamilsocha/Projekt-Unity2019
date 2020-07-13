@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using TMPro;
+using UnityEngine;
 
 public class CompleteLevel : MonoBehaviour
 {
@@ -9,12 +11,19 @@ public class CompleteLevel : MonoBehaviour
     public delegate void ContinueButtonEvent();
     public event ContinueButtonEvent OnContinue;
 
+    public TMP_Text saveText;
+    public float letterPause = 0.01f;
+    bool isSaved;
+    public string savingText = "Saving...";
+    public string savedText = "Game Saved";
+
     private void Awake()
     {
         if (levelToUnlock > PlayerPrefs.GetInt("levelReached", 1))
         {
             PlayerPrefs.SetInt("levelReached", levelToUnlock);
         }
+        FindObjectOfType<GameManager>().OnDataSaved += HandleDataSaved;
     }
 
     public void SetNextLevel(string _nextLevel, int _levelToUnlock)
@@ -40,4 +49,32 @@ public class CompleteLevel : MonoBehaviour
         SceneFader.Instance.FadeTo(menuName, LoadType.Menu);
     }
 
+    private void OnEnable()
+    {
+        isSaved = false;
+        StartCoroutine(Saving());
+    }
+
+    IEnumerator Saving()
+    {
+        var length = savingText.Length;
+        while(!isSaved)
+        {
+            for (int i = 0; i < length; i++)
+            {
+                saveText.text = savingText.Substring(0, i);
+                yield return new WaitForSeconds(letterPause);
+            }
+            yield return new WaitForSeconds(letterPause);
+        }
+        saveText.text = savedText;
+        yield return new WaitForSeconds(3f);
+        saveText.enabled = false;
+        isSaved = false;
+    }
+
+    void HandleDataSaved()
+    {
+        isSaved = true;
+    }
 }

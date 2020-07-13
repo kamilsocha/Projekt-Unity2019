@@ -203,7 +203,6 @@ public class Shop : MonoBehaviour
         AudioManager.Instance.Play(clickAudioName);
         if(shopUI.activeSelf)
         {
-            shopUI.SetActive(false);
             toggleButtonText.text = inactiveString;
             toggleButton.transform.position += buttonOffset;
             animator.SetTrigger("Out");
@@ -215,6 +214,13 @@ public class Shop : MonoBehaviour
             toggleButton.transform.position -= buttonOffset;
             animator.SetTrigger("In");
         }
+    }
+
+    public void DeativateShop()
+    {
+        buildManager.DeselectTurretToBuild();
+        buildManager.DeselectNode();
+        shopUI.SetActive(false);
     }
 
     void ShowStatsUI(TurretBlueprint tb)

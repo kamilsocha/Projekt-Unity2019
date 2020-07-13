@@ -130,6 +130,8 @@ MonoBehaviour:
     type: 3}
   shadowEffectPrefab: {fileID: 2527996538163765152, guid: 758cca542b93308459252dfd47d8b34e,
     type: 3}
+  bloodPrefab: {fileID: 2034130680917781125, guid: c53909b1a2a36114f93422ad42d364c1,
+    type: 3}
   spawnRange: 5
   timeBetweenSpawns: 3
   spawns: 20
@@ -151,6 +153,8 @@ MonoBehaviour:
   moneyWorth: 0
   scoreWorth: 100
   deathEffect: {fileID: 8262978762125445350, guid: e744641683fd1074d868a8d4b368a52b,
+    type: 3}
+  bloodPrefab: {fileID: 2034130680917781125, guid: c53909b1a2a36114f93422ad42d364c1,
     type: 3}
   healthBar: {fileID: 2007817737901706065}
   maxRevives: 1

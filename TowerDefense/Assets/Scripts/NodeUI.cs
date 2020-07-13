@@ -44,9 +44,17 @@ public class NodeUI : MonoBehaviour
         transform.position = target.GetBuildPosition();
         if(!target.isUpgraded)
         {
-            upgradeCost.text = "$" + target.TurretBlueprint.upgradeCost;
+            if (!buildManager.CanUpgrade)
+            {
+                upgradeButton.interactable = false;
+                upgradeCost.text = "LOCKED";
+            }
+            else
+            {
+                upgradeCost.text = "$" + target.TurretBlueprint.upgradeCost;
+                upgradeButton.interactable = true;
+            }
             sellAmount.text = "$" + target.TurretBlueprint.GetSellAmount();
-            upgradeButton.interactable = true;
         }
         else
         {
@@ -60,6 +68,8 @@ public class NodeUI : MonoBehaviour
         }
 
         ui.SetActive(true);
+
+        
     }
 
     public void Hide()

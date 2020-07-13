@@ -34,6 +34,9 @@ public class WaveSpawner : MonoBehaviour
     public string clipName = "WaveInfo";
     float lengthOfClip;
 
+    bool isTimerPaused;
+    public GameObject timerPaused;
+
     void Start()
     {
         Enemy.OnEnemyDeath += HandleEnemyDeath;
@@ -45,12 +48,17 @@ public class WaveSpawner : MonoBehaviour
         waveInfoText = waveInfo.GetComponentInChildren<TMP_Text>();
         waveInfoAnimator = waveInfo.GetComponent<Animator>();
         lengthOfClip = waveInfoAnimator.runtimeAnimatorController.animationClips.First(x => x.name == clipName).length;
+
+        isTimerPaused = false;
     }
 
     public void StartGame()
     {
         EnemiesAlive = 0;
         waveIndex = 0;
+        bossSpawned = false;
+        wavesSpawned = false;
+        isTimerPaused = false;
         spawnPoint = GameObject.FindWithTag("SpawnPoint").transform;
         this.enabled = true;
     }
@@ -87,8 +95,24 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
 
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if(isTimerPaused)
+            {
+                isTimerPaused = false;
+                timerPaused.SetActive(false);
+            } else
+            {
+                isTimerPaused = true;
+                timerPaused.SetActive(true);
+            }
+        }
+
         if(!wavesSpawned)
         {
+            if (isTimerPaused) return;
+
+
             if (countdown <= 0f)
             {
                 waveInfoText.text = nextWaveText;

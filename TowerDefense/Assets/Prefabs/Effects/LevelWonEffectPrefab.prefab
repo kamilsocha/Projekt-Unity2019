@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1657098823398795687}
   m_Layer: 0
-  m_Name: LevelWonFireworksGO
+  m_Name: LevelWonEffectPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 7549503696660451223}
   - component: {fileID: 3712886498258379094}
   - component: {fileID: 8484842800556725194}
+  - component: {fileID: 440403667838493783}
   m_Layer: 0
   m_Name: Fireworks
   m_TagString: Untagged
@@ -141,3 +142,16 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &440403667838493783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5449815154821276675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd8abbac675d5f44a8a272a6dd9ad602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectSoundName: Fireworks

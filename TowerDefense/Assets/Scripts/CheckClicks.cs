@@ -8,11 +8,13 @@ public class CheckClicks : MonoBehaviour
 {
 
     Shop shop;
+    BuildManager buildManager;
     StatsUI statsUI;
 
-    private void Awake()
+    private void Start()
     {
         shop = FindObjectOfType<Shop>();
+        buildManager = BuildManager.Instance;
     }
 
     private void OnMouseDown()
@@ -21,7 +23,8 @@ public class CheckClicks : MonoBehaviour
         {
             return;
         }
-        BuildManager.Instance.DeselectTurretToBuild();
+        buildManager.DeselectTurretToBuild();
+        buildManager.DeselectNode();
 
         if(statsUI == null)
         {

@@ -14,11 +14,17 @@ public class SecondCameraController : MonoBehaviour
     Quaternion newRotation;
     Vector3 newZoom;
 
+    public float xRotation = 0f;
+    public Vector3 newCameraRotation;
+
+    public float minCameraRotation = 1;
+    public float maxCameraRotation = 60;
+
     Camera _camera;
     AudioListener audioListener;
 
-    public float minY;
-    public float maxY;
+    public float minZoomY;
+    public float maxZoomY;
 
     public bool isActive;
     bool doMovement;
@@ -29,6 +35,9 @@ public class SecondCameraController : MonoBehaviour
     {
         _camera = GetComponentInChildren<Camera>();
         audioListener = GetComponentInChildren<AudioListener>();
+
+        newCameraRotation = cameraTransform.localRotation.eulerAngles;
+
         newRotation = transform.rotation;
         newZoom = cameraTransform.localPosition;
         doMovement = false;
@@ -53,6 +62,15 @@ public class SecondCameraController : MonoBehaviour
             return;
         }
 
+        if (Input.GetKey(KeyCode.W))
+        {
+            xRotation += rotationAmount;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            xRotation -= rotationAmount;
+        }
+
         if (Input.GetKey(KeyCode.Q))
         {
             newRotation *= Quaternion.Euler(Vector3.up * rotationAmount);
@@ -63,11 +81,11 @@ public class SecondCameraController : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.R) && cameraTransform.localPosition.y >= minY)
+        if (Input.GetKey(KeyCode.R) && cameraTransform.localPosition.y >= minZoomY)
         {
             newZoom.y += zoomAmount;
         }
-        else if (Input.GetKey(KeyCode.F) && cameraTransform.localPosition.y <= maxY)
+        else if (Input.GetKey(KeyCode.F) && cameraTransform.localPosition.y <= maxZoomY)
         {
             newZoom.y -= zoomAmount;
         }
@@ -77,10 +95,18 @@ public class SecondCameraController : MonoBehaviour
             newZoom.y -= scroll * 1000 * scrollSpeed * Time.deltaTime;
         }
 
-        newZoom.y = Mathf.Clamp(newZoom.y, minY, maxY);
+        newZoom.y = Mathf.Clamp(newZoom.y, minZoomY, maxZoomY);
+
+        xRotation = Mathf.Clamp(xRotation, minCameraRotation, maxCameraRotation);
+        newCameraRotation = cameraTransform.rotation.eulerAngles;
+        newCameraRotation.x = xRotation;
+        Vector3 rotation = Quaternion.Lerp(cameraTransform.localRotation, Quaternion.Euler(newCameraRotation), Time.deltaTime * movementTime).eulerAngles;
+        cameraTransform.localRotation = Quaternion.Euler(rotation.x, 0f, 0f);
+
 
         transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * movementTime);
         cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, newZoom, Time.deltaTime * movementTime);
+        
     }
 
     public void SetTarget(Node _target)

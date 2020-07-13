@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -34,6 +35,10 @@ public class GameManager : MonoBehaviour
 
     string levelSharedName = "LevelShared";
     string clickAudioName = "ButtonClick";
+    public string filePath = "playerStats";
+
+    public delegate void DataSaved();
+    public event DataSaved OnDataSaved;
 
     private void Start()
     {
@@ -44,8 +49,6 @@ public class GameManager : MonoBehaviour
 
         completeLevelUI.GetComponent<CompleteLevel>().OnContinue += HandleContinueToNextLevel;
         audioManager = AudioManager.Instance;
-        // delete later - faster loading stuff
-        //OnStart();
     }
 
     void OnStart()
@@ -100,12 +103,6 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(TransferMoney());
 
-        var currentLevelStats = SaveData.Current.GetPlayerLevelData(currentLevelData.name);
-        if(playerStats.Score > currentLevelStats.bestScore)
-        {
-            currentLevelStats.bestScore = playerStats.Score;
-        }
-
         GameIsOver = true;
         int levelNumber = Array.IndexOf(levels, currentLevelData);
         if (levelNumber == (levels.Length - 1))
@@ -129,8 +126,15 @@ public class GameManager : MonoBehaviour
         {
             playerStats.ReduceMoney(1);
             playerStats.IncreaseScore(1);
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.01f);
         }
+        var currentLevelStats = SaveData.Current.GetPlayerLevelData(currentLevelData.name);
+        if (playerStats.Score > currentLevelStats.bestScore)
+        {
+            currentLevelStats.bestScore = playerStats.Score;
+        }
+        var res = SerializationManager.Save(filePath, SaveData.Current);
+        OnDataSaved?.Invoke();
     }
 
     private void OnEnable()

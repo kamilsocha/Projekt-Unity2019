@@ -8,7 +8,6 @@ public class Boss : MonoBehaviour
 
     public GameObject partToRotate;
     public GameObject enemyPrefabToSpawn;
-    List<GameObject> children;
     public GameObject spawnEffect;
     public GameObject shadowEffectPrefab;
     GameObject shadowEffect;
@@ -18,12 +17,10 @@ public class Boss : MonoBehaviour
     public float timeBetweenSpawns;
     public int spawns;
     EnemyMovement enemyMovement;
-    // TODO: to remove lives or not?
     WaveSpawner waveSpawner;
 
     private void Start()
     {
-        //children = new List<GameObject>();
         enemyMovement = GetComponent<EnemyMovement>();
         waveSpawner = FindObjectOfType(typeof(WaveSpawner)) as WaveSpawner;
         enemyMovement.LivesToReduce = livesToReduce;
@@ -81,12 +78,6 @@ public class Boss : MonoBehaviour
     private void OnDestroy()
     {
         shadowEffect.transform.parent = null;
-        Destroy(shadowEffect.gameObject, 5f);
-
-        //foreach(var c in children)
-        //{
-        //    if(c != null)
-        //        Destroy(c);
-        //}
+        Destroy(shadowEffect.gameObject, 3f);
     }
 }
