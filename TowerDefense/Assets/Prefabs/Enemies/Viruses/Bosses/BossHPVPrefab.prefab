@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8992179f131da054db43fe78389a7762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  livesToReduce: 5
+  livesToReduce: 10
   partToRotate: {fileID: 0}
   enemyPrefabToSpawn: {fileID: 5924642817355052401, guid: 21234748572af824a828e5ef7c29a1ee,
     type: 3}
@@ -317,9 +317,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c45ddce299343948918a2b1a8a40d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 2
+  startSpeed: 3
   speed: 0
-  startHealth: 1000
+  startHealth: 2000
   moneyWorth: 0
   scoreWorth: 600
   deathEffect: {fileID: 3839504768761925124, guid: 3001d3966c027424e86ec6b036552c7f,
@@ -329,7 +329,7 @@ MonoBehaviour:
   healthBar: {fileID: 8134053534370399992}
   maxRevives: 2
   chanceToRevive: 30
-  reviveHealth: 500
+  reviveHealth: 750
 --- !u!114 &1949194397506939927
 MonoBehaviour:
   m_ObjectHideFlags: 0

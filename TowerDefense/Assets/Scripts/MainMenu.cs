@@ -15,19 +15,13 @@ public class MainMenu : MonoBehaviour
     public TMP_Text[] scoreTexts; 
     public PlayerLevelData[] playerLevelDatas;
     Animator animator;
-    float creditsTime;
     public string filePath = "playerStats";
     string lockedText = "locked";
 
     private void Start()
     {
         creditsScreen.SetActive(false);
-        animator = creditsScreen.GetComponent<Animator>();
-        RuntimeAnimatorController ac = animator.runtimeAnimatorController;
-        foreach (var c in ac.animationClips)
-        {
-            creditsTime += c.length;
-        }
+        animator = GetComponent<Animator>();
 
         highscoreScreen.SetActive(false);
         SaveData.Current = SerializationManager.Load(filePath) as SaveData;
@@ -75,20 +69,17 @@ public class MainMenu : MonoBehaviour
     public void Credits()
     {
         creditsScreen.SetActive(true);
-        StartCoroutine(ShowCredits());
+        animator.SetTrigger("Credits");
+    }
+
+    public void DeactivateCredits()
+    {
+        creditsScreen.SetActive(false);
     }
 
     public void PlaySound(string s)
     {
         AudioManager.Instance.Play(s);
     }
-
-    IEnumerator ShowCredits()
-    {
-        yield return new WaitForSeconds(creditsTime - 1f);
-        creditsScreen.SetActive(false);
-    }
-
-
 
 }

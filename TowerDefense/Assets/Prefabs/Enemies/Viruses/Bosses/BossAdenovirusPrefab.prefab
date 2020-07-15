@@ -130,10 +130,8 @@ MonoBehaviour:
     type: 3}
   shadowEffectPrefab: {fileID: 2527996538163765152, guid: 758cca542b93308459252dfd47d8b34e,
     type: 3}
-  bloodPrefab: {fileID: 2034130680917781125, guid: c53909b1a2a36114f93422ad42d364c1,
-    type: 3}
   spawnRange: 5
-  timeBetweenSpawns: 3
+  timeBetweenSpawns: 4
   spawns: 20
 --- !u!114 &5216346774171136670
 MonoBehaviour:
@@ -147,9 +145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c45ddce299343948918a2b1a8a40d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 8
+  startSpeed: 6
   speed: 0
-  startHealth: 200
+  startHealth: 360
   moneyWorth: 0
   scoreWorth: 100
   deathEffect: {fileID: 8262978762125445350, guid: e744641683fd1074d868a8d4b368a52b,
@@ -159,7 +157,7 @@ MonoBehaviour:
   healthBar: {fileID: 2007817737901706065}
   maxRevives: 1
   chanceToRevive: 45
-  reviveHealth: 100
+  reviveHealth: 180
 --- !u!114 &5324913428656094461
 MonoBehaviour:
   m_ObjectHideFlags: 0

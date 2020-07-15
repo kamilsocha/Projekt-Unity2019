@@ -30,16 +30,18 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 8404717703095437200, guid: 36c5895cde1000d4a8458b294211077b,
         type: 3}
       count: 5
-    bossPrefab: {fileID: 3712512803101729328, guid: db277239970a3ac44aeea84ba36ff397,
-      type: 3}
     rate: 1
   - enemyWaves:
     - enemyPrefab: {fileID: 1718528107863396320, guid: 012442a7829ce284ea84d298372a235f,
         type: 3}
       count: 1
-    bossPrefab: {fileID: 1718528107863396320, guid: 29d45cbe47cdb9444ae14e461816bf80,
-      type: 3}
     rate: 0.5
+  bossPrefab: {fileID: 0}
   timeBetweenWaves: 5
   startMoney: 200
   startLives: 10
+  scoreToUnlockCannon: 500
+  scoreToUnlockLaserBeamer: 750
+  scoreToUnlockLaser: 1000
+  scoreToUnlockAntibiotic: 1500
+  scoreToUnlockMedicine: 2500

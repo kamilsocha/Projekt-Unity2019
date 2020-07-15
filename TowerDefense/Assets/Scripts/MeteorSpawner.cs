@@ -49,9 +49,6 @@ public class MeteorSpawner : MonoBehaviour
 
     Vector3 GenerateSpawnPosition()
     {
-        //var startX = Random.Range(min_x, max_x);
-        //var startZ = Random.Range(min_z, max_z);
-        //return new Vector3(startX, spawnPosition.position.y, startZ);
         return spawnPosition.position;
     }
 

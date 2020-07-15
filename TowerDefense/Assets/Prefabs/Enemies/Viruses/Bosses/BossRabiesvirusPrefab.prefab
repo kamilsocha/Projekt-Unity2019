@@ -383,7 +383,7 @@ MonoBehaviour:
     type: 3}
   spawnRange: 4
   timeBetweenSpawns: 6
-  spawns: 10
+  spawns: 20
 --- !u!114 &3216474592329803994
 MonoBehaviour:
   m_ObjectHideFlags: 0

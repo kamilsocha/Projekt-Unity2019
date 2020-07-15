@@ -30,6 +30,7 @@ public class Bacteria : Enemy
             {
                 health -= amountToReduce;
                 shieldDurability -= amountToReduce;
+                healthBar.fillAmount = health / (float)startHealth;
             }
             else 
             {
@@ -39,6 +40,7 @@ public class Bacteria : Enemy
         else
         {
             health -= amount;
+            healthBar.fillAmount = health / (float)startHealth;
         }
         if(shieldDurability <= 0)
         {

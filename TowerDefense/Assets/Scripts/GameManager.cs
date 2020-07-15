@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     public WaveSpawner waveSpawner;
     public PlayerStats playerStats;
+    public Shop shop;
 
     public LevelData[] levels;
     public LevelData currentLevelData;
@@ -44,11 +45,13 @@ public class GameManager : MonoBehaviour
     {
         waveSpawner = GetComponent<WaveSpawner>();
         playerStats = GetComponent<PlayerStats>();
+        shop = FindObjectOfType<Shop>();
 
-        currentLevel = PlayerPrefs.GetString("CurrentLevel", currentLevel);//, "Level01");
+        currentLevel = PlayerPrefs.GetString("CurrentLevel", currentLevel);
 
         completeLevelUI.GetComponent<CompleteLevel>().OnContinue += HandleContinueToNextLevel;
         audioManager = AudioManager.Instance;
+
     }
 
     void OnStart()
@@ -68,6 +71,8 @@ public class GameManager : MonoBehaviour
         }
         waveSpawner.SetData(currentLevelData.waves, currentLevelData.timeBetweenWaves, currentLevelData.bossPrefab);
         playerStats.SetData(currentLevelData.startMoney, currentLevelData.startLives);
+        shop.SetData(currentLevelData.scoreToUnlockCannon, currentLevelData.scoreToUnlockLaserBeamer,
+            currentLevelData.scoreToUnlockLaser, currentLevelData.scoreToUnlockAntibiotic, currentLevelData.scoreToUnlockMedicine);
     }
 
     public void Ready()
@@ -96,11 +101,6 @@ public class GameManager : MonoBehaviour
     {
         OnLevelWon?.Invoke();
 
-        // TODO
-        // calculate overall score
-        // transform money left into additional score
-        // sum money spent on upgrades?
-
         StartCoroutine(TransferMoney());
 
         GameIsOver = true;
@@ -126,7 +126,13 @@ public class GameManager : MonoBehaviour
         {
             playerStats.ReduceMoney(1);
             playerStats.IncreaseScore(1);
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.005f);
+        }
+        while (playerStats.UpgradesMoney > 0)
+        {
+            playerStats.UpgradesMoney -= 10;
+            playerStats.IncreaseScore(1);
+            yield return new WaitForSeconds(0.005f);
         }
         var currentLevelStats = SaveData.Current.GetPlayerLevelData(currentLevelData.name);
         if (playerStats.Score > currentLevelStats.bestScore)
@@ -151,6 +157,7 @@ public class GameManager : MonoBehaviour
     {
         if(scene.name != levelSharedName)
             OnStart();
+        shop = FindObjectOfType<Shop>();
     }
 
     public void ReadyButton()

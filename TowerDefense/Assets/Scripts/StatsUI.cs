@@ -34,6 +34,8 @@ public class StatsUI : MonoBehaviour
         var turret = selectedTurret.prefab.GetComponent<Turret>() as Turret;
         var upgradedTurret = selectedTurret.upgradedPrefab.GetComponent<Turret>() as Turret;
 
+        if (turret is Laser) { Debug.Log("this is a laser"); }
+
         description.text = turret.description;
         range.text = turret.range.ToString().Replace(",", ".");
         damage.text = turret.damage.ToString().Replace(",", ".");

@@ -9,4 +9,10 @@ public class LevelData : ScriptableObject
     public float timeBetweenWaves;
     public int startMoney;
     public int startLives;
+
+    public int scoreToUnlockCannon;
+    public int scoreToUnlockLaserBeamer;
+    public int scoreToUnlockLaser;
+    public int scoreToUnlockAntibiotic;
+    public int scoreToUnlockMedicine;
 }

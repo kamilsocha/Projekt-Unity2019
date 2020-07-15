@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 5466249758188155714}
   m_Layer: 0
   m_Name: EbolaPrefab
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,11 +135,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c45ddce299343948918a2b1a8a40d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 6
+  startSpeed: 12
   speed: 0
-  startHealth: 200
-  moneyWorth: 60
-  scoreWorth: 40
+  startHealth: 160
+  moneyWorth: 70
+  scoreWorth: 80
   deathEffect: {fileID: 580954988153248394, guid: 6fdfcb50bb2b34d4a8423113712b44ee,
     type: 3}
   bloodPrefab: {fileID: 2034130680917781125, guid: c53909b1a2a36114f93422ad42d364c1,
@@ -147,7 +147,7 @@ MonoBehaviour:
   healthBar: {fileID: 5940821962929900734}
   maxRevives: 2
   chanceToRevive: 40
-  reviveHealth: 100
+  reviveHealth: 80
 --- !u!136 &5466249758188155714
 CapsuleCollider:
   m_ObjectHideFlags: 0

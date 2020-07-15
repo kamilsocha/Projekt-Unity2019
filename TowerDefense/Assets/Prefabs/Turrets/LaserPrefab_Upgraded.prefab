@@ -285,9 +285,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eba27be496bdeb4fa511adefca2bcf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 25
-  fireRate: 0.5
-  damage: 10
+  range: 30
+  fireRate: 0.75
+  damage: 60
   description: Fires laser which hits all opponents on it's path.
   enemyTag: Enemy
   audioEffectName: LaserSingle

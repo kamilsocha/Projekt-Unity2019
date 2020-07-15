@@ -8,17 +8,18 @@ public class OptionsController : MonoBehaviour
 {
     string menuSceneName = "MainMenu";
     Resolution[] resolutions;
+    public GameObject settingsUI;
+
 
     public AudioMixer themeAudioMixer;
     public AudioMixer soundsAudioMixer;
     public TMP_Dropdown graphicsDropdown;
     public TMP_Dropdown resolutionDropdown;
 
-    public TurretPanelUI turretPanelUI;
-    public GameObject optionsCanvas;
-    public GameObject controlsCanvas;
 
-    public TMP_InputField cameraMovementEnableKeyInput;
+    public TurretUI turretUI;
+    public ControlsUI controlsUI;
+
     string buttonAudioName = "ButtonClick";
 
     private void Awake()
@@ -43,16 +44,7 @@ public class OptionsController : MonoBehaviour
         resolutionDropdown.AddOptions(resolutionsList);
         resolutionDropdown.SetValueWithoutNotify(currentResolutionIndex);
 
-        optionsCanvas.SetActive(true);
-        controlsCanvas.SetActive(false);
-
-        var key = PlayerPrefs.GetString("cameraMovementEnableKey", "m");
-        cameraMovementEnableKeyInput.text = key;
-
-        cameraMovementEnableKeyInput.onValueChanged.AddListener(delegate
-        {
-            PlayerPrefs.SetString("cameraMovementEnableKey", cameraMovementEnableKeyInput.text.ToLower());
-        });
+        settingsUI.SetActive(true);
     }
 
     public void BackToMainMenu()
@@ -90,12 +82,12 @@ public class OptionsController : MonoBehaviour
 
     public void ShowTurretsPanel()
     {
-        turretPanelUI.Show();
+        turretUI.Show();
     }
 
-    public void ToggleControlsCanvas()
+    public void ShowControlsPanel()
     {
-        controlsCanvas.SetActive(!controlsCanvas.activeSelf);
+        controlsUI.Show();
     }
 
     public void PlaySound(string s)

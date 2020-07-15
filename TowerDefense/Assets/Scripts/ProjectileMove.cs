@@ -40,10 +40,7 @@ public class ProjectileMove : MonoBehaviour, IPooledObject
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("collision");
-
         speed = 0;
-
         ContactPoint contact = collision.contacts[0];
         Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
         Vector3 pos = contact.point;
@@ -52,7 +49,7 @@ public class ProjectileMove : MonoBehaviour, IPooledObject
         {
             var impactGO = Instantiate(impactPrefab, pos, rot);
 
-            Destroy(impactGO, 5);
+            Destroy(impactGO, 150);
         }
 
         if(trails.Count > 0)
@@ -64,12 +61,10 @@ public class ProjectileMove : MonoBehaviour, IPooledObject
                 if(particleSystem != null)
                 {
                     particleSystem.Stop();
-                    //Destroy(particleSystem.gameObject, particleSystem.main.duration + particleSystem.main.startLifetime.constantMax);
                 }
             }
         }
         gameObject.SetActive(false);
-        //Destroy(gameObject);
     }
 
 }

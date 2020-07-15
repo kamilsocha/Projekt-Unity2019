@@ -382,9 +382,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bc50104d8063f4c85cf40462c06cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 20
+  range: 22
   fireRate: 0.5
-  damage: 40
+  damage: 60
   description: 
   enemyTag: Enemy
   audioEffectName: Cannon

@@ -121,19 +121,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c45ddce299343948918a2b1a8a40d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 10
+  startSpeed: 8
   speed: 0
-  startHealth: 80
-  moneyWorth: 50
-  scoreWorth: 10
+  startHealth: 120
+  moneyWorth: 30
+  scoreWorth: 5
   deathEffect: {fileID: 8262978762125445350, guid: e744641683fd1074d868a8d4b368a52b,
     type: 3}
   bloodPrefab: {fileID: 2034130680917781125, guid: c53909b1a2a36114f93422ad42d364c1,
     type: 3}
   healthBar: {fileID: 2007817737901706065}
-  maxRevives: 2
+  maxRevives: 1
   chanceToRevive: 30
-  reviveHealth: 40
+  reviveHealth: 80
 --- !u!114 &5324913428656094461
 MonoBehaviour:
   m_ObjectHideFlags: 0

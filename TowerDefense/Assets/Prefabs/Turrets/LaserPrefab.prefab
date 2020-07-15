@@ -287,7 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 25
   fireRate: 0.5
-  damage: 10
+  damage: 25
   description: Fires laser which hits all opponents on it's path.
   enemyTag: Enemy
   audioEffectName: LaserSingle

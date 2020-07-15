@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8992179f131da054db43fe78389a7762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  livesToReduce: 5
+  livesToReduce: 15
   partToRotate: {fileID: 0}
   enemyPrefabToSpawn: {fileID: 1718528107863396320, guid: 012442a7829ce284ea84d298372a235f,
     type: 3}
@@ -130,8 +130,8 @@ MonoBehaviour:
   shadowEffectPrefab: {fileID: 2527996538163765152, guid: 79b527008422e39408465c0bd7c03d02,
     type: 3}
   spawnRange: 5
-  timeBetweenSpawns: 3
-  spawns: 20
+  timeBetweenSpawns: 5
+  spawns: 15
 --- !u!114 &1718528107863396350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,17 +146,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 2
   speed: 0
-  startHealth: 600
+  startHealth: 4000
   moneyWorth: 0
-  scoreWorth: 700
+  scoreWorth: 1200
   deathEffect: {fileID: 7675146461362234754, guid: 171a318d6a4841540bbd082ffd298359,
     type: 3}
   bloodPrefab: {fileID: 2034130680917781125, guid: c53909b1a2a36114f93422ad42d364c1,
     type: 3}
   healthBar: {fileID: 7571406943203812267}
-  maxRevives: 0
-  chanceToRevive: 10
-  reviveHealth: 200
+  maxRevives: 1
+  chanceToRevive: 15
+  reviveHealth: 1500
 --- !u!114 &1718528107863396351
 MonoBehaviour:
   m_ObjectHideFlags: 0

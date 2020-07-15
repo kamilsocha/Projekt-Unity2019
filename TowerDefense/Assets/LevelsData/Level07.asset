@@ -14,12 +14,80 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Level07
   waves:
-  - enemyWaves: []
-    bossPrefab: {fileID: 0}
+  - enemyWaves:
+    - enemyPrefab: {fileID: 6582347219084660416, guid: ccf07670b2a36b544adcd8b7962663c1,
+        type: 3}
+      count: 3
+    - enemyPrefab: {fileID: 3712512803101729328, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
+        type: 3}
+      count: 5
+    - enemyPrefab: {fileID: 6582347219084660416, guid: ccf07670b2a36b544adcd8b7962663c1,
+        type: 3}
+      count: 4
     rate: 0.5
-  - enemyWaves: []
-    bossPrefab: {fileID: 0}
+  - enemyWaves:
+    - enemyPrefab: {fileID: 963621573988982035, guid: a89985756d35f60448ff392ec3dba19e,
+        type: 3}
+      count: 5
+    - enemyPrefab: {fileID: 8404717703095437200, guid: 36c5895cde1000d4a8458b294211077b,
+        type: 3}
+      count: 5
+    - enemyPrefab: {fileID: 3712512803101729328, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
+        type: 3}
+      count: 10
+    rate: 0.75
+  - enemyWaves:
+    - enemyPrefab: {fileID: 1718528107863396320, guid: 012442a7829ce284ea84d298372a235f,
+        type: 3}
+      count: 30
+    rate: 0.25
+  - enemyWaves:
+    - enemyPrefab: {fileID: 6582347219084660416, guid: ccf07670b2a36b544adcd8b7962663c1,
+        type: 3}
+      count: 3
+    - enemyPrefab: {fileID: 5924642817355052401, guid: 21234748572af824a828e5ef7c29a1ee,
+        type: 3}
+      count: 2
+    - enemyPrefab: {fileID: 1694613178877623209, guid: 85964e00bd37e2541805a786f0ccd4b8,
+        type: 3}
+      count: 3
+    - enemyPrefab: {fileID: 6417118012919658425, guid: 8f3937f24ce06cb4686597b1f63fa221,
+        type: 3}
+      count: 5
+    - enemyPrefab: {fileID: 8404717703095437200, guid: 36c5895cde1000d4a8458b294211077b,
+        type: 3}
+      count: 3
+    - enemyPrefab: {fileID: 5162459270882826970, guid: ee67a49d1d35c5c4193991bdf76a5567,
+        type: 3}
+      count: 5
+    - enemyPrefab: {fileID: 6417118012919658425, guid: 8f3937f24ce06cb4686597b1f63fa221,
+        type: 3}
+      count: 4
+    - enemyPrefab: {fileID: 6582347219084660416, guid: ccf07670b2a36b544adcd8b7962663c1,
+        type: 3}
+      count: 5
     rate: 0.5
+  - enemyWaves:
+    - enemyPrefab: {fileID: 1694613178877623209, guid: 85964e00bd37e2541805a786f0ccd4b8,
+        type: 3}
+      count: 10
+    - enemyPrefab: {fileID: 963621573988982035, guid: a89985756d35f60448ff392ec3dba19e,
+        type: 3}
+      count: 5
+    - enemyPrefab: {fileID: 3712512803101729328, guid: 71ebbcb232c8aeb4a99dc6412972e8f4,
+        type: 3}
+      count: 15
+    - enemyPrefab: {fileID: 7989696480547705687, guid: 387b0947afa19e74e9e5e8d2afe52f80,
+        type: 3}
+      count: 10
+    rate: 0.5
+  bossPrefab: {fileID: 6582347219084660416, guid: 5c11a2fb487b47249965bd8bdffa15ea,
+    type: 3}
   timeBetweenWaves: 5
-  startMoney: 300
+  startMoney: 500
   startLives: 15
+  scoreToUnlockCannon: 200
+  scoreToUnlockLaserBeamer: 400
+  scoreToUnlockLaser: 500
+  scoreToUnlockAntibiotic: 700
+  scoreToUnlockMedicine: 1000

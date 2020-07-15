@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8992179f131da054db43fe78389a7762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  livesToReduce: 4
+  livesToReduce: 8
   partToRotate: {fileID: 0}
   enemyPrefabToSpawn: {fileID: 5162459270882826970, guid: ee67a49d1d35c5c4193991bdf76a5567,
     type: 3}
@@ -71,11 +71,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079176f19449b2247be5f6589916d4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 10
+  startSpeed: 7
   speed: 0
-  startHealth: 600
+  startHealth: 1500
   moneyWorth: 0
-  scoreWorth: 1000
+  scoreWorth: 1500
   deathEffect: {fileID: 1866604827614593723, guid: 1b6fb17064eeaf240bce420edd6c971d,
     type: 3}
   bloodPrefab: {fileID: 2034130680917781125, guid: c53909b1a2a36114f93422ad42d364c1,

@@ -153,9 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bc50104d8063f4c85cf40462c06cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 14
+  range: 15
   fireRate: 0.5
-  damage: 20
+  damage: 30
   description: Basic turret, hurts one enemy on regular period.
   enemyTag: Enemy
   audioEffectName: Crossbow

@@ -57,7 +57,7 @@ MonoBehaviour:
   shadowEffectPrefab: {fileID: 2527996538163765152, guid: ff3e0de92d9631749b155350f0c8ab34,
     type: 3}
   spawnRange: 4
-  timeBetweenSpawns: 3
+  timeBetweenSpawns: 5
   spawns: 10
 --- !u!114 &8687366729807902940
 MonoBehaviour:
@@ -71,11 +71,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079176f19449b2247be5f6589916d4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 3
+  startSpeed: 5
   speed: 0
   startHealth: 3000
   moneyWorth: 0
-  scoreWorth: 2000
+  scoreWorth: 3500
   deathEffect: {fileID: 6356494289311358451, guid: a28b49d5dfe84414383f7ceaa0d90a77,
     type: 3}
   bloodPrefab: {fileID: 2034130680917781125, guid: c53909b1a2a36114f93422ad42d364c1,

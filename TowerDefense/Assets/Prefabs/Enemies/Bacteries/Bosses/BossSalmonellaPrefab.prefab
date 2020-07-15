@@ -150,11 +150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079176f19449b2247be5f6589916d4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 4
+  startSpeed: 9
   speed: 0
   startHealth: 1000
   moneyWorth: 0
-  scoreWorth: 800
+  scoreWorth: 1000
   deathEffect: {fileID: 1182809934006311627, guid: e4972868da7883b409528fa0adc49b09,
     type: 3}
   bloodPrefab: {fileID: 2034130680917781125, guid: c53909b1a2a36114f93422ad42d364c1,

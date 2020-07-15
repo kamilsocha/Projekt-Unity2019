@@ -84,8 +84,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4990763098693804961}
   - component: {fileID: 1650179007836076495}
-  - component: {fileID: 362780655876583808}
   - component: {fileID: 9159228473376042142}
+  - component: {fileID: 362780655876583808}
   - component: {fileID: 5385990231043125541}
   m_Layer: 0
   m_Name: BossEbolaPrefab
@@ -132,7 +132,32 @@ MonoBehaviour:
     type: 3}
   spawnRange: 6
   timeBetweenSpawns: 1
-  spawns: 100
+  spawns: 50
+--- !u!114 &9159228473376042142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650179007836076494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c45ddce299343948918a2b1a8a40d37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSpeed: 8
+  speed: 0
+  startHealth: 1000
+  moneyWorth: 0
+  scoreWorth: 800
+  deathEffect: {fileID: 580954988153248394, guid: 6fdfcb50bb2b34d4a8423113712b44ee,
+    type: 3}
+  bloodPrefab: {fileID: 2034130680917781125, guid: c53909b1a2a36114f93422ad42d364c1,
+    type: 3}
+  healthBar: {fileID: 5985546399504436953}
+  maxRevives: 2
+  chanceToRevive: 40
+  reviveHealth: 500
 --- !u!114 &362780655876583808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,31 +172,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partToRotate: {fileID: 8477907728090279813}
   enemyEndPathSound: EnemyEndPath
---- !u!114 &9159228473376042142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650179007836076494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c45ddce299343948918a2b1a8a40d37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startSpeed: 6
-  speed: 0
-  startHealth: 200
-  moneyWorth: 60
-  scoreWorth: 40
-  deathEffect: {fileID: 580954988153248394, guid: 6fdfcb50bb2b34d4a8423113712b44ee,
-    type: 3}
-  bloodPrefab: {fileID: 2034130680917781125, guid: c53909b1a2a36114f93422ad42d364c1,
-    type: 3}
-  healthBar: {fileID: 5985546399504436953}
-  maxRevives: 2
-  chanceToRevive: 40
-  reviveHealth: 100
 --- !u!136 &5385990231043125541
 CapsuleCollider:
   m_ObjectHideFlags: 0

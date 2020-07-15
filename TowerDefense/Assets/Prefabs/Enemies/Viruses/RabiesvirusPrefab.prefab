@@ -372,10 +372,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c45ddce299343948918a2b1a8a40d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 4
+  startSpeed: 6
   speed: 0
   startHealth: 150
-  moneyWorth: 50
+  moneyWorth: 40
   scoreWorth: 10
   deathEffect: {fileID: 5507643424701861108, guid: a171e9a0ce679e6469e994eab5572831,
     type: 3}
@@ -384,7 +384,7 @@ MonoBehaviour:
   healthBar: {fileID: 8028292861606446453}
   maxRevives: 1
   chanceToRevive: 50
-  reviveHealth: 75
+  reviveHealth: 70
 --- !u!114 &398876761192546370
 MonoBehaviour:
   m_ObjectHideFlags: 0

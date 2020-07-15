@@ -15,11 +15,15 @@ MonoBehaviour:
   name: Level08
   waves:
   - enemyWaves: []
-    bossPrefab: {fileID: 0}
     rate: 0.5
   - enemyWaves: []
-    bossPrefab: {fileID: 0}
     rate: 0.5
+  bossPrefab: {fileID: 0}
   timeBetweenWaves: 5
   startMoney: 300
   startLives: 15
+  scoreToUnlockCannon: 1000
+  scoreToUnlockLaserBeamer: 1100
+  scoreToUnlockLaser: 1500
+  scoreToUnlockAntibiotic: 2000
+  scoreToUnlockMedicine: 2500

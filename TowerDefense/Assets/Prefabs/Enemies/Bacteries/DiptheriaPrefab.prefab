@@ -47,18 +47,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079176f19449b2247be5f6589916d4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 4
+  startSpeed: 8
   speed: 0
   startHealth: 400
-  moneyWorth: 50
-  scoreWorth: 10
+  moneyWorth: 200
+  scoreWorth: 80
   deathEffect: {fileID: 1866604827614593723, guid: 1b6fb17064eeaf240bce420edd6c971d,
     type: 3}
   bloodPrefab: {fileID: 2034130680917781125, guid: c53909b1a2a36114f93422ad42d364c1,
     type: 3}
   healthBar: {fileID: 6227822526553415692}
-  startShieldDurability: 0
-  shieldStart: 0
+  startShieldDurability: 200
+  shieldStart: 20
 --- !u!114 &5162459270882826968
 MonoBehaviour:
   m_ObjectHideFlags: 0

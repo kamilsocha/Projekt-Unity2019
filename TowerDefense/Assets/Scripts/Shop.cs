@@ -228,4 +228,16 @@ public class Shop : MonoBehaviour
         statsUI.SelectTurret(tb);
     }
 
+    public void SetData(int _scoreToUnlockCannon,
+        int _scoreToUnlockLaserBeamer,
+        int _scoreToUnlockLaser,
+        int _scoreToUnlockAntibiotic,
+        int _scoreToUnlockMedicine)
+    {
+        scoreToUnlockCannon = _scoreToUnlockCannon;
+        scoreToUnlockLaserBeamer = _scoreToUnlockLaserBeamer;
+        scoreToUnlockLaser = _scoreToUnlockLaser;
+        scoreToUnlockAntibiotic = _scoreToUnlockAntibiotic;
+        scoreToUnlockMedicine = _scoreToUnlockMedicine;
+    }
 }
