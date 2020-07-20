@@ -309,7 +309,7 @@ MonoBehaviour:
   enemyTag: Enemy
   audioEffectName: Cannon
   firePoint: {fileID: 3841979592568258763}
-  bulletPrefab: {fileID: 4686413160238505437, guid: 24532f3c7772a054f998134f8438d0be,
+  bulletPrefab: {fileID: 3627902272114565250, guid: 7e9cbe40932c84441bf424c5f7965f38,
     type: 3}
 --- !u!1 &8305453006369082105
 GameObject:

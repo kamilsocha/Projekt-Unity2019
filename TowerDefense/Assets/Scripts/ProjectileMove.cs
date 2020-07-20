@@ -64,6 +64,8 @@ public class ProjectileMove : MonoBehaviour, IPooledObject
                 }
             }
         }
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
         gameObject.SetActive(false);
     }
 

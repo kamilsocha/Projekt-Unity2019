@@ -124,8 +124,8 @@ MonoBehaviour:
   startSpeed: 8
   speed: 0
   startHealth: 120
-  moneyWorth: 30
-  scoreWorth: 5
+  moneyWorth: 5
+  scoreWorth: 10
   deathEffect: {fileID: 8262978762125445350, guid: e744641683fd1074d868a8d4b368a52b,
     type: 3}
   bloodPrefab: {fileID: 2034130680917781125, guid: c53909b1a2a36114f93422ad42d364c1,

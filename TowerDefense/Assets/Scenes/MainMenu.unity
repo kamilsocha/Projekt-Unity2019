@@ -9309,12 +9309,12 @@ PrefabInstance:
     - target: {fileID: 6449275262380704840, guid: 1c775599748ab8b47b6dfba2c622da34,
         type: 3}
       propertyPath: timeBetweenSpawns
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6449275262380704840, guid: 1c775599748ab8b47b6dfba2c622da34,
         type: 3}
       propertyPath: spawnDelay
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6449275262380704841, guid: 1c775599748ab8b47b6dfba2c622da34,
         type: 3}
@@ -9325,6 +9325,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.z
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6449275262380704841, guid: 1c775599748ab8b47b6dfba2c622da34,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6449275262380704842, guid: 1c775599748ab8b47b6dfba2c622da34,
         type: 3}
@@ -9339,7 +9344,7 @@ PrefabInstance:
     - target: {fileID: 6449275262380704847, guid: 1c775599748ab8b47b6dfba2c622da34,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6449275262380704847, guid: 1c775599748ab8b47b6dfba2c622da34,
         type: 3}
@@ -11291,7 +11296,7 @@ MonoBehaviour:
   - tag: Meteors
     prefab: {fileID: 3524003436214584210, guid: 3f587e651b0210d44867c8a6ccc9a748,
       type: 3}
-    size: 5
+    size: 2
 --- !u!95 &1979191616
 Animator:
   serializedVersion: 3

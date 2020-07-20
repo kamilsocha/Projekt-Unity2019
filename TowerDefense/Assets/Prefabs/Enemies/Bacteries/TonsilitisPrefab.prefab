@@ -58,7 +58,7 @@ MonoBehaviour:
     type: 3}
   healthBar: {fileID: 4879089725620934845}
   startShieldDurability: 200
-  shieldStart: 40
+  shieldStart: 60
 --- !u!114 &-3825538185000353535
 MonoBehaviour:
   m_ObjectHideFlags: 0

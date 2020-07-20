@@ -22,10 +22,7 @@ public class Bacteria : Enemy
     {
         if (isShieldActive)
         {
-            Debug.Log(amount);
-            
             float amountToReduce = amount - shield;
-            Debug.Log(amountToReduce);
             if (amountToReduce > 0)
             {
                 health -= amountToReduce;

@@ -18,7 +18,8 @@ MonoBehaviour:
     rate: 0.5
   - enemyWaves: []
     rate: 0.5
-  bossPrefab: {fileID: 0}
+  bossPrefab: {fileID: 7989696480547705687, guid: 34dc74730368e684da939600e8c08c7d,
+    type: 3}
   timeBetweenWaves: 5
   startMoney: 300
   startLives: 15

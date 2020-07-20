@@ -25,6 +25,7 @@ public class Shop : MonoBehaviour
 
     public BuildManager buildManager;
 
+    public GameObject crossbowTurretItem;
     public GameObject cannonTurretItem;
     Button cannonButton;
     Image cannonImage;
@@ -67,7 +68,6 @@ public class Shop : MonoBehaviour
         {
             toggleButtonText.text = inactiveString;
         }
-            
 
         FindObjectOfType<PlayerStats>().OnPlayerScoreChanged += HandlePlayerScoreChange;
 
@@ -81,48 +81,69 @@ public class Shop : MonoBehaviour
 
         cannonImage = cannonTurretItem.GetComponent<Image>();
         cannonButton = cannonTurretItem.GetComponent<Button>();
-        cannonButton.interactable = false;
-        cannonImage.sprite = cannonLockedImage;
 
         laserBeamerImage = laserBeamerTurretItem.GetComponent<Image>();
         laserBeamerButton = laserBeamerTurretItem.GetComponent<Button>();
-        laserBeamerButton.interactable = false;
-        laserBeamerImage.sprite = laserBeamerLockedImage;
 
         laserImage = laserTurretItem.GetComponent<Image>();
         laserButton = laserTurretItem.GetComponent<Button>();
-        laserButton.interactable = false;
-        laserImage.sprite = laserLockedImage;
 
         buildManager = BuildManager.Instance;
-    }
 
-    void HandlePlayerScoreChange(int score)
-    {
-        if(score >= scoreToUnlockMedicine)
-        {
-            //TODO
-        }
-        else if(score >= scoreToUnlockAntibiotic)
-        {
-            //TODO
-        }
-        else if(score >= scoreToUnlockLaser)
-        {
-            laserImage.sprite = itemsImages["laser"];
-            laserButton.interactable = true;
-        }
-        else if(score >= scoreToUnlockLaserBeamer)
-        {
-            laserBeamerImage.sprite = itemsImages["laserBeamer"];
-            laserBeamerButton.interactable = true;
-        }
-        else if(score >= scoreToUnlockCannon)
+        crossbowTurretItem.GetComponentInChildren<Text>().text = "$" + crossbowTurret.cost;
+        cannonTurretItem.GetComponentInChildren<Text>().text = "$" + cannonTurret.cost;
+        laserBeamerTurretItem.GetComponentInChildren<Text>().text = "$" + laserBeamerTurret.cost;
+        laserTurretItem.GetComponentInChildren<Text>().text = "$" + laserTurret.cost;
+        //antibioticTurretItem.GetComponentInChildren<Text>().text = "$" + antibioticTurret.cost;
+        //medicineTurretItem.GetComponentInChildren<Text>().text = "$" + medicineTurret.cost;
+
+
+        if (scoreToUnlockCannon == 0)
         {
             cannonImage.sprite = itemsImages["cannon"];
             cannonButton.interactable = true;
         }
-        else if(score == 0)
+        else
+        {
+            cannonImage.sprite = cannonLockedImage;
+            cannonButton.interactable = false;
+        }
+        if (scoreToUnlockLaserBeamer == 0)
+        {
+            laserBeamerImage.sprite = itemsImages["laserBeamer"];
+            laserBeamerButton.interactable = true;
+        }
+        else
+        {
+            laserBeamerImage.sprite = laserBeamerLockedImage;
+            laserBeamerButton.interactable = false;
+        }
+        if (scoreToUnlockLaser == 0)
+        {
+            laserImage.sprite = itemsImages["laser"];
+            laserButton.interactable = true;
+        }
+        else
+        {
+            laserImage.sprite = laserLockedImage;
+            laserButton.interactable = false;
+        }
+        //if (scoreToUnlockAntibiotic == 0)
+        //{
+        //    laserImage.sprite = itemsImages["antibiotic"];
+        //    antibioticButton.interactable = true;
+        //}
+        //if (scoreToUnlockMedicine == 0)
+        //{
+        //    laserImage.sprite = itemsImages["medicine"];
+        //    medicineButton.interactable = true;
+        //}
+
+    }
+
+    void HandlePlayerScoreChange(int score)
+    {
+        if (score == 0)
         {
             cannonImage.sprite = cannonLockedImage;
             laserBeamerImage.sprite = laserBeamerLockedImage;
@@ -133,13 +154,35 @@ public class Shop : MonoBehaviour
             laserBeamerButton.interactable = false;
             //TODO REST
         }
+        if (score >= scoreToUnlockMedicine)
+        {
+            //TODO
+        }
+        if(score >= scoreToUnlockAntibiotic)
+        {
+            //TODO
+        }
+        if(score >= scoreToUnlockLaser)
+        {
+            laserImage.sprite = itemsImages["laser"];
+            laserButton.interactable = true;
+        }
+        if(score >= scoreToUnlockLaserBeamer)
+        {
+            laserBeamerImage.sprite = itemsImages["laserBeamer"];
+            laserBeamerButton.interactable = true;
+        }
+        if(score >= scoreToUnlockCannon)
+        {
+            cannonImage.sprite = itemsImages["cannon"];
+            cannonButton.interactable = true;
+        }
     }
 
     public void SelectCrossbowTurret()
     {
         if(buildManager == null)
         {
-            Debug.Log("null");
             buildManager = BuildManager.Instance;
         }
         buildManager.SelectTurretToBuild(crossbowTurret);

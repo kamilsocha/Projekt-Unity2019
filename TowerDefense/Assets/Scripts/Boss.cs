@@ -78,6 +78,6 @@ public class Boss : MonoBehaviour
     private void OnDestroy()
     {
         shadowEffect.transform.parent = null;
-        Destroy(shadowEffect.gameObject, 3f);
+        Destroy(shadowEffect, 3f);
     }
 }

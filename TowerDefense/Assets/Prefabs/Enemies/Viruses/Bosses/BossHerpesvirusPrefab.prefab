@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8992179f131da054db43fe78389a7762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  livesToReduce: 6
+  livesToReduce: 8
   partToRotate: {fileID: 0}
   enemyPrefabToSpawn: {fileID: 6582347219084660416, guid: ccf07670b2a36b544adcd8b7962663c1,
     type: 3}

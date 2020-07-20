@@ -6,15 +6,13 @@ public class PlayerStats : MonoBehaviour
     public int Money { get; set; }
 
     public int startLives = 20;
-    public int Lives;// { get; set; }
+    public int Lives;
 
     public int Rounds { get; set; }
     
-    // TODO
-    // Score system
     public int Score { get; set; }
 
-    public int UpgradesMoney;// { get; set; }
+    public int UpgradesMoney { get; set; }
 
     public delegate void PlayerMoneyChangedEvent(int money);
     public event PlayerMoneyChangedEvent OnPlayerMoneyChanged;
@@ -61,6 +59,7 @@ public class PlayerStats : MonoBehaviour
     public void ReduceLives(int livesToReduce) 
     {
         Lives -= livesToReduce;
+        Lives = Mathf.Clamp(Lives, 0, startLives);
         OnPlayerLivesChanged?.Invoke(Lives);
     }
 

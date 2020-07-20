@@ -70,7 +70,7 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
-    m_ReflectionCompression: 2
+    m_ReflectionCompression: 0
     m_MixedBakeMode: 1
     m_BakeBackend: 2
     m_PVRSampling: 1
@@ -732,7 +732,7 @@ PrefabInstance:
     - target: {fileID: 2582016991416340677, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
       propertyPath: m_Text
-      value: $60
+      value: $100
       objectReference: {fileID: 0}
     - target: {fileID: 5816523902912407432, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
@@ -904,6 +904,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SelectCrossbowTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816523903936982347, guid: 84d38212695a59a43accb9d46f9a8a72,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5816523903936982357, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
@@ -3016,7 +3021,7 @@ PrefabInstance:
     - target: {fileID: 2582016991416340677, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
       propertyPath: m_Text
-      value: '$200
+      value: '$225
 
 '
       objectReference: {fileID: 0}
@@ -3160,6 +3165,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SelectLaserTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816523903936982347, guid: 84d38212695a59a43accb9d46f9a8a72,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5816523903936982357, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
@@ -4368,7 +4378,7 @@ PrefabInstance:
     - target: {fileID: 2582016991416340677, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
       propertyPath: m_Text
-      value: $150
+      value: $200
       objectReference: {fileID: 0}
     - target: {fileID: 5816523902912407432, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
@@ -4515,6 +4525,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SelectLaserBeamerTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816523903936982347, guid: 84d38212695a59a43accb9d46f9a8a72,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5816523903936982357, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
@@ -6104,7 +6119,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &706209386
 GameObject:
@@ -12300,7 +12315,7 @@ RectTransform:
   - {fileID: 673523336}
   - {fileID: 1895157762}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13189,7 +13204,7 @@ PrefabInstance:
     - target: {fileID: 2582016991416340677, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
       propertyPath: m_Text
-      value: $100
+      value: $150
       objectReference: {fileID: 0}
     - target: {fileID: 5816523902912407432, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
@@ -13356,6 +13371,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816523903936982347, guid: 84d38212695a59a43accb9d46f9a8a72,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5816523903936982357, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
@@ -15217,32 +15237,33 @@ MonoBehaviour:
   buttonOffset: {x: 0, y: 70, z: 0}
   crossbowTurret:
     prefab: {fileID: 626465215571811200, guid: cdf97655bd8c4fc4aa5c776e5f1a6078, type: 3}
-    cost: 60
+    cost: 80
     upgradedPrefab: {fileID: 5673349266562329067, guid: 417dfe50801d3844e92d771e2b5151fe,
       type: 3}
-    upgradeCost: 50
+    upgradeCost: 60
   cannonTurret:
     prefab: {fileID: 6172449242888374197, guid: 3a438516b06d6ef46b95f0fbe92ce86d,
       type: 3}
-    cost: 100
+    cost: 150
     upgradedPrefab: {fileID: 8049532230785201885, guid: 5428c07a74b64904bb34bd893ea3ccb9,
       type: 3}
-    upgradeCost: 60
+    upgradeCost: 80
   laserBeamerTurret:
     prefab: {fileID: 7623808330001491553, guid: 5c1c01a8d5bd25c4fb8cf8378d6dc4c7,
       type: 3}
-    cost: 150
+    cost: 200
     upgradedPrefab: {fileID: 3640978559604766818, guid: 02f1a97fe7a4bf246b27d3b95060405b,
       type: 3}
-    upgradeCost: 70
+    upgradeCost: 100
   laserTurret:
     prefab: {fileID: 6804669244290234652, guid: ae147ca1f3f022c4ea46a8b7ba42649f,
       type: 3}
-    cost: 200
+    cost: 225
     upgradedPrefab: {fileID: 8190646584854103513, guid: 6ca39aa126eab5e4a9fb75822143ab96,
       type: 3}
-    upgradeCost: 80
+    upgradeCost: 75
   buildManager: {fileID: 0}
+  crossbowTurretItem: {fileID: 1955311674}
   cannonTurretItem: {fileID: 17651924}
   laserBeamerTurretItem: {fileID: 2141853388}
   laserTurretItem: {fileID: 1968645133}
@@ -15570,7 +15591,7 @@ PrefabInstance:
     - target: {fileID: 3326198838834339704, guid: a7fe6197d180edf4da742abcf861fa68,
         type: 3}
       propertyPath: currentLevel
-      value: Level01
+      value: Level09
       objectReference: {fileID: 0}
     - target: {fileID: 3326198838834339704, guid: a7fe6197d180edf4da742abcf861fa68,
         type: 3}
@@ -16192,7 +16213,7 @@ PrefabInstance:
     - target: {fileID: 8995257928168905864, guid: ed5cda7ffdf801246ac8029417bdcab5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8995257928168905864, guid: ed5cda7ffdf801246ac8029417bdcab5,
         type: 3}

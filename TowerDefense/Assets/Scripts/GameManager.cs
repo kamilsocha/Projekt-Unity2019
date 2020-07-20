@@ -51,7 +51,6 @@ public class GameManager : MonoBehaviour
 
         completeLevelUI.GetComponent<CompleteLevel>().OnContinue += HandleContinueToNextLevel;
         audioManager = AudioManager.Instance;
-
     }
 
     void OnStart()
@@ -69,10 +68,11 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("Level data not found. You may have not added the level to GameMaster or made a typo :) From Button");
             return;
         }
-        waveSpawner.SetData(currentLevelData.waves, currentLevelData.timeBetweenWaves, currentLevelData.bossPrefab);
-        playerStats.SetData(currentLevelData.startMoney, currentLevelData.startLives);
         shop.SetData(currentLevelData.scoreToUnlockCannon, currentLevelData.scoreToUnlockLaserBeamer,
             currentLevelData.scoreToUnlockLaser, currentLevelData.scoreToUnlockAntibiotic, currentLevelData.scoreToUnlockMedicine);
+        waveSpawner.SetData(currentLevelData.waves, currentLevelData.timeBetweenWaves, currentLevelData.bossPrefab);
+        playerStats.SetData(currentLevelData.startMoney, currentLevelData.startLives);
+        
     }
 
     public void Ready()
@@ -87,12 +87,14 @@ public class GameManager : MonoBehaviour
 
         if(playerStats.Lives <= 0)
         {
+            Debug.Log($"{playerStats.Lives}");
             EndGame();
         }
     }
 
     void EndGame()
     {
+        Debug.Log("Endgame");
         GameIsOver = true;
         gameOverUI.SetActive(true);
     }
@@ -155,9 +157,9 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(scene.name != levelSharedName)
-            OnStart();
         shop = FindObjectOfType<Shop>();
+        if (scene.name != levelSharedName)
+            OnStart();
     }
 
     public void ReadyButton()

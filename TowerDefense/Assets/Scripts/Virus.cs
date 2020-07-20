@@ -18,7 +18,7 @@ public class Virus : Enemy
     protected override void Start()
     {
         base.Start();
-        canRevive = false;
+        canRevive = true;
         revives = maxRevives;
     }
 
@@ -28,6 +28,9 @@ public class Virus : Enemy
         if(revive <= chanceToRevive && canRevive)
         {
             health = reviveHealth;
+            reviveHealth = reviveHealth - reviveHealth / 5;
+            chanceToRevive -= 5;
+            chanceToRevive = Mathf.Clamp(chanceToRevive, 0, 100);
             healthBar.fillAmount = reviveHealth / (float)startHealth;
             revives--;
             if(revives <= 0)

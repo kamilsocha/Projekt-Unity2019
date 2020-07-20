@@ -36,12 +36,14 @@ public class BulletShootingTurret : ShootingTurret
         GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 
-        animator.SetTrigger("Shoot");
-        audioManager.Play(audioEffectName);
-
         if (bullet != null)
         {
             bullet.Seek(target);
         }
+
+        animator.SetTrigger("Shoot");
+        audioManager.Play(audioEffectName);
+
+        
     }
 }

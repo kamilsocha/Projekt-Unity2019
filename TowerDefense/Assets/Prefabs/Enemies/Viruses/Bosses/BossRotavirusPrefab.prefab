@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8992179f131da054db43fe78389a7762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  livesToReduce: 10
+  livesToReduce: 12
   partToRotate: {fileID: 0}
   enemyPrefabToSpawn: {fileID: 963621573988982035, guid: a89985756d35f60448ff392ec3dba19e,
     type: 3}

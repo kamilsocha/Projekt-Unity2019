@@ -348,7 +348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8049532230785201885}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.157795, y: 0.5, z: -14.66}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_Children:
   - {fileID: 1102303413267021379}
@@ -389,5 +389,5 @@ MonoBehaviour:
   enemyTag: Enemy
   audioEffectName: Cannon
   firePoint: {fileID: 1102303413379215779}
-  bulletPrefab: {fileID: 8235512071484335377, guid: 7a10b80cd3a211145b269435b2a2485e,
+  bulletPrefab: {fileID: 1815906010383787744, guid: 1480176cff924684d870a2735a94680a,
     type: 3}
