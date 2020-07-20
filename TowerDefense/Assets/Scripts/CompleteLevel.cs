@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CompleteLevel : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class CompleteLevel : MonoBehaviour
 
     public delegate void ContinueButtonEvent();
     public event ContinueButtonEvent OnContinue;
+
+    public Button completeLevelButton;
+    public Button menuButton;
+
+    public Button[] buttons;
 
     public TMP_Text saveText;
     public float letterPause = 0.01f;
@@ -24,6 +30,9 @@ public class CompleteLevel : MonoBehaviour
             PlayerPrefs.SetInt("levelReached", levelToUnlock);
         }
         FindObjectOfType<GameManager>().OnDataSaved += HandleDataSaved;
+
+        buttons = GetComponentsInChildren<Button>();
+        foreach (var button in buttons) button.interactable = false;
     }
 
     public void SetNextLevel(string _nextLevel, int _levelToUnlock)
@@ -76,5 +85,6 @@ public class CompleteLevel : MonoBehaviour
     void HandleDataSaved()
     {
         isSaved = true;
+        foreach (var button in buttons) button.interactable = true;
     }
 }

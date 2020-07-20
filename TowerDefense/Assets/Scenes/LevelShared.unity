@@ -9731,6 +9731,9 @@ MonoBehaviour:
   menuName: MainMenu
   nextLevel: Level01
   levelToUnlock: 2
+  completeLevelButton: {fileID: 0}
+  menuButton: {fileID: 0}
+  buttons: []
   saveText: {fileID: 1112939902}
   letterPause: 0.3
   savingText: Saving...
