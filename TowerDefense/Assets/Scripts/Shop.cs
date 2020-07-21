@@ -19,9 +19,8 @@ public class Shop : MonoBehaviour
     public TurretBlueprint cannonTurret;
     public TurretBlueprint laserBeamerTurret;
     public TurretBlueprint laserTurret;
-    //TODO
-    //public TurretBlueprint antibioticTurret;
-    //public TurretBlueprint medicineTurret;
+    public TurretBlueprint antibioticTurret;
+    public TurretBlueprint medicineTurret;
 
     public BuildManager buildManager;
 
@@ -45,8 +44,10 @@ public class Shop : MonoBehaviour
     Dictionary<string, Sprite> itemsImages;
     public Sprite cannonLockedImage;
     public Sprite laserBeamerLockedImage;
-    public Sprite laserLockedImage; 
-    
+    public Sprite laserLockedImage;
+    public Sprite antibioticLockedImage;
+    public Sprite medicineLockedImage;
+
     public int scoreToUnlockCannon;
     public int scoreToUnlockLaserBeamer;
     public int scoreToUnlockLaser;
@@ -88,14 +89,20 @@ public class Shop : MonoBehaviour
         laserImage = laserTurretItem.GetComponent<Image>();
         laserButton = laserTurretItem.GetComponent<Button>();
 
+        antibioticImage = antibioticTurretItem.GetComponent<Image>();
+        antibioticButton = antibioticTurretItem.GetComponent<Button>();
+
+        medicineImage = medicineTurretItem.GetComponent<Image>();
+        medicineButton = medicineTurretItem.GetComponent<Button>();
+
         buildManager = BuildManager.Instance;
 
         crossbowTurretItem.GetComponentInChildren<Text>().text = "$" + crossbowTurret.cost;
         cannonTurretItem.GetComponentInChildren<Text>().text = "$" + cannonTurret.cost;
         laserBeamerTurretItem.GetComponentInChildren<Text>().text = "$" + laserBeamerTurret.cost;
         laserTurretItem.GetComponentInChildren<Text>().text = "$" + laserTurret.cost;
-        //antibioticTurretItem.GetComponentInChildren<Text>().text = "$" + antibioticTurret.cost;
-        //medicineTurretItem.GetComponentInChildren<Text>().text = "$" + medicineTurret.cost;
+        antibioticTurretItem.GetComponentInChildren<Text>().text = "$" + antibioticTurret.cost;
+        medicineTurretItem.GetComponentInChildren<Text>().text = "$" + medicineTurret.cost;
 
 
         if (scoreToUnlockCannon == 0)
@@ -128,17 +135,24 @@ public class Shop : MonoBehaviour
             laserImage.sprite = laserLockedImage;
             laserButton.interactable = false;
         }
-        //if (scoreToUnlockAntibiotic == 0)
-        //{
-        //    laserImage.sprite = itemsImages["antibiotic"];
-        //    antibioticButton.interactable = true;
-        //}
-        //if (scoreToUnlockMedicine == 0)
-        //{
-        //    laserImage.sprite = itemsImages["medicine"];
-        //    medicineButton.interactable = true;
-        //}
-
+        if (scoreToUnlockAntibiotic == 0)
+        {
+            antibioticImage.sprite = itemsImages["antibiotic"];
+            antibioticButton.interactable = true;
+        }
+        {
+            antibioticImage.sprite = antibioticLockedImage;
+            antibioticButton.interactable = false;
+        }
+        if (scoreToUnlockMedicine == 0)
+        {
+            medicineImage.sprite = itemsImages["medicine"];
+            medicineButton.interactable = true;
+        }
+        {
+            medicineImage.sprite = medicineLockedImage;
+            medicineButton.interactable = false;
+        }
     }
 
     void HandlePlayerScoreChange(int score)
@@ -148,19 +162,24 @@ public class Shop : MonoBehaviour
             cannonImage.sprite = cannonLockedImage;
             laserBeamerImage.sprite = laserBeamerLockedImage;
             laserImage.sprite = laserLockedImage;
+            antibioticImage.sprite = antibioticLockedImage;
+            medicineImage.sprite = medicineLockedImage;
 
             cannonButton.interactable = false;
             laserButton.interactable = false;
             laserBeamerButton.interactable = false;
-            //TODO REST
+            antibioticButton.interactable = false;
+            medicineButton.interactable = false;
         }
         if (score >= scoreToUnlockMedicine)
         {
-            //TODO
+            medicineImage.sprite = itemsImages["medicine"];
+            medicineButton.interactable = true;
         }
         if(score >= scoreToUnlockAntibiotic)
         {
-            //TODO
+            antibioticImage.sprite = itemsImages["antibiotic"];
+            antibioticButton.interactable = true;
         }
         if(score >= scoreToUnlockLaser)
         {
@@ -218,28 +237,23 @@ public class Shop : MonoBehaviour
     {
         ShowStatsUI(laserTurret);
     }
-    /* 
-     * TODO
     public void SelectAntibioticTurret()
     {
-
+        buildManager.SelectTurretToBuild(antibioticTurret);
     }
-
     public void MouseOverAntibioticTurret()
     {
-
+        ShowStatsUI(antibioticTurret);
     }
-
     public void SelectMedicineTurret()
     {
-
+        buildManager.SelectTurretToBuild(medicineTurret);
     }
-
     public void MouseOverMedicineTurret()
     {
-
+        ShowStatsUI(medicineTurret);
     }
-    */
+
 
     public void ToggleShopPanel()
     {

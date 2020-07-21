@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(TargetSeeker))]
 public class ShootingTurret : Turret
 {
-    public string enemyTag = "Enemy";
+    public string[] enemyTags = { "Enemy", "Bacteria" };
     public string audioEffectName = "Shot";
     public Transform firePoint;
 

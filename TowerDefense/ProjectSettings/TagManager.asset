@@ -8,6 +8,7 @@ TagManager:
   - SpawnPoint
   - Environment
   - TornadoObject
+  - Bacteria
   layers:
   - Default
   - TransparentFX

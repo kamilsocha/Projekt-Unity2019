@@ -3,6 +3,7 @@
 public class Bacteria : Enemy
 {
     bool isShieldActive;
+    bool antibioticEffect;
     [Header("Total amount of damage the shield can take before it disappears.")]
     public int startShieldDurability;
     float shieldDurability;
@@ -16,11 +17,29 @@ public class Bacteria : Enemy
         shield = shieldStart;
         shieldDurability = startShieldDurability;
         isShieldActive = true;
+        InvokeRepeating("ShieldRepair", 0f, 3f);
+    }
+
+    void ShieldRepair()
+    {
+        shieldDurability += (float)(startShieldDurability * 0.1); 
+        if(shieldDurability > startShieldDurability)
+        {
+            shieldDurability = startShieldDurability;
+        }
+    }
+    public void EnableAntibioticEffect()
+    {
+        antibioticEffect = true;
+    }
+    public void DisableAntibioticEffect()
+    {
+        antibioticEffect = false;
     }
 
     public override void TakeDamage(float amount)
     {
-        if (isShieldActive)
+        if ((isShieldActive) && (antibioticEffect == false))
         {
             float amountToReduce = amount - shield;
             if (amountToReduce > 0)
@@ -52,6 +71,7 @@ public class Bacteria : Enemy
     public void DisableShield()
     {
         isShieldActive = false;
+        CancelInvoke("ShieldRepair");
     }
 
 }

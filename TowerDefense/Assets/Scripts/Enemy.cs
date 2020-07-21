@@ -42,10 +42,19 @@ public abstract class Enemy : MonoBehaviour
     {
         percentage /= 100f;
         speed = startSpeed * (1f - percentage);
+        if(speed < (float)(startSpeed * 0.3))
+        {
+            speed = (float)(startSpeed * 0.3);
+        }
+    }
+
+    public void EndSlow()
+    {
+        speed = startSpeed;
     }
 
     protected virtual void Die()
-    {
+    { 
         isAlive = false;
 
         OnEnemyDeath?.Invoke(moneyWorth, scoreWorth);

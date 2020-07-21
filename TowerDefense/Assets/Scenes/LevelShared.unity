@@ -1521,6 +1521,34 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 307839713}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &148884891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148884889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2060558152}
+          m_MethodName: MouseOverAntibioticTurret
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &153399707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2774,12 +2802,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 885a9fa375d8b4648b91fe5e038fcebe,
+      objectReference: {fileID: 21300000, guid: 74ce82651357b874581963cd0ddd48f0,
         type: 3}
     - target: {fileID: 5816523902912407432, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5816523902912407436, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
@@ -2905,11 +2933,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2060558152}
     - target: {fileID: 5816523902912407439, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectLaserTurret
+      value: SelectAntibioticTurret
       objectReference: {fileID: 0}
     - target: {fileID: 5816523903936982357, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
@@ -9819,6 +9847,34 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1950566865}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1361875951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361875949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2060558152}
+          m_MethodName: MouseOverMedicineTurret
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1408566688
 GameObject:
   m_ObjectHideFlags: 0
@@ -14209,12 +14265,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 885a9fa375d8b4648b91fe5e038fcebe,
+      objectReference: {fileID: 21300000, guid: 6a743f67c37296a488322d4ca06a954f,
         type: 3}
     - target: {fileID: 5816523902912407432, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5816523902912407436, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
@@ -14340,11 +14396,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2060558152}
     - target: {fileID: 5816523902912407439, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectLaserTurret
+      value: SelectMedicineTurret
       objectReference: {fileID: 0}
     - target: {fileID: 5816523903936982357, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
@@ -15265,6 +15321,20 @@ MonoBehaviour:
     upgradedPrefab: {fileID: 8190646584854103513, guid: 6ca39aa126eab5e4a9fb75822143ab96,
       type: 3}
     upgradeCost: 75
+  antibioticTurret:
+    prefab: {fileID: 2058543449689178965, guid: e8b8cf842977cc14991e89d9eefb21d7,
+      type: 3}
+    cost: 60
+    upgradedPrefab: {fileID: 1512922194896165401, guid: 9f0012b2e1734f74eb1a390561f86f05,
+      type: 3}
+    upgradeCost: 60
+  medicineTurret:
+    prefab: {fileID: 3981230115804321561, guid: b0639fb4b06be0341a47d8794c81c83a,
+      type: 3}
+    cost: 60
+    upgradedPrefab: {fileID: 8220590193935235729, guid: 3fb508b66ac7d1b4494b438322eed3a8,
+      type: 3}
+    upgradeCost: 60
   buildManager: {fileID: 0}
   crossbowTurretItem: {fileID: 1955311674}
   cannonTurretItem: {fileID: 17651924}
@@ -15276,11 +15346,15 @@ MonoBehaviour:
   laserBeamerLockedImage: {fileID: 21300000, guid: f8da0782088515a48a60f1ff6fef361d,
     type: 3}
   laserLockedImage: {fileID: 21300000, guid: ba6f9032e16cc724b9f62eba81caef94, type: 3}
-  scoreToUnlockCannon: 30
-  scoreToUnlockLaserBeamer: 60
-  scoreToUnlockLaser: 80
-  scoreToUnlockAntibiotic: 500
-  scoreToUnlockMedicine: 1000
+  antibioticLockedImage: {fileID: 21300000, guid: 3e924a181f1411a499fc39116188d861,
+    type: 3}
+  medicineLockedImage: {fileID: 21300000, guid: 1d7208cd806a4be49b6992520ffb6e13,
+    type: 3}
+  scoreToUnlockCannon: 3
+  scoreToUnlockLaserBeamer: 6
+  scoreToUnlockLaser: 8
+  scoreToUnlockAntibiotic: 2
+  scoreToUnlockMedicine: 2
 --- !u!1 &2066577938
 GameObject:
   m_ObjectHideFlags: 0
