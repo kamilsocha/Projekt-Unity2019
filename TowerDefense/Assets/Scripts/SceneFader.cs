@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Manages fades between scenes.
+/// </summary>
 public class SceneFader : MonoBehaviour
 {
     public static SceneFader Instance;
@@ -30,6 +33,17 @@ public class SceneFader : MonoBehaviour
         StartCoroutine(FadeIn());
     }
 
+    /// <summary>
+    /// Fades to provided scene using specified type of loading.
+    /// Single scene loading when type equals LoadType.Menu -
+    /// used when loading menu scenes.
+    /// Single scene in additive mode when type is equal to LoadType.SingleLevel - 
+    /// used to load another level without unloading levelShared.
+    /// Two scenes of which one is always LevelShared and another one is chosen level -
+    /// used when first entering playmode from menu.
+    /// </summary>
+    /// <param name="sceneToLoad">name of scene to load</param>
+    /// <param name="type">type of loading</param>
     public void FadeTo(string sceneToLoad, LoadType type)
     {
         if(type == LoadType.Menu)

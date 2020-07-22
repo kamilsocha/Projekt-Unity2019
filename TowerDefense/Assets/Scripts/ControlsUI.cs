@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Controls panel showing essential controls.
+/// </summary>
 public class ControlsUI : MonoBehaviour
 {
     public GameObject ui;

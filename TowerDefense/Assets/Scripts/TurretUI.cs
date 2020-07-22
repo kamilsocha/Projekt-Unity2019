@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Controls state of menu panel with turrets description.
+/// </summary>
 public class TurretUI : MonoBehaviour
 {
     public GameObject ui;

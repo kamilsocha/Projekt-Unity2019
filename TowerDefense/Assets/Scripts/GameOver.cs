@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Controls game over panel.
+/// </summary>
 public class GameOver : MonoBehaviour
 {
     public string menuSceneName = "MainMenu";

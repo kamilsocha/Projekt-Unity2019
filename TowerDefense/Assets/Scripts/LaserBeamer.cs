@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Laser Beamer type of turret shoots constant laser which hurts and slows down enemy.
+/// </summary>
 public class LaserBeamer : ShootingTurret
 {
     [Range(0, 100)]

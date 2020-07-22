@@ -2,6 +2,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Controls UI panel displayed when turret on board is selected.
+/// Allows player to upgrade or sell turret on selected node, informs node about player's
+/// choice. Allows to switch to turret camera.
+/// </summary>
 public class NodeUI : MonoBehaviour
 {
     public GameObject ui;

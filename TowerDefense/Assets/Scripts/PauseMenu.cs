@@ -2,6 +2,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Manages pause menu.
+/// </summary>
 public class PauseMenu : MonoBehaviour
 {
     public GameObject ui;

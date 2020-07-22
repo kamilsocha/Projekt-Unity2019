@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Strategy like camera. Allows to move in specified boundaries, zoom in and out
+/// as well as rotate around the level.
+/// </summary>
 public class StrategyCamera : MonoBehaviour
 {
     public Transform cameraTransform;
@@ -138,7 +142,9 @@ public class StrategyCamera : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * movementTime);
         cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, newZoom, Time.deltaTime * movementTime);
     }
-
+    /// <summary>
+    /// Controls if camera should be active. When deactivated restores its' original position.
+    /// </summary>
     void HandleCamerasSwitch()
     {
         if (isActive)
@@ -168,6 +174,9 @@ public class StrategyCamera : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// When level is won it returns to original position.
+    /// </summary>
     void HandleLevelWon()
     {
         newPosition = initRigPosition;

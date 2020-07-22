@@ -3,6 +3,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Allows to view turrets, their stats, select turret to buy and pass it to build manager.
+/// Manages avaibility of buying specific turrets according to player's current score.
+/// </summary>
 public class Shop : MonoBehaviour
 {
     public StatsUI statsUI;

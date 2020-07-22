@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Responsible for tracking nearest target if it stays in turrets range.
+/// </summary>
 [RequireComponent(typeof(ShootingTurret))]
 public class TargetSeeker : MonoBehaviour
 {
@@ -24,7 +27,9 @@ public class TargetSeeker : MonoBehaviour
         if (Target == null) return;
         LockOnTarget();
     }
-
+    /// <summary>
+    /// Regular updating of closest enemy.
+    /// </summary>
     void UpdateTarget()
     {
         float shortestDistance = Mathf.Infinity;
@@ -53,7 +58,9 @@ public class TargetSeeker : MonoBehaviour
             Target = null;
         }
     }
-
+    /// <summary>
+    /// Smoothly rotates in direction of current target.
+    /// </summary>
     void LockOnTarget()
     {
         Vector3 dir = Target.position - transform.position;

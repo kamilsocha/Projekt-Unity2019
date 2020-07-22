@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Type of turret which shoots bullets on some regular basis.
+/// </summary>
 public class BulletShootingTurret : ShootingTurret
 {
     Animator animator;

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
+/// <summary>
+/// Controls spawning desease object from pool.
+/// </summary>
 public class DiseaseSpawner : MonoBehaviour
 {
     public ObjectPooler objectPooler;

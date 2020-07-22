@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// Simulates random wandering of red blood cells in pool using navmeshagent.
+/// </summary>
 public class RandomWandering : MonoBehaviour
 {
     NavMeshAgent nav;

@@ -2,6 +2,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Stronger enemy which spawns regular enemies.
+/// </summary>
 public class Boss : MonoBehaviour
 {
     public int livesToReduce = 1;
@@ -49,6 +52,9 @@ public class Boss : MonoBehaviour
         countdown -= Time.deltaTime;
     }
 
+    /// <summary>
+    /// Spawns child enemy and makes it subsribe to OnEndPath event.
+    /// </summary>
     void SpawnChildEnemy()
     {
         var pos = GenerateSpawnPosition();

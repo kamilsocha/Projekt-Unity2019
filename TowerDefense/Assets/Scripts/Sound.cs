@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.Audio;
 
+/// <summary>
+/// Describes sounds properties. Makes it easier to manage sounds properties.
+/// </summary>
 [System.Serializable]
 public class Sound
 {

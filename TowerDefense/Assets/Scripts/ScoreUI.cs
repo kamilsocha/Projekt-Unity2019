@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Controls text displaying current player score.
+/// </summary>
 public class ScoreUI : MonoBehaviour
 {
     public TMP_Text scoreText;

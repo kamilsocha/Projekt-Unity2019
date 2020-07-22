@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Describes virus type of enemy.
+/// Weaker enemy but can revive with specific amount of live after losing all health points.
+/// </summary>
 public class Virus : Enemy
 {
     bool canRevive;
@@ -21,7 +25,9 @@ public class Virus : Enemy
         canRevive = true;
         revives = maxRevives;
     }
-
+    /// <summary>
+    /// If virus revives then it restores some live, if not it dies.
+    /// </summary>
     protected override void Die()
     {
         float revive = Random.Range(0, 100);

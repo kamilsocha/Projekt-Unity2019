@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Displays text informing whether camera movement is turned on or off.
+/// </summary>
 public class CameraUI : MonoBehaviour
 {
     public string cameraTextToDisplay = "Camera Move: ";

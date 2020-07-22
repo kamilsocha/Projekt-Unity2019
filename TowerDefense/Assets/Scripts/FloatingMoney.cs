@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Controls movement of world canvas object spawned form pool
+/// when turret is bought.
+/// </summary>
 public class FloatingMoney : MonoBehaviour, IPooledObject
 {
     public float lifetime = 7;
@@ -16,7 +20,10 @@ public class FloatingMoney : MonoBehaviour, IPooledObject
         canvas = GetComponentInChildren<CanvasGroup>();
         rb = GetComponent<Rigidbody>();
     }
-
+    /// <summary>
+    /// Method implemented from IPooledObject interface, when object is spawned from pool
+    /// it's properties are reset and it's movement starts from beginning.
+    /// </summary>
     public void OnObjectSpawn()
     {
         StopAllCoroutines();
@@ -24,7 +31,10 @@ public class FloatingMoney : MonoBehaviour, IPooledObject
         rb.velocity = new Vector3(0, upForce, 0);
         StartCoroutine(FloatMoney());
     }
-
+    /// <summary>
+    /// Controls canvas's movement in x and z axis using trigonometric functions.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator FloatMoney()
     {
         float t = 0f;

@@ -131,7 +131,10 @@ public class WaveSpawner : MonoBehaviour
         }
         
     }
-
+    /// <summary>
+    /// Spawns waves of enemies on regular interval specific for current wave.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator SpawnWave()
     {
         playerStats.Rounds++;
@@ -151,7 +154,10 @@ public class WaveSpawner : MonoBehaviour
 
         waveIndex++;
     }
-
+    /// <summary>
+    /// Waits for timeBetweenWaves and then spawns the boss enemy.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator SpawnBoss()
     {
         EnemiesAlive++;
@@ -173,7 +179,11 @@ public class WaveSpawner : MonoBehaviour
         yield return new WaitForSeconds(time);
         waveInfo.SetActive(false);
     }
-
+    /// <summary>
+    /// Spawns specified enemyPrefab and subscribes to it's event OnEndPath which occurs
+    /// when enemy makes it way to the end of level.
+    /// </summary>
+    /// <param name="enemyPrefab"></param>
     void SpawnEnemy(GameObject enemyPrefab)
     {
         var obj = Instantiate(enemyPrefab, spawnPoint.position + positionOffset, Quaternion.identity);

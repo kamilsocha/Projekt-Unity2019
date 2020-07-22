@@ -4,6 +4,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 
+/// <summary>
+/// Controls options panel with graphics quality, screen resolution and sound settings.
+/// </summary>
 public class OptionsController : MonoBehaviour
 {
     string menuSceneName = "MainMenu";
@@ -22,6 +25,10 @@ public class OptionsController : MonoBehaviour
 
     string buttonAudioName = "ButtonClick";
 
+    /// <summary>
+    /// Gets all possible resolutions with getting rid of repeating ones.
+    /// Sets current quality settings and current resolution.
+    /// </summary>
     private void Awake()
     {
         graphicsDropdown.SetValueWithoutNotify(QualitySettings.GetQualityLevel());

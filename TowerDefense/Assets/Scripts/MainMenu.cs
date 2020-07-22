@@ -4,6 +4,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Controls main menu behaviour.
+/// </summary>
 public class MainMenu : MonoBehaviour
 {
     public string settingsSceneName = "Settings";
@@ -45,19 +48,16 @@ public class MainMenu : MonoBehaviour
 
     public void Quit()
     {
-        Debug.Log("Quiting the game...");
         Application.Quit();
     }
 
     public void Settings()
     {
-        Debug.Log("Loading settings menu.");
         SceneFader.Instance.FadeTo(settingsSceneName, LoadType.Menu);
     }
 
     public void ShowHighscores()
     {
-        Debug.Log("Display highscores.");
         highscoreScreen.SetActive(true);
     }
 

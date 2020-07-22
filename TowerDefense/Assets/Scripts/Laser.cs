@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Laser type of turret which hurts all enemies on it's path of shot.
+/// </summary>
 public class Laser : ShootingTurret
 {
     public GameObject laserPrefab;

@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Contains and manages pools of objects.
+/// </summary>
 public class ObjectPooler : MonoBehaviour
 {
    [System.Serializable]

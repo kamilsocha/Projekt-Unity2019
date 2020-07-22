@@ -2,6 +2,11 @@
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Manages state of node, allows to upgrade or sell turret placed on the node.
+/// Displays if player can perform transaction with adequate hover color.
+/// Plays effects linked with specific transactions.
+/// </summary>
 public class Node : MonoBehaviour
 {
     Color startColor;

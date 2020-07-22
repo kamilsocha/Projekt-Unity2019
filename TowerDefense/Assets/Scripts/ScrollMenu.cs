@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Controls scroll panel in turrets options panel.
+/// </summary>
 public class ScrollMenu : MonoBehaviour
 {
     public GameObject scrollbar;

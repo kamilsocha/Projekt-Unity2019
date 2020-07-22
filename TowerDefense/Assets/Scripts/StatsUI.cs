@@ -2,6 +2,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Displays stats of currently selected or hovered turret.
+/// </summary>
 public class StatsUI : MonoBehaviour
 {
     public GameObject ui;

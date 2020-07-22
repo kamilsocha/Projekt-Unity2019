@@ -1,5 +1,10 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Contains prefabs of standard and upgraded turret obejct.
+/// Provides it's upgrade and sell amount.
+/// Allows easier management of shop.
+/// </summary>
 [System.Serializable]
 public class TurretBlueprint
 {

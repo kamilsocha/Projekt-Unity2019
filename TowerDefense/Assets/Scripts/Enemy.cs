@@ -2,6 +2,10 @@
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
+/// <summary>
+/// Basic class describing enemy, contains properties common for bacteria and virus types of enemies.
+/// Provides common methods.
+/// </summary>
 public abstract class Enemy : MonoBehaviour
 {
     public float startSpeed = 5f;
@@ -26,7 +30,10 @@ public abstract class Enemy : MonoBehaviour
         speed = startSpeed;
         health = startHealth;
     }
-
+    /// <summary>
+    /// Takes damage and displays left amount of live on health bar.
+    /// </summary>
+    /// <param name="amount">value of damage to take</param>
     public virtual void TakeDamage(float amount)
     {
         health -= amount;

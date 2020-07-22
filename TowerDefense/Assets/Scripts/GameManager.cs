@@ -4,6 +4,10 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Manages state of the game. Controls wave spawner, complete/pause level panels.
+/// Provides level information for wave spawner, player stats and shop.
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     public static bool GameIsOver;
@@ -52,7 +56,9 @@ public class GameManager : MonoBehaviour
         completeLevelUI.GetComponent<CompleteLevel>().OnContinue += HandleContinueToNextLevel;
         audioManager = AudioManager.Instance;
     }
-
+    /// <summary>
+    /// Prepares data for currently active level.
+    /// </summary>
     void OnStart()
     {
         Debug.Log("OnStart called.");
@@ -173,7 +179,9 @@ public class GameManager : MonoBehaviour
     {
         SceneFader.Instance.FadeTo(gameWonSceneLoad, LoadType.Menu);
     }
-
+    /// <summary>
+    /// Cleans level from turrets and fireworks played after level is won.
+    /// </summary>
     void HandleContinueToNextLevel()
     {
         Turret[] turrets = FindObjectsOfType<Turret>();

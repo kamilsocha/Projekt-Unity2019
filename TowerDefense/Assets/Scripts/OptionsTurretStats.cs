@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Controls displayed stats of currently displayed turret on turret panel in menu.
+/// </summary>
 public class OptionsTurretStats : MonoBehaviour
 {
     public TMP_Text description;

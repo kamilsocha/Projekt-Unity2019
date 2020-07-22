@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Describes turret shooting at enemies.
+/// </summary>
 [RequireComponent(typeof(TargetSeeker))]
 public class ShootingTurret : Turret
 {

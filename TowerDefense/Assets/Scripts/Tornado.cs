@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Describes torando behaviour.
+/// Movement is controlled using iTween animation system. 
+/// </summary>
 public class Tornado : MonoBehaviour
 {
     public iTween.EaseType movementEaseType = iTween.EaseType.easeInOutSine;
@@ -23,7 +27,10 @@ public class Tornado : MonoBehaviour
         startPosition = transform.position;
         StartCoroutine(Movement());
     }
-
+    /// <summary>
+    /// Generates position to move for object, moves there and then ivokes itself again.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Movement()
     {
         var destination = new Vector3(startPosition.x + Random.Range(-movementRadius, movementRadius), startPosition.y, startPosition.z + Random.Range(-movementRadius, movementRadius));

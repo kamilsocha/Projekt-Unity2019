@@ -2,6 +2,10 @@
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Controls animation of rounds survived by player. Counts up from zero to number
+/// of survived rounds. Displayed on level won and game over panels.
+/// </summary>
 public class RoundsSurvived : MonoBehaviour
 {
     public TMP_Text roundsText;

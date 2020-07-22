@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Contains all player stats, informs subscribers about their changes 
+/// by invoking adequate events.
+/// </summary>
 public class PlayerStats : MonoBehaviour
 {
     public int startMoney = 400;

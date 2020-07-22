@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 
+
+/// <summary>
+/// Stronger type of enemy, has shield which makes it resistant to weaker attacks unless it is under impact of antibiotic turret.
+/// </summary>
 public class Bacteria : Enemy
 {
     bool isShieldActive;    // if shield isn't destroyed, false = is destroyed

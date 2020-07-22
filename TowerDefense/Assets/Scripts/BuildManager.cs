@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Responsible for building turrets, informing if transactions are possible.
+/// Manages range drawer to display adequate range when placing or selecting turret.
+/// Provides effects for node to play. Playes floating money animation when turret is bought.
+/// </summary>
 public class BuildManager : MonoBehaviour
 {
     #region Singleton

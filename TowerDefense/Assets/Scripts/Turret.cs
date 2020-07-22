@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Base class for all turrets.
+/// Contains general information about turret as well as basic properties.
+/// </summary>
 public abstract class Turret : MonoBehaviour
 {
     [Header("General")]

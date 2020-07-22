@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Makes object move in start rotation with random speed.
+/// </summary>
 public class ProjectileMove : MonoBehaviour, IPooledObject
 {
     public float speedBoundLow = 30;
@@ -12,6 +15,9 @@ public class ProjectileMove : MonoBehaviour, IPooledObject
 
     private Rigidbody rb;
 
+    /// <summary>
+    /// Generates random speed and attaches back trails connected with this object.
+    /// </summary>
     public void OnObjectSpawn()
     {
         speed = UnityEngine.Random.Range(speedBoundLow, speedBoundHigh);
@@ -38,6 +44,10 @@ public class ProjectileMove : MonoBehaviour, IPooledObject
         }
     }
 
+    /// <summary>
+    /// Detaches trails and resets object before anoter use.
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         speed = 0;

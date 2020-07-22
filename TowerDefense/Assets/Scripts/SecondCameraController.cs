@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Controls turret camera placed over selected turret.
+/// Allows to rotate around turret as well as zoom in and out in specified boundaries.
+/// </summary>
 public class SecondCameraController : MonoBehaviour
 {
     public Transform cameraTransform;
@@ -116,7 +120,9 @@ public class SecondCameraController : MonoBehaviour
         newRotation = transform.rotation;
         newZoom = cameraTransform.localPosition;
     }
-
+    /// <summary>
+    /// Disables camera when it is not active.
+    /// </summary>
     void HandleCameraSwitch()
     {
         doMovement = !doMovement;

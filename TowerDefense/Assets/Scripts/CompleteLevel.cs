@@ -3,6 +3,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Controls complete level screen.
+/// </summary>
 public class CompleteLevel : MonoBehaviour
 {
     public string menuName = "MainMenu";

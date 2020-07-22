@@ -1,4 +1,7 @@
-﻿
+﻿/// <summary>
+/// Contains waves of enemies spawned during one wave what allows to make more varied
+/// levels.
+/// </summary>
 [System.Serializable]
 public class Wave
 {

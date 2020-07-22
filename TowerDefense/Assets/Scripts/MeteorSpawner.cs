@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Spawns meteor objects from pool from spawn position and makes them collide with itself on
+/// randomly chosen position on it's own collider.
+/// </summary>
 public class MeteorSpawner : MonoBehaviour
 {
     public Transform spawnPosition;

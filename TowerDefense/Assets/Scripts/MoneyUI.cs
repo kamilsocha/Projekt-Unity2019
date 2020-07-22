@@ -1,7 +1,9 @@
 ﻿using TMPro;
 using UnityEngine;
 
-
+/// <summary>
+/// Manages displaying proper amount of money currently scored by player.
+/// </summary>
 public class MoneyUI : MonoBehaviour
 {
     public TMP_Text moneyText;

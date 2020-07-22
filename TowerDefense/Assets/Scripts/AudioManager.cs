@@ -3,7 +3,8 @@ using System.Collections;
 using UnityEngine;
 
 /// <summary>
-/// Contains all sounds and is  
+/// Contains all sounds and plays them.
+/// Placing all sounds in one place makes it easier to manage them.
 /// </summary>
 public class AudioManager : MonoBehaviour
 {
