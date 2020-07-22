@@ -111,10 +111,10 @@ MonoBehaviour:
   bossPrefab: {fileID: 6582347219084660416, guid: 5c11a2fb487b47249965bd8bdffa15ea,
     type: 3}
   timeBetweenWaves: 5
-  startMoney: 300
+  startMoney: 500
   startLives: 15
-  scoreToUnlockCannon: 500
-  scoreToUnlockLaserBeamer: 600
-  scoreToUnlockLaser: 1000
-  scoreToUnlockAntibiotic: 400
-  scoreToUnlockMedicine: 800
+  scoreToUnlockCannon: 10
+  scoreToUnlockLaserBeamer: 10
+  scoreToUnlockLaser: 10
+  scoreToUnlockAntibiotic: 10
+  scoreToUnlockMedicine: 10

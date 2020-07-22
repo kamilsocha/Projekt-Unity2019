@@ -5076,7 +5076,7 @@ MonoBehaviour:
   fireRate: 100
   damage: 0
   description: 
-  slowRate: 60
+  slowRate: 70
 --- !u!65 &4269406500879115820
 BoxCollider:
   m_ObjectHideFlags: 0

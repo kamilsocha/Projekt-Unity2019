@@ -6,7 +6,7 @@ public class LevelSelector : MonoBehaviour
     public Button[] levelButtons;
 
     static string menuName = "MainMenu";
-    int defaultLevel = 1;
+    int defaultLevel = 7;
 
     private void Start()
     {

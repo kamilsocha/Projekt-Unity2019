@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Antibiotic : Turret
 {
-    void Start()
-    {
-    }
-
     private void OnTriggerEnter(Collider other) // when object enters collider
     {
         if(other.tag == "Bacteria")             // if bacteria, else return

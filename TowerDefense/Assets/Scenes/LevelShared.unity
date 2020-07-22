@@ -15296,45 +15296,45 @@ MonoBehaviour:
   buttonOffset: {x: 0, y: 70, z: 0}
   crossbowTurret:
     prefab: {fileID: 626465215571811200, guid: cdf97655bd8c4fc4aa5c776e5f1a6078, type: 3}
-    cost: 50
+    cost: 10
     upgradedPrefab: {fileID: 5673349266562329067, guid: 417dfe50801d3844e92d771e2b5151fe,
       type: 3}
     upgradeCost: 60
   cannonTurret:
     prefab: {fileID: 6172449242888374197, guid: 3a438516b06d6ef46b95f0fbe92ce86d,
       type: 3}
-    cost: 50
+    cost: 20
     upgradedPrefab: {fileID: 8049532230785201885, guid: 5428c07a74b64904bb34bd893ea3ccb9,
       type: 3}
-    upgradeCost: 80
+    upgradeCost: 70
   laserBeamerTurret:
     prefab: {fileID: 7623808330001491553, guid: 5c1c01a8d5bd25c4fb8cf8378d6dc4c7,
       type: 3}
-    cost: 50
+    cost: 30
     upgradedPrefab: {fileID: 3640978559604766818, guid: 02f1a97fe7a4bf246b27d3b95060405b,
       type: 3}
-    upgradeCost: 100
+    upgradeCost: 80
   laserTurret:
     prefab: {fileID: 6804669244290234652, guid: ae147ca1f3f022c4ea46a8b7ba42649f,
       type: 3}
-    cost: 50
+    cost: 40
     upgradedPrefab: {fileID: 8190646584854103513, guid: 6ca39aa126eab5e4a9fb75822143ab96,
       type: 3}
-    upgradeCost: 75
+    upgradeCost: 90
   antibioticTurret:
     prefab: {fileID: 2058543449689178965, guid: e8b8cf842977cc14991e89d9eefb21d7,
       type: 3}
     cost: 50
     upgradedPrefab: {fileID: 72174288049672984, guid: d19958dcd4afd1c43b049b1a60079626,
       type: 3}
-    upgradeCost: 50
+    upgradeCost: 100
   medicineTurret:
     prefab: {fileID: 3981230115804321561, guid: b0639fb4b06be0341a47d8794c81c83a,
       type: 3}
-    cost: 50
+    cost: 60
     upgradedPrefab: {fileID: 8220590193935235729, guid: 3fb508b66ac7d1b4494b438322eed3a8,
       type: 3}
-    upgradeCost: 50
+    upgradeCost: 110
   buildManager: {fileID: 0}
   crossbowTurretItem: {fileID: 1955311674}
   cannonTurretItem: {fileID: 17651924}
@@ -15350,11 +15350,11 @@ MonoBehaviour:
     type: 3}
   medicineLockedImage: {fileID: 21300000, guid: 1d7208cd806a4be49b6992520ffb6e13,
     type: 3}
-  scoreToUnlockCannon: 3
-  scoreToUnlockLaserBeamer: 6
-  scoreToUnlockLaser: 8
-  scoreToUnlockAntibiotic: 2
-  scoreToUnlockMedicine: 2
+  scoreToUnlockCannon: 1
+  scoreToUnlockLaserBeamer: 1
+  scoreToUnlockLaser: 1
+  scoreToUnlockAntibiotic: 1
+  scoreToUnlockMedicine: 1
 --- !u!1 &2066577938
 GameObject:
   m_ObjectHideFlags: 0
