@@ -2,14 +2,14 @@
 
 public class Bacteria : Enemy
 {
-    bool isShieldActive;
-    bool antibioticEffect;
+    bool isShieldActive;    // if shield isn't destroyed, false = is destroyed
+    bool antibioticEffect;  // helps enabling effect of antibiotic turret
     [Header("Total amount of damage the shield can take before it disappears.")]
-    public int startShieldDurability;
-    float shieldDurability;
+    public int startShieldDurability;   // start value of shield durability
+    float shieldDurability;             // actual value of shield durability
     [Header("Value of damage the shield absorbs.")]
-    public int shieldStart;
-    float shield;
+    public int shieldStart;             // start value of shield strength
+    float shield;                       // actual value of shield strength
 
     protected override void Start()
     {
@@ -17,29 +17,29 @@ public class Bacteria : Enemy
         shield = shieldStart;
         shieldDurability = startShieldDurability;
         isShieldActive = true;
-        InvokeRepeating("ShieldRepair", 0f, 3f);
+        InvokeRepeating("ShieldRepair", 0f, 3f);    // every 3 sec -> repairing shield
     }
 
     void ShieldRepair()
     {
-        shieldDurability += (float)(startShieldDurability * 0.1); 
-        if(shieldDurability > startShieldDurability)
+        shieldDurability += (float)(startShieldDurability * 0.1);   // repairing 10% of shield
+        if(shieldDurability > startShieldDurability)                // if over 100% -> stop on max
         {
             shieldDurability = startShieldDurability;
         }
     }
     public void EnableAntibioticEffect()
     {
-        antibioticEffect = true;
+        antibioticEffect = true;    // enabling effect of antibiotic turret
     }
     public void DisableAntibioticEffect()
     {
-        antibioticEffect = false;
+        antibioticEffect = false;   // disabling effect of antibiotic turret
     }
 
     public override void TakeDamage(float amount)
     {
-        if ((isShieldActive) && (antibioticEffect == false))
+        if ((isShieldActive) && (antibioticEffect == false))    // if bacteria has shield and there is no antibiotic turret effect
         {
             float amountToReduce = amount - shield;
             if (amountToReduce > 0)
@@ -53,14 +53,14 @@ public class Bacteria : Enemy
                 shieldDurability -= amount;
             }
         }
-        else
+        else    // normal taking damage
         {
             health -= amount;
             healthBar.fillAmount = health / (float)startHealth;
         }
-        if(shieldDurability <= 0)
+        if(shieldDurability <= 0)   // if durability below 0 -> disable shield
         {
-            DisableShield();
+            DisableShield();    
         }
         if(health < 0 && isAlive)
         {
@@ -70,8 +70,8 @@ public class Bacteria : Enemy
 
     public void DisableShield()
     {
-        isShieldActive = false;
-        CancelInvoke("ShieldRepair");
+        CancelInvoke("ShieldRepair");   // stop invoke every 3 sec of repairing shield
+        isShieldActive = false;         // for future TakeDamage()
     }
 
 }

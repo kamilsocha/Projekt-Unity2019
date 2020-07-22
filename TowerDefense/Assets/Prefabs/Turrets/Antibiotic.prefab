@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7364467462122524068}
   - component: {fileID: 205481953593371623}
   - component: {fileID: 1243928581139407692}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bubbles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4765,7 +4765,7 @@ GameObject:
   - component: {fileID: 3083333539315888454}
   - component: {fileID: 1137348575699366339}
   - component: {fileID: 8123877191376166510}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Antibiotic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4813,7 +4813,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058543449689178965}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 25, y: 2, z: 25}
@@ -4829,7 +4829,7 @@ GameObject:
   - component: {fileID: 8989169978998833608}
   - component: {fileID: 1282301889997763963}
   - component: {fileID: 8738135238184331122}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cauldron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4908,7 +4908,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7271815581318044703}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cauldron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4942,7 +4942,7 @@ GameObject:
   - component: {fileID: 5508795656219670510}
   - component: {fileID: 5511635100048368117}
   - component: {fileID: 4084959069119147806}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9696,7 +9696,7 @@ GameObject:
   - component: {fileID: 3423856992693710563}
   - component: {fileID: 100452397263457587}
   - component: {fileID: 1092719711010622576}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ElixirSurface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9775,7 +9775,7 @@ GameObject:
   - component: {fileID: 5531281922417041713}
   - component: {fileID: 8791535369778224549}
   - component: {fileID: 4599978359410173175}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

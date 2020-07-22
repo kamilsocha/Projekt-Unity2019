@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3988839040018866443}
   - component: {fileID: 6635304854657003556}
   - component: {fileID: 655470611093537323}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Antibiotic_Upgraded 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 5361173993358248974}
   - component: {fileID: 2392606157483828069}
   - component: {fileID: 4463926716212060953}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4829,7 +4829,7 @@ GameObject:
   - component: {fileID: 8908920914617048553}
   - component: {fileID: 2254901270032677802}
   - component: {fileID: 923891074935911169}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bubbles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9583,7 +9583,7 @@ GameObject:
   - component: {fileID: 7002800576306385285}
   - component: {fileID: 890207202614224182}
   - component: {fileID: 7265739748558026559}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cauldron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9662,7 +9662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8753781357058755666}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cauldron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9696,7 +9696,7 @@ GameObject:
   - component: {fileID: 5859763552830976380}
   - component: {fileID: 7462691817622441448}
   - component: {fileID: 2470056787321091258}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9776,7 +9776,7 @@ GameObject:
   - component: {fileID: 3608223014661832366}
   - component: {fileID: 2086820919485521278}
   - component: {fileID: 1349706272670964797}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ElixirSurface
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -732,7 +732,7 @@ PrefabInstance:
     - target: {fileID: 2582016991416340677, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
       propertyPath: m_Text
-      value: $100
+      value: $80
       objectReference: {fileID: 0}
     - target: {fileID: 5816523902912407432, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
@@ -2796,7 +2796,7 @@ PrefabInstance:
     - target: {fileID: 2582016991416340677, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
       propertyPath: m_Text
-      value: $350
+      value: $250
       objectReference: {fileID: 0}
     - target: {fileID: 5816523902912407432, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
@@ -2942,7 +2942,7 @@ PrefabInstance:
     - target: {fileID: 5816523903936982357, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
       propertyPath: m_Text
-      value: TODO
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5816523903936982357, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
@@ -14259,7 +14259,7 @@ PrefabInstance:
     - target: {fileID: 2582016991416340677, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
       propertyPath: m_Text
-      value: $350
+      value: $500
       objectReference: {fileID: 0}
     - target: {fileID: 5816523902912407432, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
@@ -14405,7 +14405,7 @@ PrefabInstance:
     - target: {fileID: 5816523903936982357, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
       propertyPath: m_Text
-      value: TODO
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5816523903936982357, guid: 84d38212695a59a43accb9d46f9a8a72,
         type: 3}
@@ -15296,45 +15296,45 @@ MonoBehaviour:
   buttonOffset: {x: 0, y: 70, z: 0}
   crossbowTurret:
     prefab: {fileID: 626465215571811200, guid: cdf97655bd8c4fc4aa5c776e5f1a6078, type: 3}
-    cost: 80
+    cost: 50
     upgradedPrefab: {fileID: 5673349266562329067, guid: 417dfe50801d3844e92d771e2b5151fe,
       type: 3}
     upgradeCost: 60
   cannonTurret:
     prefab: {fileID: 6172449242888374197, guid: 3a438516b06d6ef46b95f0fbe92ce86d,
       type: 3}
-    cost: 150
+    cost: 50
     upgradedPrefab: {fileID: 8049532230785201885, guid: 5428c07a74b64904bb34bd893ea3ccb9,
       type: 3}
     upgradeCost: 80
   laserBeamerTurret:
     prefab: {fileID: 7623808330001491553, guid: 5c1c01a8d5bd25c4fb8cf8378d6dc4c7,
       type: 3}
-    cost: 200
+    cost: 50
     upgradedPrefab: {fileID: 3640978559604766818, guid: 02f1a97fe7a4bf246b27d3b95060405b,
       type: 3}
     upgradeCost: 100
   laserTurret:
     prefab: {fileID: 6804669244290234652, guid: ae147ca1f3f022c4ea46a8b7ba42649f,
       type: 3}
-    cost: 225
+    cost: 50
     upgradedPrefab: {fileID: 8190646584854103513, guid: 6ca39aa126eab5e4a9fb75822143ab96,
       type: 3}
     upgradeCost: 75
   antibioticTurret:
     prefab: {fileID: 2058543449689178965, guid: e8b8cf842977cc14991e89d9eefb21d7,
       type: 3}
-    cost: 60
-    upgradedPrefab: {fileID: 1512922194896165401, guid: 9f0012b2e1734f74eb1a390561f86f05,
+    cost: 50
+    upgradedPrefab: {fileID: 72174288049672984, guid: d19958dcd4afd1c43b049b1a60079626,
       type: 3}
-    upgradeCost: 60
+    upgradeCost: 50
   medicineTurret:
     prefab: {fileID: 3981230115804321561, guid: b0639fb4b06be0341a47d8794c81c83a,
       type: 3}
-    cost: 60
+    cost: 50
     upgradedPrefab: {fileID: 8220590193935235729, guid: 3fb508b66ac7d1b4494b438322eed3a8,
       type: 3}
-    upgradeCost: 60
+    upgradeCost: 50
   buildManager: {fileID: 0}
   crossbowTurretItem: {fileID: 1955311674}
   cannonTurretItem: {fileID: 17651924}
@@ -15668,7 +15668,7 @@ PrefabInstance:
     - target: {fileID: 3326198838834339704, guid: a7fe6197d180edf4da742abcf861fa68,
         type: 3}
       propertyPath: currentLevel
-      value: Level09
+      value: Level01
       objectReference: {fileID: 0}
     - target: {fileID: 3326198838834339704, guid: a7fe6197d180edf4da742abcf861fa68,
         type: 3}

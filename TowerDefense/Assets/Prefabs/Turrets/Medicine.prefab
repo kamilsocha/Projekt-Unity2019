@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 989429872043935995}
   - component: {fileID: 7644326543844028196}
   - component: {fileID: 4278849209322933660}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pills
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 6344815823204604770}
   - component: {fileID: 1015018448690764176}
   - component: {fileID: 6294048607474531287}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 6012419437454053891}
   - component: {fileID: 6614328298121990330}
   - component: {fileID: 5314386030112606584}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4925,7 +4925,7 @@ GameObject:
   - component: {fileID: 79783220317283594}
   - component: {fileID: -104326717840964347}
   - component: {fileID: 5512322337551791542}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Medicine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4987,7 +4987,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7158390964035416017}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PillsPlate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5021,7 +5021,7 @@ GameObject:
   - component: {fileID: 5439807956006441727}
   - component: {fileID: 9060351635997814379}
   - component: {fileID: 4065480440831416121}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
